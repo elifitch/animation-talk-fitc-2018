@@ -15,6 +15,8 @@ import {
   Appear
 } from "spectacle";
 
+import Fragment from './components/fragment';
+
 import styled from 'react-emotion';
 
 // Import theme
@@ -51,7 +53,16 @@ export default class Presentation extends React.Component {
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
           <InlineBlock>This is the first part</InlineBlock>
-          <CustomAppear><InlineBlock>&nbsp;Whats&nbsp;</InlineBlock></CustomAppear>
+          <Fragment
+            startValue={{
+              color: 'red'
+            }}
+            endValue={{
+              color: 'blue'
+            }}
+          >
+            <InlineBlock>&nbsp;Whats&nbsp;</InlineBlock>
+          </Fragment>
           <InlineBlock>And this is the last</InlineBlock>
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
