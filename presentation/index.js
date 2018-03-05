@@ -11,7 +11,8 @@ import {
   List,
   Quote,
   Slide,
-  Text
+  Text,
+  Appear
 } from "spectacle";
 
 import styled from 'react-emotion';
@@ -37,11 +38,22 @@ const CustomHeader = styled(Heading)`
   font-size: 100px;
   transform: scale(3)
 `
+const CustomAppear = styled(Appear)`
+  display: inline-block;
+`
+const InlineBlock = styled('div')`
+  display: inline-block;
+`
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
+        <Slide transition={["zoom"]} bgColor="primary">
+          <InlineBlock>This is the first part</InlineBlock>
+          <CustomAppear><InlineBlock>&nbsp;Whats&nbsp;</InlineBlock></CustomAppear>
+          <InlineBlock>And this is the last</InlineBlock>
+        </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
           <CustomHeader size={1} fit caps lineHeight={1} textColor="secondary">
             Spectacle Boilerplate
