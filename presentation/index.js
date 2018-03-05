@@ -14,6 +14,8 @@ import {
   Text
 } from "spectacle";
 
+import styled from 'react-emotion';
+
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
@@ -30,14 +32,20 @@ const theme = createTheme({
   secondary: "Helvetica"
 });
 
+const CustomHeader = styled(Heading)`
+  color: blue;
+  font-size: 100px;
+  transform: scale(3)
+`
+
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <CustomHeader size={1} fit caps lineHeight={1} textColor="secondary">
             Spectacle Boilerplate
-          </Heading>
+          </CustomHeader>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
             open the presentation/index.js file to get started
           </Text>
