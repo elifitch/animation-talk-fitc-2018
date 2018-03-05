@@ -15,7 +15,7 @@ import {
   Appear
 } from "spectacle";
 
-import Fragment from './components/fragment';
+import FancyAppear from './components/fancy-appear';
 
 import styled from 'react-emotion';
 
@@ -53,7 +53,7 @@ export default class Presentation extends React.Component {
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
           <InlineBlock>This is the first part</InlineBlock>
-          <Fragment
+          <FancyAppear
             startValue={{
               color: 'red'
             }}
@@ -62,7 +62,7 @@ export default class Presentation extends React.Component {
             }}
           >
             <InlineBlock>&nbsp;Whats&nbsp;</InlineBlock>
-          </Fragment>
+          </FancyAppear>
           <InlineBlock>And this is the last</InlineBlock>
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary">

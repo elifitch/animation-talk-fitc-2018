@@ -7,7 +7,7 @@ import findKey from 'lodash/findKey';
 import { connect } from 'react-redux';
 import { VictoryAnimation } from 'victory-core';
 
-class Fragment extends Component {
+class FancyAppear extends Component {
   state = {
     active: false,
   };
@@ -60,11 +60,11 @@ class Fragment extends Component {
 
   render() {
     const child = React.Children.only(this.props.children);
-    const endValue = this.state.active ? this.props.startValue : this.props.endValue;
+    const tweenData = this.state.active ? this.props.endValue : this.props.startValue;
     const transitionDuration = this.props.transitionDuration;
     return (
       <VictoryAnimation
-        data={endValue}
+        data={tweenData}
         duration={transitionDuration}
         easing={this.props.easing}
       >
@@ -81,14 +81,14 @@ class Fragment extends Component {
   }
 }
 
-Fragment.defaultProps = {
+FancyAppear.defaultProps = {
   transitionDuration: 300,
   startValue: { opacity: 0 },
   endValue: { opacity: 0 },
   easing: 'quadInOut'
 };
 
-Fragment.propTypes = {
+FancyAppear.propTypes = {
   children: PropTypes.node,
   fragment: PropTypes.object,
   order: PropTypes.number,
@@ -100,7 +100,7 @@ Fragment.propTypes = {
   endValue: PropTypes.object
 };
 
-Fragment.contextTypes = {
+FancyAppear.contextTypes = {
   export: PropTypes.bool,
   overview: PropTypes.bool,
   slide: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
@@ -110,4 +110,4 @@ Fragment.contextTypes = {
   })
 };
 
-export default connect(state => state)(Fragment);
+export default connect(state => state)(FancyAppear);
