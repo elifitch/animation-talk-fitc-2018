@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'react-emotion';
 import {
   BlockQuote,
   Cite,
@@ -11,23 +10,13 @@ import {
   Slide,
   Text,
 } from 'spectacle';
-
-import createTheme from 'spectacle/lib/themes/default';
 import { Bounce } from './components/anim';
 import Vignette from './components/vignette';
 import IB from './components/primitives/inline-block';
+import Heading3D from './components/heading-3d';
+import theme from './theme';
 
 require('normalize.css');
-
-const theme = createTheme({
-  primary: 'white',
-  secondary: '#1F2022',
-  tertiary: '#03A9FC',
-  quarternary: '#CECECE',
-}, {
-  primary: 'Montserrat',
-  secondary: 'Helvetica',
-});
 
 export default class Presentation extends React.Component {
   render() {
@@ -35,6 +24,9 @@ export default class Presentation extends React.Component {
       <div>
         <Vignette />
         <Deck transition={['zoom', 'slide']} transitionDuration={500} theme={theme}>
+          <Slide transition={['zoom']} bgColor="primary">
+            <Heading3D>yoooooo</Heading3D>
+          </Slide>
           <Slide transition={['zoom']} bgColor="primary">
             <IB>Fancy appears?&nbsp;</IB>
             <Bounce>
