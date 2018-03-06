@@ -1,4 +1,4 @@
-/* eslint-disable react/no-did-mount-set-state */
+/* eslint-disable */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -7,10 +7,13 @@ import findKey from 'lodash/findKey';
 import { connect } from 'react-redux';
 import { VictoryAnimation } from 'victory-core';
 
-class FancyAppear extends Component {
-  state = {
-    active: false,
-  };
+let FancyAppear = class FancyAppear extends Component {
+  constructor() {
+    super();
+    this.state = {
+      active: false,
+    };
+  }
 
   componentDidMount() {
     const shouldDisableAnimation =
@@ -110,4 +113,6 @@ FancyAppear.contextTypes = {
   })
 };
 
-export default connect(state => state)(FancyAppear);
+FancyAppear = connect(state => state)(FancyAppear);
+
+export { FancyAppear };

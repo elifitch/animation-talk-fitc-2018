@@ -1,7 +1,5 @@
-// Import React
-import React from "react";
-
-// Import Spectacle Core tags
+import React from 'react';
+import styled from 'react-emotion';
 import {
   BlockQuote,
   Cite,
@@ -12,81 +10,73 @@ import {
   Quote,
   Slide,
   Text,
-  Appear
-} from "spectacle";
+  // Appear,
+} from 'spectacle';
 
-import FancyAppear from './components/fancy-appear';
+import createTheme from 'spectacle/lib/themes/default';
+import { FancyAppear } from './components/fancy-appear';
 
-import styled from 'react-emotion';
-
-// Import theme
-import createTheme from "spectacle/lib/themes/default";
-
-// Require CSS
-require("normalize.css");
+require('normalize.css');
 
 const theme = createTheme({
-  primary: "white",
-  secondary: "#1F2022",
-  tertiary: "#03A9FC",
-  quarternary: "#CECECE"
+  primary: 'white',
+  secondary: '#1F2022',
+  tertiary: '#03A9FC',
+  quarternary: '#CECECE',
 }, {
-  primary: "Montserrat",
-  secondary: "Helvetica"
+  primary: 'Montserrat',
+  secondary: 'Helvetica',
 });
 
 const CustomHeader = styled(Heading)`
   color: blue;
   font-size: 100px;
   transform: scale(3)
-`
-const CustomAppear = styled(Appear)`
-  display: inline-block;
-`
+`;
 const InlineBlock = styled('div')`
   display: inline-block;
-`
+`;
 
 const startAnim = {
   opacity: 0,
-  transform: "translateY(-1em)"
+  transform: 'translateY(-1em)',
 };
 
 const endAnim = {
   opacity: 1,
-  transform: "translateY(0em)"
+  transform: 'translateY(0em)',
 };
 
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide transition={["zoom"]} bgColor="primary">
+      <Deck transition={['zoom', 'slide']} transitionDuration={500} theme={theme}>
+        <Slide transition={['zoom']} bgColor="primary">
           <InlineBlock>Fancy appears?&nbsp;</InlineBlock>
           <FancyAppear
             startValue={startAnim}
             endValue={endAnim}
-            easing={'bounceOut'}
+            easing="bounceOut"
           >
             <InlineBlock><b>This&nbsp;</b></InlineBlock>
           </FancyAppear>
           <FancyAppear
             startValue={startAnim}
             endValue={endAnim}
-            easing={'bounceOut'}
+            easing="bounceOut"
           >
             <InlineBlock><b>could&nbsp;</b></InlineBlock>
           </FancyAppear>
           <FancyAppear
             startValue={startAnim}
             endValue={endAnim}
-            easing={'bounceOut'}
+            easing="bounceOut"
           >
             <InlineBlock><b>be&nbsp;</b></InlineBlock>
           </FancyAppear>
           <InlineBlock>pretty darn cool!</InlineBlock>
         </Slide>
-        <Slide transition={["zoom"]} bgColor="primary">
+        <Slide transition={['zoom']} bgColor="primary">
           <CustomHeader size={1} fit caps lineHeight={1} textColor="secondary">
             Spectacle Boilerplate
           </CustomHeader>
@@ -94,7 +84,7 @@ export default class Presentation extends React.Component {
             open the presentation/index.js file to get started
           </Text>
         </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={['fade']} bgColor="tertiary">
           <Heading size={6} textColor="primary" caps>Typography</Heading>
           <Heading size={1} textColor="secondary">Heading 1</Heading>
           <Heading size={2} textColor="secondary">Heading 2</Heading>
@@ -103,7 +93,7 @@ export default class Presentation extends React.Component {
           <Heading size={5} textColor="secondary">Heading 5</Heading>
           <Text size={6} textColor="secondary">Standard text</Text>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>Standard List</Heading>
           <List>
             <ListItem>Item 1</ListItem>
@@ -112,7 +102,7 @@ export default class Presentation extends React.Component {
             <ListItem>Item 4</ListItem>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <BlockQuote>
             <Quote>Example Quote</Quote>
             <Cite>Author</Cite>
