@@ -47,23 +47,44 @@ const InlineBlock = styled('div')`
   display: inline-block;
 `
 
+const startAnim = {
+  opacity: 0,
+  transform: "translateY(-1em)"
+};
+
+const endAnim = {
+  opacity: 1,
+  transform: "translateY(0em)"
+};
+
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
-          <InlineBlock>This is the first part</InlineBlock>
+          <InlineBlock>Fancy appears?&nbsp;</InlineBlock>
           <FancyAppear
-            startValue={{
-              color: 'red'
-            }}
-            endValue={{
-              color: 'blue'
-            }}
+            startValue={startAnim}
+            endValue={endAnim}
+            easing={'bounceOut'}
           >
-            <InlineBlock>&nbsp;Whats&nbsp;</InlineBlock>
+            <InlineBlock><b>This&nbsp;</b></InlineBlock>
           </FancyAppear>
-          <InlineBlock>And this is the last</InlineBlock>
+          <FancyAppear
+            startValue={startAnim}
+            endValue={endAnim}
+            easing={'bounceOut'}
+          >
+            <InlineBlock><b>could&nbsp;</b></InlineBlock>
+          </FancyAppear>
+          <FancyAppear
+            startValue={startAnim}
+            endValue={endAnim}
+            easing={'bounceOut'}
+          >
+            <InlineBlock><b>be&nbsp;</b></InlineBlock>
+          </FancyAppear>
+          <InlineBlock>pretty darn cool!</InlineBlock>
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
           <CustomHeader size={1} fit caps lineHeight={1} textColor="secondary">

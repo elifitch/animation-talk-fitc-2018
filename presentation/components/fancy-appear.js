@@ -84,7 +84,7 @@ class FancyAppear extends Component {
 FancyAppear.defaultProps = {
   transitionDuration: 300,
   startValue: { opacity: 0 },
-  endValue: { opacity: 0 },
+  endValue: { opacity: 1 },
   easing: 'quadInOut'
 };
 
