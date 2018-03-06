@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
 import { FancyAppear } from './fancy-appear';
-
-const InlineBlock = styled('div')`
-  display: inline-block;
-`;
+import IB from './primitives/inline-block';
 
 function Bounce({ children }) {
   return (
@@ -20,7 +16,7 @@ function Bounce({ children }) {
       }}
       easing="bounceOut"
     >
-      <InlineBlock>{children}</InlineBlock>
+      <IB>{children}</IB>
     </FancyAppear>
   );
 }
@@ -31,7 +27,7 @@ Bounce.propTypes = {
 function Fade({ children }) {
   return (
     <FancyAppear>
-      <InlineBlock>{children}</InlineBlock>
+      <IB>{children}</IB>
     </FancyAppear>
   );
 }

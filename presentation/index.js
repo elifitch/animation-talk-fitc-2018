@@ -15,6 +15,7 @@ import {
 import createTheme from 'spectacle/lib/themes/default';
 import { Bounce } from './components/anim';
 import Vignette from './components/vignette';
+import IB from './components/primitives/inline-block';
 
 require('normalize.css');
 
@@ -27,9 +28,6 @@ const theme = createTheme({
   primary: 'Montserrat',
   secondary: 'Helvetica',
 });
-const InlineBlock = styled('div')`
-  display: inline-block;
-`;
 
 export default class Presentation extends React.Component {
   render() {
@@ -38,7 +36,7 @@ export default class Presentation extends React.Component {
         <Vignette />
         <Deck transition={['zoom', 'slide']} transitionDuration={500} theme={theme}>
           <Slide transition={['zoom']} bgColor="primary">
-            <InlineBlock>Fancy appears?&nbsp;</InlineBlock>
+            <IB>Fancy appears?&nbsp;</IB>
             <Bounce>
               <b>This&nbsp;</b>
             </Bounce>
@@ -48,7 +46,7 @@ export default class Presentation extends React.Component {
             <Bounce>
               <b>be&nbsp;</b>
             </Bounce>
-            <InlineBlock>pretty darn cool!</InlineBlock>
+            <IB>pretty darn cool!</IB>
           </Slide>
           <Slide transition={['zoom']} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="secondary">
