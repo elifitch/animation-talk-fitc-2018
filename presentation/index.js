@@ -18,7 +18,6 @@ import Heading3D from './components/heading-3d';
 import theme from './theme';
 
 const kat = require('../assets/kat.png');
-console.log(kat)
 
 require('normalize.css');
 
@@ -32,7 +31,7 @@ export default class Presentation extends React.Component {
             <Heading3D>yoooooo</Heading3D>
             <Image src={kat.replace('/', '')} alt="" />
           </Slide>
-          <Slide transition={['zoom']} bgColor="primary">
+          <Slide transition={['zoom', 'spin']} bgColor="primary">
             <IB>Fancy appears?&nbsp;</IB>
             <Bounce>
               <b>This&nbsp;</b>
@@ -60,7 +59,7 @@ export default class Presentation extends React.Component {
             <Heading size={3} textColor="secondary">Heading 3</Heading>
             <Heading size={4} textColor="secondary">Heading 4</Heading>
             <Heading size={5} textColor="secondary">Heading 5</Heading>
-            <Text size={6} textColor="secondary">Standard text</Text>
+            <Text size={6} textColor="secondary" textFont="secondary">Standard text</Text>
           </Slide>
           <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
             <Heading size={6} textColor="secondary" caps>Standard List</Heading>

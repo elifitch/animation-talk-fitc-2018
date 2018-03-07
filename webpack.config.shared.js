@@ -1,13 +1,14 @@
 /* eslint-disable */
 var path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  loaders: {
-    markdown: {
+  loaders: [
+    {
       test: /\.md$/,
       loader: "html-loader!markdown-loader?gfm=false"
     },
-    fonts: {
+    {
       test: /\.(ttf|eot|woff|svg|woff2)$/,
       loader: "file-loader",
       include: path.join(__dirname, "assets/fonts"),
@@ -15,5 +16,10 @@ module.exports = {
         name: "fonts/[name].[ext]",
       }
     }
-  }
+  ],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './template.html'
+    })
+  ]
 }

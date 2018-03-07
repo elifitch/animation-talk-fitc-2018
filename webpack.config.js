@@ -1,9 +1,9 @@
 /* eslint-disable */
 
-var path = require("path");
-var webpack = require("webpack");
-var sharedConfig = require("./webpack.config.shared");
-var sharedLoaders = sharedConfig.loaders;
+const path = require("path");
+const webpack = require("webpack");
+const sharedConfig = require("./webpack.config.shared");
+const sharedLoaders = sharedConfig.loaders;
 
 module.exports = {
   devtool: "cheap-module-source-map",
@@ -16,16 +16,16 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/dist",
+    // publicPath: "/dist",
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    ...sharedConfig.plugins,
   ],
   module: {
     loaders: [
-      sharedLoaders.markdown,
-      sharedLoaders.fonts,
+      ...sharedLoaders,
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,

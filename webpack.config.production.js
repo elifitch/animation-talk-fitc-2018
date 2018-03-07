@@ -1,10 +1,8 @@
 /* eslint-disable */
 
-var path = require("path");
-var webpack = require("webpack");
-var sharedConfig = require("./webpack.config.shared");
-var sharedLoaders = sharedConfig.loaders;
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require("path");
+const webpack = require("webpack");
+const sharedConfig = require("./webpack.config.shared");
 
 module.exports = {
   entry: [
@@ -22,19 +20,16 @@ module.exports = {
         "NODE_ENV": JSON.stringify("production")
       }
     }),
-    new HtmlWebpackPlugin({
-      template: './template.html'
-    })
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compressor: {
-    //     warnings: false
-    //   }
-    // })
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    }),
+    ...sharedConfig.plugins
   ],
   module: {
     loaders: [
-      sharedLoaders.markdown,
-      sharedLoaders.fonts,
+      ...sharedConfig.loaders,
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
