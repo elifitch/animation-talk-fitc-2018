@@ -8,6 +8,7 @@ import {
   List,
   Quote,
   Slide,
+  Image,
   Text,
 } from 'spectacle';
 import { Bounce } from './components/anim';
@@ -15,6 +16,9 @@ import Vignette from './components/vignette';
 import IB from './components/primitives/inline-block';
 import Heading3D from './components/heading-3d';
 import theme from './theme';
+
+const kat = require('../assets/kat.png');
+console.log(kat)
 
 require('normalize.css');
 
@@ -26,6 +30,7 @@ export default class Presentation extends React.Component {
         <Deck transition={['zoom', 'slide']} transitionDuration={500} theme={theme}>
           <Slide transition={['zoom']} bgColor="primary">
             <Heading3D>yoooooo</Heading3D>
+            <Image src={kat.replace('/', '')} alt="" />
           </Slide>
           <Slide transition={['zoom']} bgColor="primary">
             <IB>Fancy appears?&nbsp;</IB>

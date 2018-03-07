@@ -10,6 +10,7 @@ function Vignette() {
     width: 100vw;
     background-image: radial-gradient(transparent 0%, transparent 60%, rgba(0, 0, 0, 0.2));
     z-index: 1;
+    pointer-events: none;
   `;
   return <VignetteDiv />;
 }
