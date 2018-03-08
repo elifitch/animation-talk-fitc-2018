@@ -135,6 +135,7 @@ These slides should be made last
 * Animation won't paper over bad design really, but it can make good design much better. ehhhhhhhh?
 * Animation as affordance: Animation can be a fantastic way to hint or preview at what an action will do before a user clicks a button. If you have a UI with many panels, it can be helpful to signal to users what will open or close by doing a slight peek or tuck on hover. In drag and drop interfaces, especially when reording a list, animating elements around the dragged item to make room for a potential drop can give the user a real time preview of what will happen before they take action. This eases cognitive load of the action because expectations are set, the brain's processed what's going to happen before it happens. Especially valuable for new users; subtle animations can help them discover new actions without shouting at them or giving them a walkthrough. Examples: IOS camera on home screen, some hamburger menu somewhere[val]?, Clear[val]?
 * Example of a springy energetic brand is dropbox paper [val][https://vimeo.com/162721550]; compared to medium, which is much more measured and restrained writing experience [val][https://vimeo.com/162721531]
+* Surprise and delight examples: Yelp pull to refresh cat rocketship, medium clap animaiton....
 
 
 ## Resources

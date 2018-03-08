@@ -1,80 +1,95 @@
 import React from 'react';
 import {
-  BlockQuote,
-  Cite,
+  // BlockQuote,
+  // Cite,
   Deck,
   Heading,
   ListItem,
   List,
-  Quote,
+  // Quote,
   Slide,
   Image,
-  Text,
+  // Text,
+  Notes,
 } from 'spectacle';
 import { Bounce } from './components/anim';
-import Vignette from './components/vignette';
-import IB from './components/primitives/inline-block';
 import Heading3D from './components/heading-3d';
 import theme from './theme';
 
-const kat = require('../assets/kat.png');
-
 require('normalize.css');
+const swearTrekOpinionButtGif = require('../assets/swear-trek-opinion-butt.gif');
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <div>
-        {/* <Vignette /> */}
-        <Deck transition={['fade', 'spin']} transitionDuration={500} theme={theme} controls={false}>
+        <Deck transition={['slide']} transitionDuration={500} theme={theme} controls={false}>
           <Slide bgColor="primary">
-            <Heading3D>yoooooo</Heading3D>
-            <Image src={kat.replace('/', '')} alt="" />
+            <Heading3D>Big Title Slide</Heading3D>
           </Slide>
-          <Slide bgColor="primary">
-            <IB>Fancy appears?&nbsp;</IB>
-            <Bounce>
-              <b>This&nbsp;</b>
-            </Bounce>
-            <Bounce>
-              <b>could&nbsp;</b>
-            </Bounce>
-            <Bounce>
-              <b>be&nbsp;</b>
-            </Bounce>
-            <IB>pretty darn cool!</IB>
+
+          <Slide>
+            <Heading>Hi I'm eli slide</Heading>
           </Slide>
-          <Slide bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-              Spectacle Boilerplate
-            </Heading>
-            <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-              open the presentation/index.js file to get started
-            </Text>
+
+          <Slide>
+            <Heading>Some things about me slide</Heading>
           </Slide>
-          <Slide bgColor="tertiary">
-            <Heading size={6} textColor="primary" caps>Typography</Heading>
-            <Heading size={1} textColor="secondary">Heading 1</Heading>
-            <Heading size={2} textColor="secondary">Heading 2</Heading>
-            <Heading size={3} textColor="secondary">Heading 3</Heading>
-            <Heading size={4} textColor="secondary">Heading 4</Heading>
-            <Heading size={5} textColor="secondary">Heading 5</Heading>
-            <Text size={6} textColor="secondary" textFont="secondary">Standard text</Text>
-          </Slide>
-          <Slide bgColor="primary" textColor="tertiary">
-            <Heading size={6} textColor="secondary" caps>Standard List</Heading>
+
+          <Slide>
+            <Heading>What we talk about slide</Heading>
             <List>
-              <ListItem>Item 1</ListItem>
+              <ListItem>Why animation should be a first class citizen in UI design</ListItem>
               <ListItem>Item 2</ListItem>
               <ListItem>Item 3</ListItem>
               <ListItem>Item 4</ListItem>
             </List>
           </Slide>
-          <Slide bgColor="secondary" textColor="primary">
-            <BlockQuote>
-              <Quote>Example Quote</Quote>
-              <Cite>Author</Cite>
-            </BlockQuote>
+
+          <Slide>
+            <Heading size={6} caps>[section heading]</Heading>
+            <Heading>Animation's place in interactive design</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>Animation is unfairly trivialized</Heading>
+            <Notes>
+              Animation is often regarded with skepticism at best, and outright derision at worst.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Bounce><Heading>Superfluous</Heading></Bounce>
+            <Bounce><Heading>Surprise &amp; delight</Heading></Bounce>
+            <Bounce><Heading>[Collect other quotes here]</Heading></Bounce>
+            <Notes>
+              I've heard folks call animation in UI design superfluous, give it a backhanded complement of "surprise and delight"
+              the implication being that its not serious enough to be a part of "real" design
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Image style={{ minWidth: '40vw' }} src={swearTrekOpinionButtGif} />
+          </Slide>
+
+          <Slide>
+            <Heading>A set of biological &amp; cultural assumptions</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading size={6}>[Hierarchy slide, some graphic to illustrate, maybe a hierarchical page and a picture of a walkway along the hudson with someone running in the foreground, and NYC in the back]</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>[typography slide, graphic of a geometric sans, gif of zach galafinaikis math, and then a picture of a modern building]</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>[image of a brain? 3d brain? brain gif?]</Heading>
+            <Notes>
+              Without the human hindbrain's ability to rapidly draw associations, 
+              and fit new things into established patterns, design wouldn't work.
+            </Notes>
           </Slide>
         </Deck>
       </div>
