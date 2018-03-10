@@ -50,6 +50,7 @@ These slides should be made last
 * Animation is often dismissed as mere "surprise and delight" (which is codswallop btw) but jesus christ I mean, if I found a way to make today's miserable, jaded user of the internet surprised and fucking *happy*, well dammit I'm gonna take that seriously.
 * Margaret Livingston called the system of inferring information from shape and color the "what system" and inferring infromation from motion the "where system". The "where system" is less evolved, more human hardware than human software, and offers a more direct way to communicate with the human hindbrain.
 * Kind of an offbeat way to think about design is this. Design leverages a set of biological and cultural assumptions about how people perceive the world around them. Think hierarchy. Objects that are larger (or closer) need to be handled and considered first, or you might end up on the wrong end of a kangaroo foot.
+* What system vs where system: communicating via [color](https://www.smashingmagazine.com/2010/01/color-theory-for-designers-part-1-the-meaning-of-color/) has a bunch of different associations depending on culture, it's very hard to count on. Animation is closer to the metal, and interpretations are more stable across cultural lines.
 
 ### How to use animation to manipulate cognition
 #### Key points
@@ -65,6 +66,7 @@ These slides should be made last
 ##### Spacial
 * It also helps users build a spacial relationship for where they are in an application. This is super important especially on small screens. The smaller porthole you have to view the world, the more context you need to know where you are
 * Offscreen navigation has become more and more popular...
+* depth
 * Think about IOS (settings app); as you move through an application pages slide in from the right to left, on top of the last page you were on. They don't snap into existence. This lets users gracefully move through flows, and cues them to interact with a back gesture to return to their last page, because they spacially know where it is.
 * Morph objects from one state to another to signal to users that while information is presented in a different way now, they refer to the same thing [[sarah drasner map example: https://vimeo.com/162715963]]. Also look at like the IOS app icons. You zoom into the icon that both signals to you that the icon contains the app and reinforces where on the home screen the icon is to help nurture muscle memory.
 ##### Performance

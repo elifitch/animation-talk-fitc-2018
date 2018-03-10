@@ -12,17 +12,20 @@ import {
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce } from './components/anim';
+import { Bounce, Fade } from './components/anim';
 import theme from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
 import SlideHeading from './components/slide-heading';
+import ListHeading from './components/list-heading';
+import SubsectionHeading from './components/subsection-heading';
 
 require('normalize.css');
 const swearTrekOpinionButtGif = require('../assets/swear-trek-opinion-butt.gif');
 
 // Aliases
 const SH = SectionHeading;
+const SSH = SubsectionHeading;
 const H = SlideHeading;
 
 export default class Presentation extends React.Component {
@@ -35,7 +38,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <SH>Hi I'm eli slide</SH>
+            <H>Hi I'm eli slide</H>
           </Slide>
 
           <Slide>
@@ -43,31 +46,30 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>What we talk about slide</H>
+            <ListHeading>What we talk about slide</ListHeading>
             <List>
               <ListItem>Why animation should be a first class citizen in UI design</ListItem>
-              <ListItem>Item 2</ListItem>
-              <ListItem>Item 3</ListItem>
-              <ListItem>Item 4</ListItem>
+              <ListItem>How to use animation to influence user cognition</ListItem>
+              <ListItem>How animation can shape users' emotional state</ListItem>
+              <ListItem>How to build animation into your design process</ListItem>
             </List>
           </Slide>
 
           <Slide>
-            <H size={6} caps>[section heading]</H>
-            <H>Animation's place in interactive design</H>
+            <SH>Animation's place in interactive design</SH>
           </Slide>
 
           <Slide>
-            <H>Animation is unfairly trivialized</H>
+            <H>Animation is<br />unfairly trivialized</H>
             <Notes>
               Animation is often regarded with skepticism at best, and outright derision at worst.
             </Notes>
           </Slide>
 
           <Slide>
-            <Bounce><H size={1}>Superfluous</H></Bounce>
-            <Bounce><H>Surprise &amp; delight</H></Bounce>
-            <Bounce><H>[Collect other quotes here]</H></Bounce>
+            <div><Bounce><H size={6}>Superfluous</H></Bounce></div>
+            <div><Bounce><H size={6}>Surprise &amp; delight</H></Bounce></div>
+            <div><Bounce><H size={6}>[Collect other quotes here]</H></Bounce></div>
             <Notes>
               I've heard folks call animation in UI design superfluous, give it a backhanded complement of "surprise and delight"
               the implication being that its not serious enough to be a part of "real" design
@@ -82,10 +84,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H size={6}>some graphic [[Animation is actually powerful]]</H>
+            <H size={6}>[[some graphic: Animation is actually powerful/think different]]</H>
             <Notes>
               Animation is actually incredibly powerful, expressive and useful design tool.
               It deserves to be taken seriously, at least as seriously as traditional design precepts.
+              In order to fully appreciate animation's usefulness, lets think about design in a kind of weird way.
             </Notes>
           </Slide>
 
@@ -98,9 +101,17 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Leverages Biological &amp; cultural factors</H>
+            <H>Biological &amp; Cultural</H>
             <Notes>
               Design leverages biological and cultural factors of how humans process our environemnt in order to more effectively rely information.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[image of a brain? 3d brain? brain gif?]</H>
+            <Notes>
+              Without the human hindbrain's ability to rapidly draw associations,
+              and fit new things into established patterns, design wouldn't work.
             </Notes>
           </Slide>
 
@@ -113,7 +124,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>We are also hard wired to infer meaning from motion</H>
+            <H>Animation is no different</H>
+            <Notes>
+              We infer at least as much information from how things move or change over time.
+              In fact some research suggests that we infer *more* information from animation than we do "traditional" design
+            </Notes>
           </Slide>
 
           <Slide>
@@ -131,12 +146,116 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[image of a brain? 3d brain? brain gif?]</H>
+            <H>Animation is the most efficient way to communicate</H>
             <Notes>
-              Without the human hindbrain's ability to rapidly draw associations, 
-              and fit new things into established patterns, design wouldn't work.
+              Because of this more "hardware" level connection with the human subconscious, animation is an incredibly information dense 
+              way to communicate. It is at least as efficient as static design in communicating information.
             </Notes>
           </Slide>
+
+          <Slide>
+            <SH>Animation &amp; Cognition</SH>
+            <Notes>
+              Animation's place in our visual perception pipeline gives it unique abilities to influence human cognition
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <ListHeading>Managing users' cognition</ListHeading>
+            <List>
+              <ListItem><Fade>Animating responsibly</Fade></ListItem>
+              <ListItem><Fade>Lighten cognitive load</Fade></ListItem>
+              <ListItem><Fade>Cognitive "muscle memory"</Fade></ListItem>
+              <ListItem><Fade>Influence perception of time</Fade></ListItem>
+            </List>
+          </Slide>
+
+          <Slide>
+            <SSH>Animating Responsibly</SSH>
+            <Notes>
+              Because animation is a more intimate form of communication, it can have wildly unintended and sometimes even dangerous consequences.
+              Before talking about all the cool stuff you can do with animation, we need to take a moment to talk about how to animate with accessibility in mind.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Ethical animation</H>
+            <Notes>
+              As we'll see in a minute, animation has profound influence over how we think and feel. It is of the *utmost* importance to not 
+              abuse that power or embrace "dark patterns". 
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Don't leave the non-visual behind</H>
+            <Notes>
+              Animation can be a fabulous tool to relay information, as we'll see, but make sure that you include other ways to consume that information for folks who can't see the animation.
+              This serves the double purpose of also making your site generally that much more accessible.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Be mindful of vestibular issues</H>
+            <Notes>
+              Folks with vestibular disorders can experience intense vertigo, dizziness, neausea, headaches, and other adverse symptoms.
+              Try to avoid, animation that covers large parts of the screen, animations that quickly cover large distances, and simultaneous motion in different directions.
+              It is worse if these factors are combined. Avoid flashing animations as well, as those can be triggers for folks with epilepsy and migraines.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Be mindful of vestibular issues</H>
+            <Notes>
+              Folks with vestibular disorders can experience intense vertigo, dizziness, neausea, headaches, and other adverse symptoms.
+              Try to avoid, animation that covers large parts of the screen, animations that quickly cover large distances, and simultaneous motion in different directions.
+              It is worse if these factors are combined. Avoid flashing animations as well, as those can be triggers for folks with epilepsy and migraines.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Provide a way out</H>
+            <Notes>
+              If animation is a large part of your app, give users the option to disable animations in their user preferences. This will be necessary 
+              until the "prefers-reduced-motion" media query lands in more browsers than just Safari. There's no timeline on that right now but 
+              hopefully it's soon. Once that media query is widespread, users will you'll be able to set a flag in their browser that you can 
+              hook into to reduce or eliminate animation.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <SSH>Lighten cognitive load</SSH>
+            <Notes>
+              Cognitive load is a term tossed around in UX design circles a lot. Basically what it means is the amount of consious and unconscious 
+              mental effort being used. Animation can reduce that load by connecting the dots that people would otherwise have to connect themselves.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <SSH>Lighten cognitive load</SSH>
+            <Notes>
+              Cognitive load is a term tossed around in UX design circles a lot. Basically what it means is the amount of consious and unconscious
+              mental effort being used. Animation can reduce that load by connecting the dots that people would otherwise have to connect themselves.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Research Approved!™</H>
+            <Notes>
+              Studies from the university of rotterdam and university of new mexico among many others have shown that animation 
+              helps people retain information, peform better in problem solving tasks, and learn more efficiently. This is because 
+              animation reduces cognitive load, but how?
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Multithreaded thinking</H>
+            <Notes>
+              When the UI changes, your brain has to spend cycles on determining what has changed on the screen and what that means. 
+              When you animate a state transition, that work is offloaded to the visual side of the brain, letting the brain's 
+              "main thread" continue uninterrupted, just like a computer with more than one processor thread.
+            </Notes>
+          </Slide>
+          
         </Deck>
       </div>
     );

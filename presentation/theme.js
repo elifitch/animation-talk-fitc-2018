@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 
 import createTheme from 'spectacle/lib/themes/default';
-import { injectGlobal } from 'emotion';
+import { injectGlobal, css } from 'emotion';
 
 require('../assets/fonts/brandon-grotesque-bld-it.eot');
 require('../assets/fonts/brandon-grotesque-bld-it.woff');
@@ -17,6 +17,28 @@ export const pink = '#ff4cff';
 export const purple = '#9636f5';
 export const whitesmoke = '#fafafa';
 export const nearBlack = '#333333';
+
+// export const underline = css`
+//   text-align: left;
+//   position: relative;
+//   display: inline;
+//   background-size: 100% 0.15em;
+//   background-repeat: no-repeat;
+//   background-position: 0 1em;
+//   overflow: hidden;
+//   font-family: "brandon grotesque", Impact, sans-serif;
+//   background-image: linear-gradient(to bottom, ${pink} 0%, ${pink} 100%);
+//   text-shadow: 0px 0.025em 0.1em rgba(0, 0, 0, 0.2);
+// `
+export const underline = css`
+  display: inline;
+  background-size: 100% 0.15em;
+  background-repeat: no-repeat;
+  background-position: 0 1em;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, ${pink} 0%, ${pink} 100%);
+  text-shadow: 0px 0.025em 0.1em rgba(0, 0, 0, 0.2);
+`;
 
 injectGlobal`
   @font-face {
