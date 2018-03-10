@@ -70,10 +70,32 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Image style={{ minWidth: '40vw' }} src={swearTrekOpinionButtGif} />
+            <Notes>
+              This is total nonsense. 
+            </Notes>
           </Slide>
 
           <Slide>
-            <Heading>A set of biological &amp; cultural assumptions</Heading>
+            <Heading size={6}>some graphic [[Animation is actually powerful]]</Heading>
+            <Notes>
+              Animation is actually incredibly powerful, expressive and useful design tool.
+              It deserves to be taken seriously, at least as seriously as traditional design precepts.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Heading size={6}>subsection heading</Heading>
+            <Heading>A different way to think about design</Heading>
+            <Notes>
+              In order to fully appreciate design's usefulness, lets think about design in a kind of weird way.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Heading>Leverages Biological &amp; cultural factors</Heading>
+            <Notes>
+              Design leverages biological and cultural factors of how humans process our environemnt in order to more effectively rely information.
+            </Notes>
           </Slide>
 
           <Slide>
@@ -82,6 +104,24 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Heading>[typography slide, graphic of a geometric sans, gif of zach galafinaikis math, and then a picture of a modern building]</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>We are also hard wired to infer meaning from motion</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading size={6}>Needs to be graphics here, maybe break up this slide, it's important information, take your time on it</Heading>
+            <Heading>What System vs. Where System</Heading>
+            <Notes>
+              Margaret Livingstone, a professor of neurobiology at harvard university 
+              notes that humans have two primary pathways of visual perception: the what system and the where system. 
+              The What system has more to do with color and form, whereas the Where system has to do more with contrast and 
+              animation. The where system is also evolutionary MUCH older, and to borrow a computer science term, closer to the metal.
+              You can use animation to more directly communicate with the users hindbrain, and more efficiently manage users cognition
+              and emotional state, which at the end of the day, is the goal of design: helping people understand information better, 
+              and forging a deeper connection betrween the user and the experience.
+            </Notes>
           </Slide>
 
           <Slide>
