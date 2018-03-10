@@ -3,27 +3,32 @@
 import createTheme from 'spectacle/lib/themes/default';
 import { injectGlobal } from 'emotion';
 
-require('../assets/fonts/brandon-grotesque-blk-it.eot');
-require('../assets/fonts/brandon-grotesque-blk-it.woff');
-require('../assets/fonts/brandon-grotesque-blk-it.ttf');
-require('../assets/fonts/brandon-grotesque-blk-it.svg');
+require('../assets/fonts/brandon-grotesque-bld-it.eot');
+require('../assets/fonts/brandon-grotesque-bld-it.woff');
+require('../assets/fonts/brandon-grotesque-bld-it.ttf');
+require('../assets/fonts/brandon-grotesque-bld-it.svg');
 
 require('../assets/fonts/pinopolis.eot');
 require('../assets/fonts/pinopolis.woff');
 require('../assets/fonts/pinopolis.ttf');
 require('../assets/fonts/pinopolis.svg');
 
+export const pink = '#ff4cff';
+export const purple = '#9636f5';
+export const whitesmoke = '#fafafa';
+export const nearBlack = '#333333';
+
 injectGlobal`
   @font-face {
     font-family: 'brandon grotesque';
-    src: url('fonts/brandon-grotesque-blk-it.eot'); /* IE9 Compat Modes */
-    src: url('fonts/brandon-grotesque-blk-it?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-        url('fonts/brandon-grotesque-blk-it.woff') format('woff'), /* Modern Browsers */
-        url('fonts/brandon-grotesque-blk-it.ttf')  format('truetype'), /* Safari, Android, iOS */
-        url('fonts/brandon-grotesque-blk-it#db83a1450782399269807c88b8666559') format('svg'); /* Legacy iOS */
+    src: url('fonts/brandon-grotesque-bld-it.eot'); /* IE9 Compat Modes */
+    src: url('fonts/brandon-grotesque-bld-it?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('fonts/brandon-grotesque-bld-it.woff') format('woff'), /* Modern Browsers */
+        url('fonts/brandon-grotesque-bld-it.ttf')  format('truetype'), /* Safari, Android, iOS */
+        url('fonts/brandon-grotesque-bld-it#db83a1450782399269807c88b8666559') format('svg'); /* Legacy iOS */
         
     font-style:   italic;
-    font-weight:  800;
+    font-weight:  700;
   }
 
   @font-face {
@@ -40,10 +45,11 @@ injectGlobal`
 `;
 
 const theme = createTheme({
-  primary: 'white',
-  secondary: '#1F2022',
-  tertiary: '#03A9FC',
+  primary: whitesmoke, // background
+  secondary: nearBlack,
+  tertiary: purple,
   quarternary: '#CECECE',
+  nearBlack,
 }, {
   primary: 'brandon grotesque',
   secondary: 'pinopolis',

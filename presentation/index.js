@@ -13,31 +13,37 @@ import {
   Notes,
 } from 'spectacle';
 import { Bounce } from './components/anim';
-import Heading3D from './components/heading-3d';
 import theme from './theme';
+import Title from './components/title';
+import SectionHeading from './components/section-heading';
+import SlideHeading from './components/slide-heading';
 
 require('normalize.css');
 const swearTrekOpinionButtGif = require('../assets/swear-trek-opinion-butt.gif');
+
+// Aliases
+const SH = SectionHeading;
+const H = SlideHeading;
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <div>
-        <Deck transition={['slide']} transitionDuration={500} theme={theme} controls={false}>
-          <Slide bgColor="primary">
-            <Heading3D>Big Title Slide</Heading3D>
+        <Deck transition={['slide']} transitionDuration={500} theme={theme} controls={false} bgColor="quarternary">
+          <Slide >
+            <Title>Big Title Slide</Title>
           </Slide>
 
           <Slide>
-            <Heading>Hi I'm eli slide</Heading>
+            <SH>Hi I'm eli slide</SH>
           </Slide>
 
           <Slide>
-            <Heading>Some things about me slide</Heading>
+            <H>Some things about me slide</H>
           </Slide>
 
           <Slide>
-            <Heading>What we talk about slide</Heading>
+            <H>What we talk about slide</H>
             <List>
               <ListItem>Why animation should be a first class citizen in UI design</ListItem>
               <ListItem>Item 2</ListItem>
@@ -47,21 +53,21 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={6} caps>[section heading]</Heading>
-            <Heading>Animation's place in interactive design</Heading>
+            <H size={6} caps>[section heading]</H>
+            <H>Animation's place in interactive design</H>
           </Slide>
 
           <Slide>
-            <Heading>Animation is unfairly trivialized</Heading>
+            <H>Animation is unfairly trivialized</H>
             <Notes>
               Animation is often regarded with skepticism at best, and outright derision at worst.
             </Notes>
           </Slide>
 
           <Slide>
-            <Bounce><Heading>Superfluous</Heading></Bounce>
-            <Bounce><Heading>Surprise &amp; delight</Heading></Bounce>
-            <Bounce><Heading>[Collect other quotes here]</Heading></Bounce>
+            <Bounce><H size={1}>Superfluous</H></Bounce>
+            <Bounce><H>Surprise &amp; delight</H></Bounce>
+            <Bounce><H>[Collect other quotes here]</H></Bounce>
             <Notes>
               I've heard folks call animation in UI design superfluous, give it a backhanded complement of "surprise and delight"
               the implication being that its not serious enough to be a part of "real" design
@@ -76,7 +82,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={6}>some graphic [[Animation is actually powerful]]</Heading>
+            <H size={6}>some graphic [[Animation is actually powerful]]</H>
             <Notes>
               Animation is actually incredibly powerful, expressive and useful design tool.
               It deserves to be taken seriously, at least as seriously as traditional design precepts.
@@ -84,35 +90,35 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={6}>subsection heading</Heading>
-            <Heading>A different way to think about design</Heading>
+            <H size={6}>subsection heading</H>
+            <H>A different way to think about design</H>
             <Notes>
               In order to fully appreciate design's usefulness, lets think about design in a kind of weird way.
             </Notes>
           </Slide>
 
           <Slide>
-            <Heading>Leverages Biological &amp; cultural factors</Heading>
+            <H>Leverages Biological &amp; cultural factors</H>
             <Notes>
               Design leverages biological and cultural factors of how humans process our environemnt in order to more effectively rely information.
             </Notes>
           </Slide>
 
           <Slide>
-            <Heading size={6}>[Hierarchy slide, some graphic to illustrate, maybe a hierarchical page and a picture of a walkway along the hudson with someone running in the foreground, and NYC in the back]</Heading>
+            <H size={6}>[Hierarchy slide, some graphic to illustrate, maybe a hierarchical page and a picture of a walkway along the hudson with someone running in the foreground, and NYC in the back]</H>
           </Slide>
 
           <Slide>
-            <Heading>[typography slide, graphic of a geometric sans, gif of zach galafinaikis math, and then a picture of a modern building]</Heading>
+            <H>[typography slide, graphic of a geometric sans, gif of zach galafinaikis math, and then a picture of a modern building]</H>
           </Slide>
 
           <Slide>
-            <Heading>We are also hard wired to infer meaning from motion</Heading>
+            <H>We are also hard wired to infer meaning from motion</H>
           </Slide>
 
           <Slide>
-            <Heading size={6}>Needs to be graphics here, maybe break up this slide, it's important information, take your time on it</Heading>
-            <Heading>What System vs. Where System</Heading>
+            <H size={6}>Needs to be graphics here, maybe break up this slide, it's important information, take your time on it</H>
+            <H>What System vs. Where System</H>
             <Notes>
               Margaret Livingstone, a professor of neurobiology at harvard university 
               notes that humans have two primary pathways of visual perception: the what system and the where system. 
@@ -125,7 +131,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading>[image of a brain? 3d brain? brain gif?]</Heading>
+            <H>[image of a brain? 3d brain? brain gif?]</H>
             <Notes>
               Without the human hindbrain's ability to rapidly draw associations, 
               and fit new things into established patterns, design wouldn't work.
