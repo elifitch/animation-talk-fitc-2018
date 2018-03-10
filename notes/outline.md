@@ -142,3 +142,5 @@ These slides should be made last
 
 ## Resources
 * [codenewbie podcast with RN: cognitive load](https://www.codenewbie.org/podcast/what-and-why-is-web-animation)
+* [Research: animation improves decisionmaking](http://courses.ischool.berkeley.edu/i247/s04/resources/p27-gonzalez.pdf)
+* [Research: animation builds mental maps](http://www.cs.umd.edu/hcil/jazz/learn/papers/CS-TR-3964.pdf)

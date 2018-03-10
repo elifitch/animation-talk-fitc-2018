@@ -19,6 +19,7 @@ import SectionHeading from './components/section-heading';
 import SlideHeading from './components/slide-heading';
 import ListHeading from './components/list-heading';
 import SubsectionHeading from './components/subsection-heading';
+import Pic from './components/pic';
 
 require('normalize.css');
 const swearTrekOpinionButtGif = require('../assets/swear-trek-opinion-butt.gif');
@@ -77,7 +78,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Image style={{ minWidth: '40vw' }} src={swearTrekOpinionButtGif} />
+            <Pic src="swear-trek-opinion-butt.gif" />
             <Notes>
               This is total nonsense. 
             </Notes>
@@ -204,16 +205,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Be mindful of vestibular issues</H>
-            <Notes>
-              Folks with vestibular disorders can experience intense vertigo, dizziness, neausea, headaches, and other adverse symptoms.
-              Try to avoid, animation that covers large parts of the screen, animations that quickly cover large distances, and simultaneous motion in different directions.
-              It is worse if these factors are combined. Avoid flashing animations as well, as those can be triggers for folks with epilepsy and migraines.
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <H>Provide a way out</H>
+            <H>Provide alternatives</H>
             <Notes>
               If animation is a large part of your app, give users the option to disable animations in their user preferences. This will be necessary 
               until the "prefers-reduced-motion" media query lands in more browsers than just Safari. There's no timeline on that right now but 
