@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FancyAppear } from './fancy-appear';
-import styled from 'react-emotion';
-import { css } from 'emotion';
 import IB from './primitives/inline-block';
 import { underline } from '../theme';
 
-function Bounce({ children }) {
+function Bounce(props) {
   return (
     <FancyAppear
       startValue={{
@@ -18,8 +16,9 @@ function Bounce({ children }) {
         transform: 'translateY(0em)',
       }}
       easing="bounceOut"
+      {...props}
     >
-      <IB>{children}</IB>
+      <IB>{props.children}</IB>
     </FancyAppear>
   );
 }
@@ -27,7 +26,7 @@ Bounce.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-function Fade({ children }) {
+function Fade(props) {
   return (
     <FancyAppear
       startValue={{
@@ -36,8 +35,9 @@ function Fade({ children }) {
       endValue={{
         opacity: 1,
       }}
+      {...props}
     >
-      <IB>{children}</IB>
+      <IB>{props.children}</IB>
     </FancyAppear>
   );
 }
@@ -45,18 +45,18 @@ Fade.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-function Stroke({ children }) {
+function Stroke(props) {
   return (
     <FancyAppear
-      data-foo="bar"
       startValue={{
         backgroundSize: '0% 0.15em',
       }}
       endValue={{
         backgroundSize: '100% 0.15em',
       }}
+      {...props}
     >
-      <div className={underline}>{children}</div>
+      <div className={underline}>{props.children}</div>
     </FancyAppear>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  // BlockQuote,
-  // Cite,
+  BlockQuote,
+  Cite,
+  Quote,
   Deck,
   // Heading,
   ListItem,
   List,
-  // Quote,
   Slide,
   // Image,
   // Text,
@@ -411,6 +411,51 @@ export default class Presentation extends React.Component {
               So we've been over the myriad ways animation can manage human cognition, but the other side of that 
               coin is how animation can influence our emotional state, even more than static design principles 
               like color or typography, we infer a remarkable amount of information from motion.
+            </Notes>
+          </Slide>
+
+          <Slide transition={['fade']}>
+            <Pic src="twa-empty.png" />
+            <Notes>
+              Simple question, what are these? Seiously what are they? Some shapes, rectangles? 
+            </Notes>
+          </Slide>
+
+          <Slide transition={['fade']}>
+            <Pic src="twa-full.jpg" />
+            <Notes>
+              Nope, they're characters from a wonderful video game called "Thomas was alone". 
+              This one is thomas, here's chris, this one is claire, over here we have laura.
+              I know what you're probably thinking right? Okay these are characters, but they don't seem very expressive.
+              How could you know anything about them, they're just shapes.
+            </Notes>
+          </Slide>
+
+          <Slide transitionOut={['fade']}>
+            <BlockQuote>
+              <Quote>The jump in Thomas Was Alone might be amongst the best ever programmed...</Quote>
+            </BlockQuote>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide transitionIn={['fade']}>
+            <BlockQuote>
+              <Quote>Amazingly, I felt more connected to Thomas Was Alone's colored, polygonal blocks than I have to most human characters</Quote>
+              <Cite>Evan Narcisse, Kotaku</Cite>
+            </BlockQuote>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[[video of thomas and co jumping]]</H>
+            <Notes>
+              Each distinct character has a distint jump animation that goes with their charchacter. Thomas has a bright and 
+              happy jumping style that underlines his optimism. John has a big scrunch up and bound, very bombastic, and 
+              it goes right along with his arrogant attitude. Chris
             </Notes>
           </Slide>
           

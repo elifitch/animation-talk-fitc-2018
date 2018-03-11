@@ -17,6 +17,7 @@ export const pink = '#ff4cff';
 export const purple = '#9636f5';
 export const whitesmoke = '#fafafa';
 export const nearBlack = '#333333';
+export const translucent = 'rgba(0, 0, 80, 0.2)';
 
 export const underline = css`
   display: inline;
@@ -56,7 +57,7 @@ injectGlobal`
   }
 `;
 
-const theme = createTheme({
+let mutableTheme = createTheme({
   primary: whitesmoke, // background
   secondary: nearBlack,
   tertiary: purple,
@@ -66,5 +67,24 @@ const theme = createTheme({
   primary: 'brandon grotesque',
   secondary: 'pinopolis',
 });
+
+mutableTheme.extendComponent = (component, style) => {
+  mutableTheme.screen.components[component] = Object.assign(
+    {},
+    mutableTheme.screen.components[component],
+    style,
+  );
+  return mutableTheme;
+};
+
+mutableTheme = mutableTheme.extendComponent('quote', {
+  borderLeft: `4px solid ${pink}`,
+  color: nearBlack,
+  lineHeight: 1.1,
+}).extendComponent('cite', {
+  color: translucent,
+});
+
+const theme = JSON.parse(JSON.stringify(mutableTheme));
 
 export default theme;
