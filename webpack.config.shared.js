@@ -15,7 +15,12 @@ module.exports = {
       options: {
         name: "fonts/[name].[ext]",
       }
-    }
+    },
+    {
+      test: /\.(mp4)$/,
+      loader: "file-loader",
+      include: path.join(__dirname, "assets")
+    },
   ],
   plugins: [
     new HtmlWebpackPlugin({

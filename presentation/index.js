@@ -3,16 +3,16 @@ import {
   // BlockQuote,
   // Cite,
   Deck,
-  Heading,
+  // Heading,
   ListItem,
   List,
   // Quote,
   Slide,
-  Image,
+  // Image,
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce, Fade } from './components/anim';
+import { Bounce, Fade, Stroke } from './components/anim';
 import theme from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
@@ -20,9 +20,10 @@ import SlideHeading from './components/slide-heading';
 import ListHeading from './components/list-heading';
 import SubsectionHeading from './components/subsection-heading';
 import Pic from './components/pic';
+import Vid from './components/vid';
+// import Underline from './components/underline';
 
 require('normalize.css');
-const swearTrekOpinionButtGif = require('../assets/swear-trek-opinion-butt.gif');
 
 // Aliases
 const SH = SectionHeading;
@@ -94,8 +95,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H size={6}>subsection heading</H>
-            <H>A different way to think about design</H>
+            <SSH>A different way<br />to think about design</SSH>
             <Notes>
               In order to fully appreciate design's usefulness, lets think about design in a kind of weird way.
             </Notes>
@@ -134,7 +134,11 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <H size={6}>Needs to be graphics here, maybe break up this slide, it's important information, take your time on it</H>
-            <H>What System vs. Where System</H>
+            <H>
+              <div><Fade>What System</Fade></div>
+              <div>vs.</div>
+              <div><Fade>Where System</Fade></div>
+            </H>
             <Notes>
               Margaret Livingstone, a professor of neurobiology at harvard university 
               notes that humans have two primary pathways of visual perception: the what system and the where system. 
@@ -188,6 +192,21 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <Pic src="obnoxious-ad.gif" />
+            <Notes>
+              It can be as innocuous as this, using animation's power to guide focus to continually reel attention towards an ad
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Vid src="slot.mp4" />
+            <Notes>
+              Or as serious as creating animations specifically to help addict someone to gambling, as is common in slot machines 
+              and even many video games such as candy crush and various loot crates.
+            </Notes>
+          </Slide>
+
+          <Slide>
             <H>Don't leave the non-visual behind</H>
             <Notes>
               Animation can be a fabulous tool to relay information, as we'll see, but make sure that you include other ways to consume that information for folks who can't see the animation.
@@ -196,7 +215,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Be mindful of vestibular issues</H>
+            <H>Be mindful of<br />vestibular issues</H>
             <Notes>
               Folks with vestibular disorders can experience intense vertigo, dizziness, neausea, headaches, and other adverse symptoms.
               Try to avoid, animation that covers large parts of the screen, animations that quickly cover large distances, and simultaneous motion in different directions.
@@ -215,17 +234,10 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <H>[[should have a diff title here, because both cogni and spacial reduce cognitive load]]</H>
             <SSH>Lighten cognitive load</SSH>
             <Notes>
               Cognitive load is a term tossed around in UX design circles a lot. Basically what it means is the amount of consious and unconscious 
-              mental effort being used. Animation can reduce that load by connecting the dots that people would otherwise have to connect themselves.
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <SSH>Lighten cognitive load</SSH>
-            <Notes>
-              Cognitive load is a term tossed around in UX design circles a lot. Basically what it means is the amount of consious and unconscious
               mental effort being used. Animation can reduce that load by connecting the dots that people would otherwise have to connect themselves.
             </Notes>
           </Slide>
@@ -245,6 +257,160 @@ export default class Presentation extends React.Component {
               When the UI changes, your brain has to spend cycles on determining what has changed on the screen and what that means. 
               When you animate a state transition, that work is offloaded to the visual side of the brain, letting the brain's 
               "main thread" continue uninterrupted, just like a computer with more than one processor thread.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Cueing</H>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Vid src="affordance.mp4" />
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Confirmation</H>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Pic src="confirmation.gif" />
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <SSH>Spacial orientation</SSH>
+            <Notes>
+              Animation also allows users to build spacial maps, because there's a clear idea of motion from one state to another.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Spacial orientation</H>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[[We live in a spacial world]]</H>
+            <Notes>
+              We unconsciously build mental maps of the world around us, and it lets us generally know where things are 
+              without tons of conscious effort. When we create interfaces that snap from state to state, it prevents us 
+              from building that mental map and instinctively knowing where we are in a flow.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Mental map of what's out of view</H>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[[animation of a hamgurger menu or something else off screen like a modal]]</H>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Provides a sense of depth</H>
+            <Notes>
+              Humans more naturally understand 3d spaces than 2d spaces. It's common to layer elements on top of other elements
+              as your UI becomes more complex. Animating these items into place lets the user understand where they came from,
+              creates a sense of depth, and smooths the context change of another item appearing.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[[animation of modal dropping from above (opacity and scale)]]</H>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Especially important on mobile</H>
+            <Notes>
+              Users on mobile look at your app or site through a tiny little port hole, and while moving from view to view 
+              it's very easy to become lost. 
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[[video of ios settings screen-to-screen animation]]</H>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <SSH>Animation skews time</SSH>
+            <Notes>
+              Time is a funny thing. It can appear to slow down, speed up, expand and contract.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Pic src="picard.jpg" />
+            <Notes>
+              And for some people, time might not even really exist at all
+            </Notes>
+          </Slide>
+          
+          <Slide>
+            <H>Animation governs our perception of time</H>
+            <Notes>
+              Humans are really bad at sensing how long things take. We take cues from how things move and change in 
+              our environment to know how long time is passing. Thus we can use animation to make it seem like loading 
+              takes less time than it actually does.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[[Port over progress bar demo]]</H>
+            <Notes>
+              Grad students at carnegie mellon university showed that progress bars feel like they fill 12% faster if they have 
+              bands that animate against the direction of the bar. This operates off the same principle as riding on a train 
+              and seeing another train coming the opposite direction, it feels like you're going twice as fast. We naturally 
+              try to fit what we see into existing spacial patterns.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Animation keeps us mentally engaged</H>
+            <Notes>
+              Animation keeps us mentally engaged through a long waiting period, and when we're mentally engaged, 
+              time seems to move more quickly.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[[slack video]]</H>
+            <Notes>
+              Slack conducts a masterclass here, moving from loading anim to loading anim to keep you engaged, 
+              and make the loading process seem like it's faster than it actually  is.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <SH>Emotion</SH>
+            <Notes>
+              So we've been over the myriad ways animation can manage human cognition, but the other side of that 
+              coin is how animation can influence our emotional state, even more than static design principles 
+              like color or typography, we infer a remarkable amount of information from motion.
             </Notes>
           </Slide>
           

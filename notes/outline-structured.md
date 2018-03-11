@@ -28,10 +28,11 @@
   * harness how humans naturally process information to communicate more efficiently
   * If that's true (it is) then we're hard wired to extract more information from animation, making it even more efficient than static design to communicate
 ### Cognition
+* Animate accesibly!
 * Connecting state to state, action and reaction, affordances, etc eases cognitive load and helps things become more understandable, or be understood faster and more efficiently
 * Helps people develop spacial relationships between states, develop "muscle memory"
 * Performance: changes perception of time to make your site seem faster than it actually is
-* Animate accesibly!
+
 ### Emotion
 * Humans natually anthropomorphize, and it's possible to evoke emotions and sensations from your animation; tell a subliminal story about your brand
 * The bulding blocks of character, and how to combine them to create subtle differences and evoke the right feeling

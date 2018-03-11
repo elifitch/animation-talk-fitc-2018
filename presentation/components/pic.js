@@ -8,7 +8,14 @@ class Pic extends React.Component {
   render() {
     const source = require(`../../assets/${this.props.src}`);
     return (
-      <Image style={{ minWidth: '40vw' }} src={source} />
+      <Image
+        style={{
+          minWidth: '40vw',
+          // maxWidth: '80vw',
+          // maxHeight: '620px',
+        }}
+        src={source}
+      />
     );
   }
 }
