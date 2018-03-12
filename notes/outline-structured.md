@@ -37,6 +37,7 @@
 * Humans natually anthropomorphize, and it's possible to evoke emotions and sensations from your animation; tell a subliminal story about your brand
 * The bulding blocks of character, and how to combine them to create subtle differences and evoke the right feeling
 * How to combine building blocks to evoke the right emotion for your brand/site/experience
+
 ### Process
 * All of this is moot unless you can integrate animation into your design practice
 * Don't wait for permission, just do it
@@ -44,3 +45,10 @@
 * Interactive or video prototypes alongside visual design
 * Styleguide
 * Build a coalition of people; collaborate
+
+
+
+
+
+Notes: 
+My perceeived perf talk at fluent was 113 slides

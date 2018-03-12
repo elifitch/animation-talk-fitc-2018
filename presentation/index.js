@@ -414,6 +414,22 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
+          <Slide>
+            <ListHeading>What we talk about slide</ListHeading>
+            <List>
+              <ListItem>How humans ascribe meaning to motion</ListItem>
+              <ListItem>The building blocks of character</ListItem>
+              <ListItem>How to design animations to evoke a desired feeling</ListItem>
+            </List>
+          </Slide>
+
+          <Slide>
+            <SH>Meaning from motion</SH>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
           <Slide transition={['fade']}>
             <Pic src="twa-empty.png" />
             <Notes>
@@ -455,7 +471,64 @@ export default class Presentation extends React.Component {
             <Notes>
               Each distinct character has a distint jump animation that goes with their charchacter. Thomas has a bright and 
               happy jumping style that underlines his optimism. John has a big scrunch up and bound, very bombastic, and 
-              it goes right along with his arrogant attitude. Chris
+              it goes right along with his arrogant attitude. Chris has a short boop and plop, he's very self conscious about 
+              his limitations when it comes to jumping. and on and on it goes.  The point is, we ascribe characters, feelings, 
+              and indeed emotions to these shapeless polygons.  Their animation was a big part of that.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Vid src="fritz-heider-marianne-simmel.mp4" />
+            <Notes>
+              This has been verified with experiments as well, most famously by Fritz Heider and Marianne Simmel in 1944.
+              They showed this film to subjects, and all of them described the scene by anthropomorphizing the shapes. 
+              We can use the tendencies of humans to ascribe meaning to motion in order to create 
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <SH>The building blocks<br />of character</SH>
+            <Notes>
+              It's comparatively easy to give users an affordance by hinting at an action, or to help users build spacial 
+              relationships by animating view transitions. If we're going to influence user's emotional responses, we need 
+              to be much more intentional about the details of our animations.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Timing &amp; Spacing</H>
+            <Notes>
+              Timing and spacing work together to form the character of an animation.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[[linear ease bouncing ball animation]]</H>
+            <Notes>
+              Timing forms the structure of an animation. In CSS terms, this is the "duration" of an animation. 
+              Illustrating what effect timing alone has on a classic bouncing ball animation, you can probably see 
+              that the animation doesn't have a lot of character, and it's almost unsettlingly mechanical.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[[bouncy ease bouncing ball animation]]</H>
+            <Notes>
+              Now we're getting somewhere! If timing is the structure of an animation, spacing is where we get 
+              most of the style. It's kind of like the CSS to timing's HTML. It's called spacing, because it 
+              in the old days when frames were drawn by hand, this would refer to the amount of space between 
+              each frame. In UI animation we call it easing.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>[[component playground? bouncy ease change to a heavy bounce]]</H>
+            <Notes>
+              See how much difference a simple change in spacing, or easing, can bring? When before we had something 
+              like a ping pong ball we now have something heavy and weighty. The entire character is different. This 
+              is a simple, classic example, but it's classic because it's an elegant way to show just how much impact 
+              spacing can have on an animation. We can take this and extrapolate it way out to create all sorts of 
+              sensations from our animations.
             </Notes>
           </Slide>
           
