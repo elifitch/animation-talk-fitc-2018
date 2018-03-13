@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   BlockQuote,
   Cite,
@@ -21,7 +22,6 @@ import ListHeading from './components/list-heading';
 import SubsectionHeading from './components/subsection-heading';
 import Pic from './components/pic';
 import Vid from './components/vid';
-// import Underline from './components/underline';
 
 require('normalize.css');
 
@@ -29,6 +29,8 @@ require('normalize.css');
 const SH = SectionHeading;
 const SSH = SubsectionHeading;
 const H = SlideHeading;
+const Annot = ({ children }) => <H size={6}>{children}</H>;
+Annot.propTypes = PropTypes.node.isRequired;
 
 export default class Presentation extends React.Component {
   render() {
@@ -86,7 +88,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H size={6}>[[some graphic: Animation is actually powerful/think different]]</H>
+            <Annot>[[some graphic: Animation is actually powerful/think different]]</Annot>
             <Notes>
               Animation is actually incredibly powerful, expressive and useful design tool.
               It deserves to be taken seriously, at least as seriously as traditional design precepts.
@@ -117,7 +119,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H size={6}>[Hierarchy slide, some graphic to illustrate, maybe a hierarchical page and a picture of a walkway along the hudson with someone running in the foreground, and NYC in the back]</H>
+            <Annot>[Hierarchy slide, some graphic to illustrate, maybe a hierarchical page and a picture of a walkway along the hudson with someone running in the foreground, and NYC in the back]</Annot>
           </Slide>
 
           <Slide>
@@ -133,7 +135,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H size={6}>Needs to be graphics here, maybe break up this slide, it's important information, take your time on it</H>
+            <Annot>Needs to be graphics here, maybe break up this slide, it's important information, take your time on it</Annot>
             <H>
               <div><Fade>What System</Fade></div>
               <div>vs.</div>
@@ -496,7 +498,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Timing &amp; Spacing</H>
+            <H><Bounce>Timing</Bounce> &amp; Spacing</H>
             <Notes>
               Timing and spacing work together to form the character of an animation.
             </Notes>
@@ -529,6 +531,64 @@ export default class Presentation extends React.Component {
               is a simple, classic example, but it's classic because it's an elegant way to show just how much impact 
               spacing can have on an animation. We can take this and extrapolate it way out to create all sorts of 
               sensations from our animations.
+            </Notes>
+          </Slide>
+          
+          <Slide>
+            <Annot>make this a comical carousel, switching from 12 principles to 5 (or whatever), principles to guidlines, disneys to Elis, whatever</Annot>
+            <SSH>Disney's 12 Principles</SSH>
+            <Notes>
+              If we're going to create animations that evoke the desired emotions from our users, that exhibit the right character, 
+              traditional animation principles can be extremely useful. Disney's 12 principles are the gold standard, but many 
+              of them don't really make sense on the web. So it's gonna be more like 6? 5? And more like guidelines than principles 
+              and I guess if we're changing so much they're really from me. SO here we go Eli's 5 guidelines?  We'll walk through them 
+              with examples that show how they can make a brand feel more fun and energetic, evoking a feeling of joy in users; and we'll 
+              also show how they can make a brand feel more serious and somber, evoking a feeling of trust in users.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>animate the text to illustrate your point</Annot>
+            <H>Anticipation &amp; Follow through</H>
+            <Notes>
+              Anticipation is a movement against the main animation in--dot dot dot--anticipation of the main animation. 
+              Follow through is the opposite, an animation that continues through the final resting place 
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>animate the text to illustrate your point</Annot>
+            <H>Anticipation &amp; Follow through</H>
+            <Notes>
+              Anticipation is a movement against the main animation in--dot dot dot--anticipation of the main animation.
+              Follow through is the opposite, an animation that continues through the final resting place
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[side by side animations of a modal entering and leaving, one more somber and one more serious, maybe have one fade and one full opacity at a time to direct attention]]</Annot>
+            <Notes>
+              Here we have two animations, one more playful and one more serious, that use anticipation and followthrough. 
+              The playful one uses anticipation n followthrough to show effervesence and joie de vivre. It can be a really 
+              effective way to show life and "boucniness". But here we also are using anticipation and followthrough, but 
+              in this case it shows weight and solidity, traits that more serious brands like to fancy themselves as having.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[make an animation here when switching slides the characters each have a delay and the floop into place like dropping cards on a table]]</Annot>
+            <H>Secondary action</H>
+            <Notes>
+              Secondary action is a way to 
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[show medium clap animation, show inputs in a modal dropping in sliding into place in sequence]]</Annot>
+            <Notes>
+              These are both uses of secondary action. The first is a way to give an animation extra pop, kind of adding a 
+              flourish to something to make an action feel special and rewarding. The second is inputs cascading into place 
+              with their parent. It's a way to make an animation feel more natural and grounded, ideal for more serious brands.
             </Notes>
           </Slide>
           

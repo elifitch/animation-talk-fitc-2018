@@ -16,6 +16,7 @@
   "dependencies": {
     "babel-plugin-emotion": "^9.0.1",
     "emotion": "^9.0.2",
+    "gsap": "^1.20.4",
     "lodash.findkey": "^4.6.0",
     "normalize.css": "7.0.0",
     "prop-types": "^15.6.1",
@@ -23,7 +24,7 @@
     "react-dom": "^16.0.0",
     "react-emotion": "^9.0.2",
     "react-redux": "^5.0.7",
-    "spectacle": "^4.0.0",
+    "spectacle": "^4.1.0",
     "spectacle-renderer": "^0.0.3",
     "victory-core": "^21.0.4"
   },

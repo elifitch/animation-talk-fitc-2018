@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FancyAppear } from './fancy-appear';
+import { Appear } from 'spectacle';
 import IB from './primitives/inline-block';
 import { underline } from '../theme';
 
 function Bounce(props) {
   return (
-    <FancyAppear
+    <Appear
       startValue={{
         // opacity: 0,
         transform: 'translateY(-1em)',
@@ -19,7 +19,7 @@ function Bounce(props) {
       {...props}
     >
       <IB>{props.children}</IB>
-    </FancyAppear>
+    </Appear>
   );
 }
 Bounce.propTypes = {
@@ -28,7 +28,7 @@ Bounce.propTypes = {
 
 function Fade(props) {
   return (
-    <FancyAppear
+    <Appear
       startValue={{
         opacity: 0,
       }}
@@ -38,7 +38,7 @@ function Fade(props) {
       {...props}
     >
       <IB>{props.children}</IB>
-    </FancyAppear>
+    </Appear>
   );
 }
 Fade.propTypes = {
@@ -47,7 +47,7 @@ Fade.propTypes = {
 
 function Stroke(props) {
   return (
-    <FancyAppear
+    <Appear
       startValue={{
         backgroundSize: '0% 0.15em',
       }}
@@ -57,7 +57,7 @@ function Stroke(props) {
       {...props}
     >
       <div className={underline}>{props.children}</div>
-    </FancyAppear>
+    </Appear>
   );
 }
 Stroke.propTypes = {
