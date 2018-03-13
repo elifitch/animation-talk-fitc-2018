@@ -591,6 +591,27 @@ export default class Presentation extends React.Component {
               with their parent. It's a way to make an animation feel more natural and grounded, ideal for more serious brands.
             </Notes>
           </Slide>
+
+          <Slide>
+            <H>Squash &amp; Stretch</H>
+            <Notes>
+              As objects move through air, they deform a little bit. This elongation along the axis of motion also 
+              helps to visually give the appearance of a smoother animation (much as blurring does). Used in small doeses 
+              it just serves to make the animation feel more natural, and for brands that want to be fun, playful, and happy, 
+              or want to make their users feel that way, squash n stretch is a great way to make your project stand out. 
+              It's hard to pull off well, so most don't even try, put in a little effort and reap the dividends.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[show modal coming in without SS and then with SS]]</Annot>
+            <Notes>
+              See how this modal on the right enters, and it feels just that much more cheeky and spirited? People deride 
+              animation as only serving this purpose, but even serving the purpose of making people feel happy while using 
+              your product is an amazing tool at your disposal. Don't cast it aside because some people on the internet think 
+              they're too serious and important to use it.
+            </Notes>
+          </Slide>
           
         </Deck>
       </div>

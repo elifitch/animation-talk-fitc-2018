@@ -1,25 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Appear } from 'spectacle';
+import { FancyAppear } from './fancy-appear';
 import IB from './primitives/inline-block';
 import { underline } from '../theme';
 
 function Bounce(props) {
   return (
-    <Appear
+    <FancyAppear
       startValue={{
-        // opacity: 0,
+        opacity: 0,
         transform: 'translateY(-1em)',
       }}
       endValue={{
-        // opacity: 1,
+        opacity: 1,
         transform: 'translateY(0em)',
       }}
       easing="bounceOut"
       {...props}
     >
       <IB>{props.children}</IB>
-    </Appear>
+    </FancyAppear>
   );
 }
 Bounce.propTypes = {
