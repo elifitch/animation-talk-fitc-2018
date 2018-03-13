@@ -616,11 +616,14 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Tween
-              tweens={[
+              from={{
+                duration: 0.4,
+                params: { y: -200 },
+              }}
+              to={[
                 {
-                  method: 'from',
                   duration: 0.4,
-                  params: { y: -200 },
+                  params: { y: 0 },
                 },
               ]}
             >
