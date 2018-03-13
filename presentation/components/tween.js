@@ -6,7 +6,7 @@ import { findDOMNode } from 'react-dom';
 import findKey from 'lodash/findKey';
 import { connect } from 'react-redux';
 import { VictoryAnimation } from 'victory-core';
-import { TweenMax, TimelineLite } from 'gsap';
+require('gsap');
 
 let Tween = class Tween extends Component {
   constructor() {
@@ -60,29 +60,16 @@ let Tween = class Tween extends Component {
     ) {
       const active = state.fragments[slide][key].visible;
       this.context.stepCounter.setFragments(state.fragments[slide], slide);
-      
       if (active && !this.state.active) {
         this.playTween();
       }
       if (!active && this.state.active) {
         this.reverseTween();
       }
-      this.setState({ active }, () => {
-        console.log(this.state.active);
-      });
-      console.log(this.state.active);
+      this.setState({ active });
     }
   }
 
-  // playTween(target) {
-  //   let currentTime = 0;
-  //   this.props.tweens.forEach((tween) => {
-  //     const { method, duration, params } = tween;
-  //     const currentDelay = params.delay += currentTime;
-  //     TweenMax[method](target, duration, { ...params, delay: currentDelay });
-  //     currentTime += duration;
-  //   })
-  // }
   playTween() {
     this.tl.play();
   }
@@ -91,17 +78,12 @@ let Tween = class Tween extends Component {
   }
 
   setInitialTweenState(target) {
-    // const firstTween = this.props.tweens[0];
-    // const { method, duration, params } = firstTween;
-    // if (method === 'from') {
-    //   TweenMax.set(target, params);
-    // }
-
-    // const { params } = this.props.from;
-    this.tl.set(target, this.props.from.params);
-    this.props.to.forEach((tween) => {
-      const { duration, params } = tween;
-      this.tl.to(target, duration, params);
+    this.props.to.forEach((tween, i) => {
+      if (i === 0) {
+        this.tl.fromTo(target, tween.duration, this.props.from.params, tween.params);
+        return;
+      }
+      this.tl.to(target, tween.duration, tween.params);
     });
     this.tl.pause();
   }
