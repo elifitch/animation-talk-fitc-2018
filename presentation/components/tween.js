@@ -6,6 +6,7 @@ import { findDOMNode } from 'react-dom';
 import findKey from 'lodash/findKey';
 import { connect } from 'react-redux';
 import { VictoryAnimation } from 'victory-core';
+import { TweenMax } from 'gsap';
 
 let Tween = class Tween extends Component {
   constructor() {
@@ -31,6 +32,7 @@ let Tween = class Tween extends Component {
       node.dataset = {};
     }
     node.dataset.order = order;
+    this.setInitialTweenState(node);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -57,7 +59,27 @@ let Tween = class Tween extends Component {
     ) {
       const active = state.fragments[slide][key].visible;
       this.context.stepCounter.setFragments(state.fragments[slide], slide);
-      this.setState({ active });
+      if (active) {
+        this.playTween(fragment);
+      }
+    }
+  }
+
+  playTween(target) {
+    let currentTime = 0;
+    this.props.tweens.forEach((tween) => {
+      const { method, duration, params } = tween;
+      const currentDelay = params.delay += currentTime;
+      TweenMax[method](target, duration, { ...params, delay: currentDelay });
+      currentTime += duration;
+    })
+  }
+
+  setInitialTweenState(target) {
+    const firstTween = this.props.tweens[0];
+    const { method, duration, params } = firstTween;
+    if (method === 'from') {
+      TweenMax.set(target, params);
     }
   }
 

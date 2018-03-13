@@ -22,6 +22,7 @@ import ListHeading from './components/list-heading';
 import SubsectionHeading from './components/subsection-heading';
 import Pic from './components/pic';
 import Vid from './components/vid';
+import { Tween } from './components/tween';
 
 require('normalize.css');
 
@@ -609,6 +610,26 @@ export default class Presentation extends React.Component {
               See how this modal on the right enters, and it feels just that much more cheeky and spirited? People deride 
               animation as only serving this purpose, but even serving the purpose of making people feel happy while using 
               your product is an amazing tool at your disposal. Don't cast it aside because some people on the internet think 
+              they're too serious and important to use it.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Tween
+              tweens={[
+                {
+                  method: 'from',
+                  duration: 0.4,
+                  params: { y: -200 },
+                },
+              ]}
+            >
+              <div>[[show modal coming in without SS and then with SS]]</div>
+            </Tween>
+            <Notes>
+              See how this modal on the right enters, and it feels just that much more cheeky and spirited? People deride
+              animation as only serving this purpose, but even serving the purpose of making people feel happy while using
+              your product is an amazing tool at your disposal. Don't cast it aside because some people on the internet think
               they're too serious and important to use it.
             </Notes>
           </Slide>
