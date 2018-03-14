@@ -24,6 +24,7 @@
     "react-dom": "^16.0.0",
     "react-emotion": "^9.0.2",
     "react-redux": "^5.0.7",
+    "react-style-proptype": "^3.2.1",
     "spectacle": "^4.1.0",
     "spectacle-renderer": "^0.0.3",
     "victory-core": "^21.0.4"

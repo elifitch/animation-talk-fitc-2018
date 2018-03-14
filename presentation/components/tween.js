@@ -1,14 +1,21 @@
-/* eslint-disable */
-/* A modification of <FancyAppear> that executes gsap animations */
+/* eslint-disable react/no-find-dom-node, no-prototype-builtins */
+/* A modification of Spectacle's <Appear> that executes gsap animations */
+
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
-import findKey from 'lodash/findKey';
 import { connect } from 'react-redux';
-import { VictoryAnimation } from 'victory-core';
-require('gsap');
+/* no idea why this is a problem here */
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved */
+import findKey from 'lodash.findKey';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved */
+/* eslint-disable no-unused-vars */
+import TweenMax from 'gsap';
+/* eslint-enable no-unused-vars */
+import TimelineMax from 'gsap/TimelineMax';
 
-let Tween = class Tween extends Component {
+class Tween extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,17 +24,18 @@ let Tween = class Tween extends Component {
     this.tl = new TimelineMax({});
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const shouldDisableAnimation =
       this.props.route.params.indexOf('export') !== -1 ||
       this.props.route.params.indexOf('overview') !== -1;
 
     if (shouldDisableAnimation) {
       this.setState({ active: true });
-      return;
     }
+  }
 
-    const order = this.props.order || 0;
+  componentDidMount() {
+    const { order } = this.props;
     const node = findDOMNode(this.fragmentRef);
     if (!node.dataset) {
       node.dataset = {};
@@ -38,11 +46,11 @@ let Tween = class Tween extends Component {
 
   componentWillReceiveProps(nextProps) {
     const state = nextProps.fragment;
-    const slide = this.props.route.slide;
+    const { slide } = this.props.route;
     const fragment = findDOMNode(this.fragmentRef);
-    const slideHash = parseInt(this.context.slideHash);
+    const slideHash = parseInt(this.context.slideHash, 10);
     const key = findKey(state.fragments[slide], {
-      id: `${slideHash}-${parseInt(fragment.dataset.fid)}`,
+      id: `${slideHash}-${parseInt(fragment.dataset.fid, 10)}`,
     });
 
     const shouldDisableAnimation =
@@ -70,13 +78,6 @@ let Tween = class Tween extends Component {
     }
   }
 
-  playTween() {
-    this.tl.play();
-  }
-  reverseTween() {
-    this.tl.reverse();
-  }
-
   setInitialTweenState(target) {
     this.props.to.forEach((tween, i) => {
       if (i === 0) {
@@ -88,41 +89,54 @@ let Tween = class Tween extends Component {
     this.tl.pause();
   }
 
+  playTween() {
+    this.tl.play();
+  }
+  reverseTween() {
+    this.tl.reverse();
+  }
+
   render() {
     const child = React.Children.only(this.props.children);
-    const tweenData = this.state.active ? this.props.endValue : this.props.startValue;
-    const transitionDuration = this.props.transitionDuration;
     return (
       <div>
-        {React.cloneElement(child, {
+        {
+          React.cloneElement(child, {
             className: `fragment ${child.props.className}`.trim(),
             style: { ...child.props.style, ...this.props.style },
-            ref: f => {
+            ref: (f) => {
               this.fragmentRef = f;
             },
-          })}
+          })
+        }
       </div>
     );
   }
 }
 
 Tween.defaultProps = {
-  transitionDuration: 300,
-  startValue: { opacity: 0 },
-  endValue: { opacity: 1 },
-  easing: 'quadInOut'
+  style: {},
+  order: 0,
 };
 
 Tween.propTypes = {
-  children: PropTypes.node,
-  fragment: PropTypes.object,
-  order: PropTypes.number,
-  route: PropTypes.object,
+  children: PropTypes.node.isRequired,
+  from: PropTypes.shape({
+    duration: PropTypes.number,
+    params: PropTypes.object,
+  }).isRequired,
+  to: PropTypes.arrayOf(PropTypes.shape({
+    duration: PropTypes.number,
+    params: PropTypes.object,
+  })).isRequired,
   style: PropTypes.object,
-  transitionDuration: PropTypes.number,
-  easing: PropTypes.oneOf(['back', 'backIn', 'backOut', 'backInOut', 'bounce', 'bounceIn', 'bounceOut', 'bounceInOut', 'circle', 'circleIn', 'circleOut', 'circleInOut', 'linear', 'linearIn', 'linearOut', 'linearInOut', 'cubic', 'cubicIn', 'cubicOut', 'cubicInOut', 'elastic', 'elasticIn', 'elasticOut', 'elasticInOut', 'exp', 'expIn', 'expOut', 'expInOut', 'poly', 'polyIn', 'polyOut', 'polyInOut', 'quad', 'quadIn', 'quadOut', 'quadInOut', 'sin', 'sinIn', 'sinOut', 'sinInOut']),
-  startValue: PropTypes.object,
-  endValue: PropTypes.object
+  order: PropTypes.number,
+  // From spectacle
+  route: PropTypes.shape({
+    slide: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    params: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+  fragment: PropTypes.object.isRequired,
 };
 
 Tween.contextTypes = {
@@ -131,10 +145,8 @@ Tween.contextTypes = {
   slide: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   slideHash: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   stepCounter: PropTypes.shape({
-    setFragments: PropTypes.func
-  })
+    setFragments: PropTypes.func,
+  }),
 };
 
-Tween = connect(state => state)(Tween);
-
-export { Tween };
+export default connect(state => state)(Tween);

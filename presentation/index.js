@@ -22,7 +22,7 @@ import ListHeading from './components/list-heading';
 import SubsectionHeading from './components/subsection-heading';
 import Pic from './components/pic';
 import Vid from './components/vid';
-import { Tween } from './components/tween';
+import Tween from './components/tween';
 
 require('normalize.css');
 
