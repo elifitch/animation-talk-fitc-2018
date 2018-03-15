@@ -756,11 +756,93 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <H>Start early</H>
+            <Notes>
+              Seriously, start early. Most important advice. Animation's reputation as frivolous surprise and delight 
+              is *because* it is usually an afterthought at the end, which mostly prevents using it as a core UX 
+              enhancer on the cognition side, and prevents a wholistic integrated approach that you need on the emotion 
+              side.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[opportunity for graphic?]]</Annot>
+            <H>[[Moodboarding]]</H>
+            <Notes>
+              If you use moodboards in your design process, collect animation inspiration as well. If this is the point 
+              at which you familiarize yourself with a brand, start developing ideas of animation here as well.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[an image of a storyboard would be better here]]</Annot>
+            <H>Storyboards as wireframes</H>
+            <Notes>
+              During wireframes, storyboards are a good complement. You don't need to do it for every animation, but for 
+              important ones its a good idea.  They illustrate interstitial states and fill the gaps between wireframe 
+              screens.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Prototypes are king</H>
+            <Notes>
+              Once we enter the visual design stage, things become a little more variable. I usually make prototypes right 
+              in code that illustrate animations and accompany visual designs, but I've seen framer.js, aftereffects, and 
+              even keynote prototypes work very well. When you're prototyping animation outside of the browser, you need to 
+              be careful to not fall in love with an animation that isn't feasible. At an agency gig, we did this really 
+              sweet gooey reveal of a logo, but I couldn't adequately execute on combining masks and gooey filters to make 
+              this happen. That gooey reveal ended up being exported as a gif, which was enormous and bad for performance, 
+              because once folks fell in love with the animation, they couldn't take nope for an answer.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Collaboration is essential</H>
+            <Notes>
+              Collaboration is key. If you're on a team with a traditional split between front end and design, it's 
+              important to work on animations together. Designers? Animation inclined FEDs often have a lot of great ideas, 
+              have exposure to a lot of inspiration, and are able to iterate in code very quickly. Developers? Designers 
+              often have more context as to how animations fit into the larger experience, and if they have less experience 
+              building animations in code, that's actually a benefit! Designers will push you out of your comfort zone 
+              because they might suggest things that aren't easily implementable but are different and incredible. Even if 
+              your team isn't split like this, it's still very important to get other eyes on your animations, and to iterate 
+              together. Animation is more sensitive to the details of implementation than most facets of visual design, so it's 
+              important that designers and devlopers continue to partner closely throughout the process. Even if you are a 
+              hybrid, as many web animation folks are, consider partnering up with a non-coding designer. The best work I've 
+              ever produced was because of a great working relationship with an incredibly talented designer in Maggie Gaudean. 
+              She'd push me to come up with incredible things because she didn't know "the rules". I'd be like "pff that's not 
+              possible", then I'd come back an hour later being like nvm figured it out. Create a working group!
+            </Notes>
+          </Slide>
+
+          <Slide>
             <H>Don't wait for permission</H>
             <Notes>
               ... because it might not come. If, like me, you struggle to get buy in for animation in design, 
               it's less productive to try to make a case and get people on board than it is to just start doing it. 
               Start making storyboards, start making prototypes, start an animation working group.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <SH>TLDR</SH>
+            <Notes>
+              in conclusion...
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[1 slide per section, summarizing]]</Annot>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[heavily animated thank you slide]]</Annot>
+            <Notes>
+              
             </Notes>
           </Slide>
           
