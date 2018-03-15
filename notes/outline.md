@@ -103,16 +103,17 @@ These slides should be made last
 * Anticipation & follow through: the more exaggerated these two things, the more engergy you impart the animation, the more playful it feels
 * Secondary action: when moving a container, move the contents along with it, that's a common way to use secondary action to make your animation more grounded in the physical world
 * Squash and stretch: As objects move through air, they deform a little bit. This elongation along the axis of motion also helps to visually give the appearance of a smoother animation (much as blurring does). Even a little squash/stretch can give your interface animation a huge amount of joi de vivre, but it's incredibly easy to fuck up. Don't NOT try, but be careful.
-
-##### Brand level stuff
-* I find it helpful to physically surround myself with the objects that evoke the same type of feeling as the animations I want to create. For example, I was working on animations for a national association, and felt animations should feel confident, decisive, stable, and smooth. I bought a heavy ball-bearing and kept it with me at all times when I was working on the project, so if I ever got stuck, I could pass it from hand to hand and get a sense of how it felt. [[throw it out in the audience]]. 
-* Important to take a high level view when thinking about animation for your brand. A lot of time individual animations are made at the page or even component level without really considering how they fit together to tell a coherent story about your brand.
-* Start with words. Look at how your company or your client's brand describes itself. Then find objects, characters, phenomena that embody those descriptors. Keep the way those things move as a touchstone as you create your animations. If you have trouble finding the words, look at company copywriting guidelines if they exist.
-* If physical objects aren't your thing, try sounds or music. Val Head is a badass web animator, and she's a big fan of using a piece of music as a touchstone. Use the rhythm, form, sensations of the music and use that as a reference for your animations. Work until your animations feel "right" alongside that piece of music.
+* Combining them into a palette
 * Energetic/outgoing? Use animations with more springiness, use more generous overshoots/followthroughs. Soft overshoots feel friendly and energetic, sharp, quick overshoots though can show frenetic urgency. Be careful.
 * Playful/friendly? Use more squash and stretch to make animations feel springy and elastic. Animations that look like they make the sound "boinngngngngngngng". Again, a little goes a long way.
 * Decisive/self assured? Restrained ease-in-out is the way to go. They feel balanced, stable, physical, and weighty without being heavy. Like a large ball bearing.
 * Calm/reserved/stable? Use smaller movements, less distance, shorter durations. Maybe choose to animate color, opacity, blur instead of using motion at all.
+
+##### Brand level stuff
+* Start with words. Look at how your company or your client's brand describes itself. Then find objects, characters, phenomena that embody those descriptors. Keep the way those things move as a touchstone as you create your animations. If you have trouble finding the words, look at company copywriting guidelines if they exist.
+* I find it helpful to physically surround myself with the objects that evoke the same type of feeling as the animations I want to create. For example, I was working on animations for a national association, and felt animations should feel confident, decisive, stable, and smooth. I bought a heavy ball-bearing and kept it with me at all times when I was working on the project, so if I ever got stuck, I could pass it from hand to hand and get a sense of how it felt. [[throw it out in the audience]]. 
+* If physical objects aren't your thing, try sounds or music. Val Head is a badass web animator, and she's a big fan of using a piece of music as a touchstone. Use the rhythm, form, sensations of the music and use that as a reference for your animations. Work until your animations feel "right" alongside that piece of music.
+* Important to take a high level view when thinking about animation for your brand. A lot of time individual animations are made at the page or even component level without really considering how they fit together to tell a coherent story about your brand.
 * You can approach this two ways, either looking at your current animations and designing an animation style guide around them, but it's pretty much always better to start from the ground up, fresh. That doesn't mean that you don't use what already works, but it's always best in my XP to have the *mindset* of starting from a blankish slate than it is to have the mindset of cobbling together what you've got.
 
 ## Integrating animation into your process
@@ -145,3 +146,4 @@ These slides should be made last
 * [codenewbie podcast with RN: cognitive load](https://www.codenewbie.org/podcast/what-and-why-is-web-animation)
 * [Research: animation improves decisionmaking](http://courses.ischool.berkeley.edu/i247/s04/resources/p27-gonzalez.pdf)
 * [Research: animation builds mental maps](http://www.cs.umd.edu/hcil/jazz/learn/papers/CS-TR-3964.pdf)
+* [Presentation resource: good easing curves for gsap](https://codepen.io/GreenSock/pen/xEPaBg?editors=0010)

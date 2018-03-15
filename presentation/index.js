@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -13,7 +14,7 @@ import {
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce, Fade, Stroke } from './components/anim';
+import { Bounce, Fade } from './components/anim';
 import theme from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
@@ -22,7 +23,6 @@ import ListHeading from './components/list-heading';
 import SubsectionHeading from './components/subsection-heading';
 import Pic from './components/pic';
 import Vid from './components/vid';
-import Tween from './components/tween';
 
 require('normalize.css');
 
@@ -615,25 +615,152 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Tween
-              from={{
-                duration: 0.4,
-                params: { y: -200 },
-              }}
-              to={[
-                {
-                  duration: 0.4,
-                  params: { y: 0 },
-                },
-              ]}
-            >
-              <div>[[show modal coming in without SS and then with SS]]</div>
-            </Tween>
+            <H>[[show modal coming in without SS and then with SS]]</H>
             <Notes>
               See how this modal on the right enters, and it feels just that much more cheeky and spirited? People deride
               animation as only serving this purpose, but even serving the purpose of making people feel happy while using
               your product is an amazing tool at your disposal. Don't cast it aside because some people on the internet think
               they're too serious and important to use it.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>These combine to form an infinite palette</H>
+            <Notes>
+              This might seem limiting, but the right timing, easing, anticipation, follow through, secondary action, and S&amp;S 
+              can give you near infinite possibilities in creating the right type of motion for your brand.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[animate the words]]</Annot>
+            <H>Energetic or lively</H>
+            <Notes>
+              Use animations with more springiness, use more generous overshoots/followthroughs. Soft overshoots feel friendly 
+              and energetic, sharp, quick overshoots though can show frenetic urgency. Be careful.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[animate the words]]</Annot>
+            <H>Playful or outgoing</H>
+            <Notes>
+              Use more squash and stretch to make animations feel springy and elastic. Animations that look like they make 
+              the sound "boinngngngngngngng". Again, a little goes a long way.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[animate the words]]</Annot>
+            <H>Decisive or self assured</H>
+            <Notes>
+              Restrained ease-in-out is the way to go. They feel balanced, stable, physical, and weighty without being heavy. 
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[animate the words]]</Annot>
+            <H>Calm, reserved or stable</H>
+            <Notes>
+              Use smaller movements, less distance, shorter durations. Maybe choose to animate color, opacity, 
+              blur instead of using motion at all.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[##### Brand level stuff]]</Annot>
+            <SSH>Finding the right character</SSH>
+            <Notes>
+              Everything we've covered so far on how to evoke the right feelings will be meaningless if you can't find what 
+              the right feeling is for your particular application, brand, project, whatever. And this can be the trickiest 
+              nut to crack.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>
+              <div><Fade>Ground up</Fade></div>
+              <span>vs.</span>
+              <div><Fade>Top down</Fade></div>
+            </H>
+            <Notes>
+              When buildling out UI animation for your brand or project, you can either start from scratch, building from the 
+              bottom up, or start with what you have, coming from the top down. When setting out to design animation to manage 
+              cognition -- to make your UI easier to use, easier to understand -- animations that are slightly different are 
+              okay, and the time savings of starting from what you already have is totally worth it! On the other hand, in 
+              desinging aniations to evoke a specific set of feelings you need to be much more intentional about the 
+              details of your animations. This means that even a small number of animations that deviate from what you need 
+              it can break everything.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Start with words</H>
+            <Notes>
+              I always try to start with words. The best place to look, if the brand in question has one, is a copywriting 
+              style guide. Those are treasure troves of descriptive words that detail how the brand wants to be expressed. 
+              I also dig through brand guidelines, style guides, I interview folks about how they want the brand to make 
+              people feel, how they characterize it. These words will give you a set of sensations that you want to bring 
+              out in users. Some common ones I hear a lot are: friendly, energetic, serious, trustworthy, erudite, playful, 
+              decisive, things like that. Keep those words as a list, maybe even written out by hand, visible at all times 
+              while you're designing animations, so you can make sure they suit.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[Maybe animate each of the words in notes, could be cool]]</Annot>
+            <H>Rely on onomatopoeia</H>
+            <Notes>
+              Sounds like fwoosh, boingngng, kathung, shumpf, kathoom; these sounds can be helpful in communicating how an
+              animation is supposed to feel, especially with clients. The sound can even indicate the desired easing.
+              Kathoomp is different from kathooooomp, and kaaaaaathoomp.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Physical objects help</H>
+            <Notes>
+              I find keeping around an object or objects that represent the brand can be extremely helpful. A few years ago 
+              I was designing and building UI animations for the website of an industry advocacy group. In talking with the 
+              client, they spoke about their brand wanting to feel serious, impressive, trustworthy, consistent, levelheaded. 
+              They wanted users to feel assured. I was typing up notes from this meeting in this agency's machine shop, and 
+              I found a large, 2 inch ball bearing. I actually have it right here. It's heavy, solid, completely smooth and 
+              uniform. It was a perfect represenatation of how this brand wanted people to feel. So I kept it on my desk through 
+              the whole process and would pull it out, toss it from hand to hand to get a feel of the weight, the smoothness 
+              and use that in designing UI animation.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Music works too</H>
+            <Notes>
+              Much like a physical object, you can use a piece of music as a touchstone. Val Head is an amazin web animator, 
+              and she's a big fan of using a piece of music as a touchstone. Use the rhythm, form, sensations of the music 
+              and use that as a reference for your animations. Work until your animations feel "right" alongside that 
+              piece of music.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[a wrap up slide for the emotion section]]</Annot>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <SH>Process</SH>
+            <Notes>
+              All of this is for naught if you can't bake animation into your web design process.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Don't wait for permission</H>
+            <Notes>
+              ... because it might not come. If, like me, you struggle to get buy in for animation in design, 
+              it's less productive to try to make a case and get people on board than it is to just start doing it. 
+              Start making storyboards, start making prototypes, start an animation working group.
             </Notes>
           </Slide>
           

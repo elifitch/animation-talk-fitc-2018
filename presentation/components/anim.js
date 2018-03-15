@@ -4,6 +4,7 @@ import { Appear } from 'spectacle';
 import { FancyAppear } from './fancy-appear';
 import IB from './primitives/inline-block';
 import { underline } from '../theme';
+import Tween from './tween';
 
 function Bounce(props) {
   return (
@@ -65,8 +66,31 @@ Stroke.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+function GsapExample(props) {
+  return (
+    <Tween
+      from={{
+        duration: 0.4,
+        params: { y: -200 },
+      }}
+      to={[
+        {
+          duration: 0.4,
+          params: { y: 0 },
+        },
+      ]}
+    >
+      {props.children}
+    </Tween>
+  );
+}
+GsapExample.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export {
   Bounce,
   Fade,
   Stroke,
+  GsapExample
 };
