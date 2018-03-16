@@ -83,6 +83,10 @@ mutableTheme = mutableTheme.extendComponent('quote', {
   lineHeight: 1.1,
 }).extendComponent('cite', {
   color: translucent,
+}).extendComponent('listItem', {
+  listStyleType: 'none',
+  marginBottom: '0.5em',
+  paddingLeft: '0.5em',
 });
 
 const theme = JSON.parse(JSON.stringify(mutableTheme));

@@ -29,6 +29,7 @@ Bounce.propTypes = {
 };
 
 function Fade(props) {
+  const divStyle = props.block ? {} : { display: 'inline-block' };
   return (
     <Appear
       startValue={{
@@ -39,12 +40,16 @@ function Fade(props) {
       }}
       {...props}
     >
-      <IB>{props.children}</IB>
+      <div style={divStyle}>{props.children}</div>
     </Appear>
   );
 }
+Fade.defaultProps = {
+  block: false,
+};
 Fade.propTypes = {
   children: PropTypes.node.isRequired,
+  block: PropTypes.bool,
 };
 
 function Stroke(props) {
@@ -92,5 +97,5 @@ export {
   Bounce,
   Fade,
   Stroke,
-  GsapExample
+  GsapExample,
 };

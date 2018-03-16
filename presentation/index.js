@@ -23,6 +23,7 @@ import ListHeading from './components/list-heading';
 import SubsectionHeading from './components/subsection-heading';
 import Pic from './components/pic';
 import Vid from './components/vid';
+import LogoRowSlide from './slides/logo-row-slide';
 
 require('normalize.css');
 
@@ -32,6 +33,7 @@ const SSH = SubsectionHeading;
 const H = SlideHeading;
 const Annot = ({ children }) => <H size={6}>{children}</H>;
 Annot.propTypes = PropTypes.node.isRequired;
+const Hsmall = Annot;
 
 export default class Presentation extends React.Component {
   render() {
@@ -44,19 +46,21 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <H>Hi I'm eli slide</H>
+            <Fade><Hsmall>I like to make weird stuff on the internet</Hsmall></Fade>
           </Slide>
 
           <Slide>
-            <H>Some things about me slide</H>
+            <LogoRowSlide />
           </Slide>
+          
 
           <Slide>
             <ListHeading>What we talk about slide</ListHeading>
             <List>
-              <ListItem>Why animation should be a first class citizen in UI design</ListItem>
-              <ListItem>How to use animation to influence user cognition</ListItem>
-              <ListItem>How animation can shape users' emotional state</ListItem>
-              <ListItem>How to build animation into your design process</ListItem>
+              <Fade><ListItem>Why animation should be a first class citizen in UI design</ListItem></Fade>
+              <Fade><ListItem>How to use animation to influence user cognition</ListItem></Fade>
+              <Fade><ListItem>How animation can shape users' emotional state</ListItem></Fade>
+              <Fade><ListItem>How to build animation into your design process</ListItem></Fade>
             </List>
           </Slide>
 
@@ -72,9 +76,10 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <div><Bounce><H size={6}>Superfluous</H></Bounce></div>
-            <div><Bounce><H size={6}>Surprise &amp; delight</H></Bounce></div>
-            <div><Bounce><H size={6}>[Collect other quotes here]</H></Bounce></div>
+            <div><Bounce><Hsmall>Superfluous</Hsmall></Bounce></div>
+            <div><Bounce><Hsmall>Surprise &amp; delight</Hsmall></Bounce></div>
+            <div><Bounce><Hsmall>Just makes it pretty</Hsmall></Bounce></div>
+            <div><Bounce><Hsmall>[Collect other quotes here]</Hsmall></Bounce></div>
             <Notes>
               I've heard folks call animation in UI design superfluous, give it a backhanded complement of "surprise and delight"
               the implication being that its not serious enough to be a part of "real" design
@@ -82,7 +87,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Pic src="swear-trek-opinion-butt.gif" />
+            <Pic src="data-bullshit.gif" />
             <Notes>
               This is total nonsense. 
             </Notes>
@@ -108,23 +113,32 @@ export default class Presentation extends React.Component {
             <H>Biological &amp; Cultural</H>
             <Notes>
               Design leverages biological and cultural factors of how humans process our environemnt in order to more effectively rely information.
+              Without the human hindbrain's ability to rapidly draw associations, and fit new things into established patterns, design wouldn't work.
             </Notes>
           </Slide>
 
           <Slide>
-            <H>[image of a brain? 3d brain? brain gif?]</H>
-            <Notes>
-              Without the human hindbrain's ability to rapidly draw associations,
-              and fit new things into established patterns, design wouldn't work.
-            </Notes>
+            <Pic src="design-hierarchy.png" />
           </Slide>
 
           <Slide>
-            <Annot>[Hierarchy slide, some graphic to illustrate, maybe a hierarchical page and a picture of a walkway along the hudson with someone running in the foreground, and NYC in the back]</Annot>
+            <Pic src="jogger-hierarchy.jpg" />
           </Slide>
 
           <Slide>
             <H>[typography slide, graphic of a geometric sans, gif of zach galafinaikis math, and then a picture of a modern building]</H>
+          </Slide>
+
+          <Slide>
+            <Pic portrait src="futura-diagram.jpg" />
+          </Slide>
+
+          <Slide>
+            <Pic src="zg-math.gif" />
+          </Slide>
+
+          <Slide>
+            <Pic src="architecture.jpg" />
           </Slide>
 
           <Slide>
@@ -136,7 +150,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>Needs to be graphics here, maybe break up this slide, it's important information, take your time on it</Annot>
+            <Annot>Needs to be graphics here, maybe break up this slide into more slides, it holds very important information, take your time on it</Annot>
             <H>
               <div><Fade>What System</Fade></div>
               <div>vs.</div>
