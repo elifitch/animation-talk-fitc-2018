@@ -14,7 +14,7 @@ import {
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce, Fade } from './components/anim';
+import { Bounce, Fade, GsapExample } from './components/anim';
 import theme from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
@@ -159,11 +159,39 @@ export default class Presentation extends React.Component {
             <Notes>
               Margaret Livingstone, a professor of neurobiology at harvard university 
               notes that humans have two primary pathways of visual perception: the what system and the where system. 
-              The What system has more to do with color and form, whereas the Where system has to do more with contrast and 
-              animation. The where system is also evolutionary MUCH older, and to borrow a computer science term, closer to the metal.
+              -------------------------------
+              The where system is also evolutionary MUCH older, and to borrow a computer science term, closer to the metal.
               You can use animation to more directly communicate with the users hindbrain, and more efficiently manage users cognition
               and emotional state, which at the end of the day, is the goal of design: helping people understand information better, 
               and forging a deeper connection betrween the user and the experience.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Pic src="dorsal-ventral-brain.png" />
+            <Notes>
+              The what system, also called the ventral system, takes the lower pathway through the brain, connecting more 
+              directly to the parts of the brain that control things like long term memory, recognition, and perception 
+              of small details. The where system, also called the ventral system, is associated with the perception of 
+              motion, spacial awareness, and it's much faster to process.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H size={3}>Static design - <Fade>What system</Fade></H>
+            <H size={3}>Animation - <Fade>Where system</Fade></H>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <GsapExample><div>asdfasdf</div></GsapExample>
+            <GsapExample><div>jsdfm jsd</div></GsapExample>
+            <GsapExample><div>jsdfm jsd</div></GsapExample>
+            <GsapExample><div>jsdfm jsd</div></GsapExample>
+            <Notes>
+              
             </Notes>
           </Slide>
 
