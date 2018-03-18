@@ -1,7 +1,5 @@
 /* eslint-disable react/no-find-dom-node, no-prototype-builtins */
-/* A modification of Spectacle's <Appear> that executes gsap animations */
-
-
+/* A modification of Spectacle's <Anim> that executes gsap animations */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
@@ -14,12 +12,6 @@ import findKey from 'lodash.findKey';
 import TweenMax from 'gsap';
 /* eslint-enable no-unused-vars */
 import TimelineMax from 'gsap/TimelineMax';
-
-function getTLSegmentDurations(tweens) {
-  return tweens.map((segment) => {
-    return segment.reduce((dur, tween) => dur + tween.duration, 0);
-  });
-}
 
 class Tween extends Component {
   constructor() {
@@ -48,17 +40,13 @@ class Tween extends Component {
     node.dataset.order = this.props.order;
     node.dataset.animCount = this.props.to.length;
     this.setInitialTweenState(node);
+    setTimeout(() => {
+      // Need to set timeout here or state.fragments is empty
+      this.seekToCurrentAnimationState();
+    }, 0);
   }
 
   componentWillReceiveProps(nextProps) {
-    const state = nextProps.fragment;
-    const { slide } = this.props.route;
-    const fragment = findDOMNode(this.fragmentRef);
-    const slideHash = parseInt(this.context.slideHash, 10);
-    const key = findKey(state.fragments[slide], {
-      id: `${slideHash}-${parseInt(fragment.dataset.fid, 10)}`,
-    });
-
     const shouldDisableAnimation =
       nextProps.route.params.indexOf('export') !== -1 ||
       nextProps.route.params.indexOf('overview') !== -1;
@@ -68,15 +56,16 @@ class Tween extends Component {
       return;
     }
 
-    if (
-      slide in state.fragments &&
-      state.fragments[slide].hasOwnProperty(key)
-    ) {
-      const animationStatus = state.fragments[slide][key].animations;
+    const animationStatus = this.getAnimationStatus();
+    if (animationStatus) {
       const newAnimationIndex = animationStatus.every(a => a === true) ?
         animationStatus.length - 1 :
         animationStatus.indexOf(false) - 1;
+      const state = nextProps.fragment;
+      const { slide } = this.props.route;
+
       this.context.stepCounter.setFragments(state.fragments[slide], slide);
+
       if (newAnimationIndex > this.state.activeAnimation) {
         this.playTween();
       }
@@ -90,10 +79,10 @@ class Tween extends Component {
   }
 
   setInitialTweenState(target) {
-    const segmentDurations = getTLSegmentDurations(this.props.to);
     let setInitialTween = false;
-    this.props.to.forEach((segment, i) => {
-      const isLastSemgment = i === this.props.to.length - 1;
+    this.props.to.forEach((segment, segmentIndex) => {
+      const isLastSemgment = segmentIndex === this.props.to.length - 1;
+
       segment.forEach((tween) => {
         if (!setInitialTween) {
           setInitialTween = true;
@@ -102,11 +91,40 @@ class Tween extends Component {
         }
         this.tl.to(target, tween.duration, tween.params);
       });
+
+      this.tl.addLabel(`segment-${segmentIndex}`);
       if (!isLastSemgment) {
-        this.tl.addPause(segmentDurations[i]);
+        this.tl.addPause();
       }
     });
     this.tl.pause();
+  }
+
+  getAnimationStatus() {
+    const state = this.props.fragment;
+    const { slide } = this.props.route;
+    const fragment = findDOMNode(this.fragmentRef);
+    const slideHash = parseInt(this.context.slideHash, 10);
+    const key = findKey(state.fragments[slide], {
+      id: `${slideHash}-${parseInt(fragment.dataset.fid, 10)}`,
+    });
+    if (
+      slide in state.fragments &&
+      state.fragments[slide].hasOwnProperty(key)
+    ) {
+      return state.fragments[slide][key].animations;
+    }
+    return null;
+  }
+
+  seekToCurrentAnimationState() {
+    const animationStatus = this.getAnimationStatus();
+    if (animationStatus) {
+      const newAnimationIndex = animationStatus.every(a => a === true) ?
+        animationStatus.length - 1 :
+        animationStatus.indexOf(false) - 1;
+      this.tl.seek(`segment-${newAnimationIndex}`);
+    }
   }
 
   playTween() {

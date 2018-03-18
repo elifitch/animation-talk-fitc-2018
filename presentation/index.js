@@ -187,6 +187,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <GsapExample><div>asdfasdf</div></GsapExample>
+            <GsapExample><div>jsdfm jsd</div></GsapExample>
             {/* <GsapExample><div>jsdfm jsd</div></GsapExample>
             <GsapExample><div>jsdfm jsd</div></GsapExample>
             <GsapExample><div>jsdfm jsd</div></GsapExample> */}
