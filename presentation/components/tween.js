@@ -67,9 +67,19 @@ class Tween extends Component {
       this.context.stepCounter.setFragments(state.fragments[slide], slide);
 
       if (newAnimationIndex > this.state.activeAnimation) {
+        if (this.tl.isActive()) {
+          // jump to next label to prevent weird behavior where tweens become
+          // out of sync with slide behavior
+          this.tl.seek(this.tl.getLabelAfter());
+        }
         this.playTween();
       }
       if (newAnimationIndex < this.state.activeAnimation) {
+        if (this.tl.isActive()) {
+          // jump to next label to prevent weird behavior where tweens become
+          // out of sync with slide behavior
+          this.tl.seek(this.tl.getLabelBefore());
+        }
         this.reverseTween();
       }
       this.setState({
