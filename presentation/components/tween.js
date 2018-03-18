@@ -15,11 +15,17 @@ import TweenMax from 'gsap';
 /* eslint-enable no-unused-vars */
 import TimelineMax from 'gsap/TimelineMax';
 
+function getTLSegmentDurations(tweens) {
+  return tweens.map((segment) => {
+    return segment.reduce((dur, tween) => dur + tween.duration, 0);
+  });
+}
+
 class Tween extends Component {
   constructor() {
     super();
     this.state = {
-      active: false,
+      activeAnimation: -1,
     };
     this.tl = new TimelineMax({});
   }
@@ -30,17 +36,17 @@ class Tween extends Component {
       this.props.route.params.indexOf('overview') !== -1;
 
     if (shouldDisableAnimation) {
-      this.setState({ active: true });
+      this.setState({ activeAnimation: this.props.to.length - 1 });
     }
   }
 
   componentDidMount() {
-    const { order } = this.props;
     const node = findDOMNode(this.fragmentRef);
     if (!node.dataset) {
       node.dataset = {};
     }
-    node.dataset.order = order;
+    node.dataset.order = this.props.order;
+    node.dataset.animCount = this.props.to.length;
     this.setInitialTweenState(node);
   }
 
@@ -58,7 +64,7 @@ class Tween extends Component {
       nextProps.route.params.indexOf('overview') !== -1;
 
     if (shouldDisableAnimation) {
-      this.setState({ active: true });
+      this.setState({ activeAnimation: this.props.to.length - 1 });
       return;
     }
 
@@ -66,25 +72,39 @@ class Tween extends Component {
       slide in state.fragments &&
       state.fragments[slide].hasOwnProperty(key)
     ) {
-      const active = state.fragments[slide][key].visible;
+      const animationStatus = state.fragments[slide][key].animations;
+      const newAnimationIndex = animationStatus.every(a => a === true) ?
+        animationStatus.length - 1 :
+        animationStatus.indexOf(false) - 1;
       this.context.stepCounter.setFragments(state.fragments[slide], slide);
-      if (active && !this.state.active) {
+      if (newAnimationIndex > this.state.activeAnimation) {
         this.playTween();
       }
-      if (!active && this.state.active) {
+      if (newAnimationIndex < this.state.activeAnimation) {
         this.reverseTween();
       }
-      this.setState({ active });
+      this.setState({
+        activeAnimation: newAnimationIndex,
+      });
     }
   }
 
   setInitialTweenState(target) {
-    this.props.to.forEach((tween, i) => {
-      if (i === 0) {
-        this.tl.fromTo(target, tween.duration, this.props.from.params, tween.params);
-        return;
+    const segmentDurations = getTLSegmentDurations(this.props.to);
+    let setInitialTween = false;
+    this.props.to.forEach((segment, i) => {
+      const isLastSemgment = i === this.props.to.length - 1;
+      segment.forEach((tween) => {
+        if (!setInitialTween) {
+          setInitialTween = true;
+          this.tl.fromTo(target, tween.duration, this.props.from.params, tween.params);
+          return;
+        }
+        this.tl.to(target, tween.duration, tween.params);
+      });
+      if (!isLastSemgment) {
+        this.tl.addPause(segmentDurations[i]);
       }
-      this.tl.to(target, tween.duration, tween.params);
     });
     this.tl.pause();
   }
@@ -97,7 +117,10 @@ class Tween extends Component {
   }
 
   render() {
-    const child = React.Children.only(this.props.children);
+    const {
+      children,
+    } = this.props;
+    const child = React.Children.only(children);
     return (
       <div>
         {
@@ -125,10 +148,10 @@ Tween.propTypes = {
     duration: PropTypes.number,
     params: PropTypes.object,
   }).isRequired,
-  to: PropTypes.arrayOf(PropTypes.shape({
-    duration: PropTypes.number,
-    params: PropTypes.object,
-  })).isRequired,
+  to: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.shape({
+    duration: PropTypes.number.isRequired,
+    params: PropTypes.object.isRequired,
+  }))).isRequired,
   style: PropTypes.object,
   order: PropTypes.number,
   // From spectacle

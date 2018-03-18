@@ -9,7 +9,8 @@
     "lint": "eslint --ext .js,.jsx .",
     "deploy": "npm run clean & npm run build && surge -p .",
     "export": "spectacle-renderer --delay 3000",
-    "start": "cross-env NODE_ENV=development node server.js"
+    "start": "cross-env NODE_ENV=development node server.js",
+    "build:spectacle": "cd node_modules/spectacle && npm run clean && npm run build:lib"
   },
   "author": "",
   "license": "MIT",
@@ -25,7 +26,7 @@
     "react-emotion": "^9.0.2",
     "react-redux": "^5.0.7",
     "react-style-proptype": "^3.2.1",
-    "spectacle": "^4.1.0",
+    "spectacle": "elifitch/spectacle#flexible-animations",
     "spectacle-renderer": "^0.0.3",
     "victory-core": "^21.0.4"
   },

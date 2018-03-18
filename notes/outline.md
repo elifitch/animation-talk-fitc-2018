@@ -147,3 +147,18 @@ These slides should be made last
 * [Research: animation improves decisionmaking](http://courses.ischool.berkeley.edu/i247/s04/resources/p27-gonzalez.pdf)
 * [Research: animation builds mental maps](http://www.cs.umd.edu/hcil/jazz/learn/papers/CS-TR-3964.pdf)
 * [Presentation resource: good easing curves for gsap](https://codepen.io/GreenSock/pen/xEPaBg?editors=0010)
+
+
+
+## Spectacle PR
+![mar-17-2018 18-14-29](https://user-images.githubusercontent.com/2495933/37560499-a1162d84-2a0f-11e8-9031-8ac37801601f.gif)
+
+Hi again Formidable folks 👋. Really loving my time with spectacle, it's super fun and a nice change of pace from reveal.js.
+
+I'm using Spectacle to make a deck for a talk on web animation, so I wanted some more flexibility animating fragments. Specifically I wanted to be able to animate a fragment multiple times before moving on to the next fragment or slide.  I ended up more-or-less replacing the <Appear> component with a more generalized <Anim> component, creating a simpler <Appear> component which is just a wrapper for <Anim> to avoid shipping any breaking changes, and made a few small alterations in <Slide> and <Manager> to accommodate the ability to step through the same fragment several times.
+
+You could use this to make a little carousel, step through an animated infographic, and so many other things my small brain can't conceive of.
+
+I concede that I would have liked to add some tests to lock down the new fragment logic, but I had some trouble grokking the tests for <Manager> and figuring out how to get the fragment functionality tested there.
+
+Oh, also went ahead and included documentation on the workaround discussed in #488 
