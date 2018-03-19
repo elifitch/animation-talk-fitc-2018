@@ -45,13 +45,16 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Letterwave>
+            {/* <Letterwave>
               <div>
                 <span style={{display: 'inline-block'}}>a</span>
                 <span style={{display: 'inline-block'}}>s</span>
                 <span style={{display: 'inline-block'}}>d</span>
                 <span style={{display: 'inline-block'}}>f</span>
               </div>
+            </Letterwave> */}
+            <Letterwave>
+              asdfasdf
             </Letterwave>
             <Notes>
               

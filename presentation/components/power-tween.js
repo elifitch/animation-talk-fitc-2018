@@ -34,6 +34,8 @@ class PowerTween extends Component {
 
   componentDidMount() {
     const node = findDOMNode(this.fragmentRef);
+    console.log(this.fragmentRef);
+    console.log(node)
     if (!node.dataset) {
       node.dataset = {};
     }
@@ -143,6 +145,7 @@ class PowerTween extends Component {
       children,
     } = this.props;
     const child = React.Children.only(children);
+    console.log(child);
     return (
       <div>
         {

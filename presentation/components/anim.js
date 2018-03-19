@@ -6,6 +6,7 @@ import IB from './primitives/inline-block';
 import { underline } from '../theme';
 import Tween from './tween';
 import PowerTween from './power-tween';
+import SplitText from './split-text';
 
 function Bounce(props) {
   return (
@@ -139,28 +140,32 @@ function Letterwave(props) {
         [
           {
             method: 'staggerFrom',
-            target: child => child.querySelectorAll('span'),
-            duration: 0.4,
-            args: [{ y: -100 }, 0.05],
+            target: child => child.querySelectorAll('.split'),
+            duration: 1.0,
+            args: [{ y: -100, ease: Elastic.easeOut.config(1, 0.6) }, 0.05],
           },
           {
             method: 'staggerTo',
-            target: child => child.querySelectorAll('span'),
-            duration: 0.4,
-            args: [{ y: 200 }, 0.05],
+            target: child => child.querySelectorAll('.split'),
+            duration: 1.0,
+            args: [{ y: 200, ease: Elastic.easeOut.config(1, 0.6) }, 0.05],
           },
         ],
         [
           {
             method: 'staggerTo',
-            target: child => child.querySelectorAll('span'),
-            duration: 0.4,
-            args: [{ y: 300 }, 0.05],
+            target: child => child.querySelectorAll('.split'),
+            duration: 1.0,
+            args: [{ y: 300, ease: Elastic.easeOut.config(1, 0.6) }, 0.05],
           },
         ],
       ]}
     >
-      {props.children}
+      <div>
+        <SplitText>
+          {props.children}
+        </SplitText>
+      </div>
     </PowerTween>
   );
 }
