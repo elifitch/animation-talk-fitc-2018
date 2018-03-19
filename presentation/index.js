@@ -14,7 +14,7 @@ import {
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce, Fade, GsapExample } from './components/anim';
+import { Bounce, Fade, GsapExample, Letterwave } from './components/anim';
 import theme from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
@@ -42,6 +42,20 @@ export default class Presentation extends React.Component {
         <Deck transition={['slide']} transitionDuration={500} theme={theme} controls={false} bgColor="quarternary">
           <Slide >
             <Title>Big Title Slide</Title>
+          </Slide>
+
+          <Slide>
+            <Letterwave>
+              <div>
+                <span style={{display: 'inline-block'}}>a</span>
+                <span style={{display: 'inline-block'}}>s</span>
+                <span style={{display: 'inline-block'}}>d</span>
+                <span style={{display: 'inline-block'}}>f</span>
+              </div>
+            </Letterwave>
+            <Notes>
+              
+            </Notes>
           </Slide>
 
           <Slide>

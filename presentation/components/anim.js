@@ -5,6 +5,7 @@ import { FancyAppear } from './fancy-appear';
 import IB from './primitives/inline-block';
 import { underline } from '../theme';
 import Tween from './tween';
+import PowerTween from './power-tween';
 
 function Bounce(props) {
   return (
@@ -72,22 +73,6 @@ Stroke.propTypes = {
 };
 
 function GsapExample(props) {
-  // return (
-  //   <Tween
-  //     from={{
-  //       duration: 0.4,
-  //       params: { y: -200 },
-  //     }}
-  //     to={[[
-  //       {
-  //         duration: 0.4,
-  //         params: { y: 0 },
-  //       },
-  //     ]]}
-  //   >
-  //     {props.children}
-  //   </Tween>
-  // );
   return (
     <Tween
       from={{
@@ -125,9 +110,68 @@ GsapExample.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+// function Letterwave(props) {
+//   return (
+//     <Tween
+//       from={{
+//         params: { y: -200 },
+//       }}
+//       to={[
+//         [
+//           {
+//             duration: 0.4,
+//             params: { y: 0 },
+//           },
+//         ],
+//       ]}
+//     >
+//       {props.children}
+//     </Tween>
+//   );
+// }
+// Letterwave.propTypes = {
+//   children: PropTypes.node.isRequired,
+// };
+function Letterwave(props) {
+  return (
+    <PowerTween
+      anims={[
+        [
+          {
+            method: 'staggerFrom',
+            target: child => child.querySelectorAll('span'),
+            duration: 0.4,
+            args: [{ y: -100 }, 0.05],
+          },
+          {
+            method: 'staggerTo',
+            target: child => child.querySelectorAll('span'),
+            duration: 0.4,
+            args: [{ y: 200 }, 0.05],
+          },
+        ],
+        [
+          {
+            method: 'staggerTo',
+            target: child => child.querySelectorAll('span'),
+            duration: 0.4,
+            args: [{ y: 300 }, 0.05],
+          },
+        ],
+      ]}
+    >
+      {props.children}
+    </PowerTween>
+  );
+}
+Letterwave.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export {
   Bounce,
   Fade,
   Stroke,
   GsapExample,
+  Letterwave,
 };
