@@ -149,3 +149,9 @@ These slides should be made last
 * [Presentation resource: good easing curves for gsap](https://codepen.io/GreenSock/pen/xEPaBg?editors=0010)
 * [Eye stuff on wikipedia](https://en.wikipedia.org/wiki/Occipital_lobe)
 * [Eye stuff on wikipedia 2](https://en.wikipedia.org/wiki/Vision_for_perception_and_vision_for_action)
+
+### GSAP demos
+https://codepen.io/elifitch/pen/5ec36ceee6e482225817ca8324406ac0
+https://codepen.io/GreenSock/pen/ca2ed1319dc4818653d2a921dd2eaf94?editors=0010
+https://codepen.io/GreenSock/pen/pRowwX?editors=0010
+https://codepen.io/GreenSock/pen/xEPaBg?editors=0010
