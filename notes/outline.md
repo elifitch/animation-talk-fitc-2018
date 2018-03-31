@@ -149,6 +149,7 @@ These slides should be made last
 * [Presentation resource: good easing curves for gsap](https://codepen.io/GreenSock/pen/xEPaBg?editors=0010)
 * [Eye stuff on wikipedia](https://en.wikipedia.org/wiki/Occipital_lobe)
 * [Eye stuff on wikipedia 2](https://en.wikipedia.org/wiki/Vision_for_perception_and_vision_for_action)
+* [vestibular examples] (https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity)
 
 ### GSAP demos
 https://codepen.io/elifitch/pen/5ec36ceee6e482225817ca8324406ac0

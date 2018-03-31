@@ -6,7 +6,7 @@ import Title from './title';
 class SectionHeading extends React.Component {
   render() {
     return (
-      <Title size={2} shadowDepth={10}>{this.props.children}</Title>
+      <Title size={2} shadowDepth={15}>{this.props.children}</Title>
     );
   }
 }

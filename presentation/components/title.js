@@ -9,10 +9,10 @@ class Title extends React.Component {
     return (
       <Heading3D
         size={this.props.size}
-        lineHeight={headingLineHeight}
         shadowDepth={this.props.shadowDepth}
         shadowColor={purple} 
         textColor={pink}
+        lineHeight={headingLineHeight}
       >
         {this.props.children}
       </Heading3D>
@@ -28,7 +28,7 @@ Title.propTypes = {
 
 Title.defaultProps = {
   size: 1,
-  shadowDepth: 15,
+  shadowDepth: 25,
 };
 
 export default Title;

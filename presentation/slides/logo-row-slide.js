@@ -23,7 +23,9 @@ class LogoRowSlide extends React.Component {
           alignItems: 'center',
         }}
       >  
-        <LogoImg src="mapbox-logo.svg" />
+        <div style={{ width: '28%' }}>
+          <Pic style={{ minWidth: 0, width: '100%' }} src="mapbox-logo.svg" />
+        </div>
         <LogoImg src="codepen-logo.svg" />
         <LogoImg src="skull.png" />
       </div>

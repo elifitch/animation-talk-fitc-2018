@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Heading } from 'spectacle';
-import { headingLineheight } from '../theme';
+import { headingLineHeight } from '../theme';
 
 
 class SlideHeading extends React.Component {
   render() {
     return (
       <Heading
-        size={2}
+        size={3}
         textColor="nearBlack"
-        lineHeight={headingLineheight}
+        lineHeight={headingLineHeight}
         {...this.props}
       >
         {this.props.children}

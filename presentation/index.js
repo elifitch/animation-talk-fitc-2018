@@ -6,7 +6,7 @@ import {
   Cite,
   Quote,
   Deck,
-  // Heading,
+  Heading,
   ListItem,
   List,
   Slide,
@@ -14,7 +14,7 @@ import {
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce, Fade, GsapExample, Letterwave } from './components/anim';
+import { Bounce, Fade, GsapExample, DirectAnimExample, Letterwave } from './components/anim';
 import theme from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
@@ -39,30 +39,22 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <div>
-        <Deck transition={['slide']} transitionDuration={500} theme={theme} controls={false} bgColor="quarternary">
+        <Deck
+          transition={['slide']}
+          transitionDuration={500}
+          theme={theme}
+          controls={false}
+          bgColor="#ff00ff"
+          contentWidth={1400}
+          contentHeight={1000}
+        >
           <Slide >
-            <Title>Big Title Slide</Title>
+            <Title>Web Animation</Title>
+            <Heading size={4} textColor="nearBlack">How to make friends and influence people</Heading>
           </Slide>
 
           <Slide>
-            {/* <Letterwave>
-              <div>
-                <span style={{display: 'inline-block'}}>a</span>
-                <span style={{display: 'inline-block'}}>s</span>
-                <span style={{display: 'inline-block'}}>d</span>
-                <span style={{display: 'inline-block'}}>f</span>
-              </div>
-            </Letterwave> */}
-            <Letterwave>
-              asdfasdf
-            </Letterwave>
-            <Notes>
-              
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <H>Hi I'm eli slide</H>
+            <H>Hi, I'm Eli</H>
             <Fade><Hsmall>I like to make weird stuff on the internet</Hsmall></Fade>
           </Slide>
 
@@ -72,7 +64,7 @@ export default class Presentation extends React.Component {
           
 
           <Slide>
-            <ListHeading>What we talk about slide</ListHeading>
+            <ListHeading>Today I'm going to howl about</ListHeading>
             <List>
               <Fade><ListItem>Why animation should be a first class citizen in UI design</ListItem></Fade>
               <Fade><ListItem>How to use animation to influence user cognition</ListItem></Fade>
@@ -94,7 +86,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <div><Bounce><Hsmall>Superfluous</Hsmall></Bounce></div>
-            <div><Bounce><Hsmall>Surprise &amp; delight</Hsmall></Bounce></div>
+            <div><Bounce><Hsmall>It's only surprise &amp; delight</Hsmall></Bounce></div>
             <div><Bounce><Hsmall>Just makes it pretty</Hsmall></Bounce></div>
             <div><Bounce><Hsmall>[Collect other quotes here]</Hsmall></Bounce></div>
             <Notes>
@@ -127,7 +119,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Biological &amp; Cultural</H>
+            <H><Fade>Biological</Fade> &amp; <Fade>Cultural</Fade></H>
             <Notes>
               Design leverages biological and cultural factors of how humans process our environemnt in order to more effectively rely information.
               Without the human hindbrain's ability to rapidly draw associations, and fit new things into established patterns, design wouldn't work.
@@ -140,10 +132,6 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Pic src="jogger-hierarchy.jpg" />
-          </Slide>
-
-          <Slide>
-            <H>[typography slide, graphic of a geometric sans, gif of zach galafinaikis math, and then a picture of a modern building]</H>
           </Slide>
 
           <Slide>
@@ -197,17 +185,6 @@ export default class Presentation extends React.Component {
           <Slide>
             <H size={3}>Static design - <Fade>What system</Fade></H>
             <H size={3}>Animation - <Fade>Where system</Fade></H>
-            <Notes>
-              
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <GsapExample><div>asdfasdf</div></GsapExample>
-            <GsapExample><div>jsdfm jsd</div></GsapExample>
-            {/* <GsapExample><div>jsdfm jsd</div></GsapExample>
-            <GsapExample><div>jsdfm jsd</div></GsapExample>
-            <GsapExample><div>jsdfm jsd</div></GsapExample> */}
             <Notes>
               
             </Notes>
@@ -359,13 +336,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Spacial orientation</H>
-            <Notes>
-              
-            </Notes>
-          </Slide>
-
-          <Slide>
             <H>[[We live in a spacial world]]</H>
             <Notes>
               We unconsciously build mental maps of the world around us, and it lets us generally know where things are 
@@ -375,7 +345,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Mental map of what's out of view</H>
+            <H>Mental map of<br />what's out of view</H>
             <Notes>
 
             </Notes>

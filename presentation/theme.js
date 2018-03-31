@@ -2,6 +2,10 @@
 
 import createTheme from 'spectacle/lib/themes/default';
 import { injectGlobal, css } from 'emotion';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved */
+import loGet from 'lodash.get';
+import loSet from 'lodash.set';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved */
 
 require('../assets/fonts/brandon-grotesque-bld-it.eot');
 require('../assets/fonts/brandon-grotesque-bld-it.woff');
@@ -68,27 +72,47 @@ let mutableTheme = createTheme({
   secondary: 'pinopolis',
 });
 
-mutableTheme.extendComponent = (component, style) => {
-  mutableTheme.screen.components[component] = Object.assign(
+mutableTheme.extendComponent = (pathToComponent, style) => {
+  const path = ['screen', 'components', ...pathToComponent];
+  const componentStyle = Object.assign(
     {},
-    mutableTheme.screen.components[component],
+    loGet(mutableTheme, path),
     style,
   );
+  loSet(mutableTheme, path, componentStyle);
   return mutableTheme;
 };
 
-mutableTheme = mutableTheme.extendComponent('quote', {
-  borderLeft: `4px solid ${pink}`,
-  color: nearBlack,
-  lineHeight: 1.1,
-}).extendComponent('cite', {
-  color: translucent,
-}).extendComponent('listItem', {
-  listStyleType: 'none',
-  marginBottom: '0.5em',
-  paddingLeft: '0.5em',
-});
+mutableTheme = mutableTheme
+  .extendComponent(['quote'], {
+    borderLeft: `4px solid ${pink}`,
+    color: nearBlack,
+    lineHeight: 1.1,
+  })
+  .extendComponent(['cite'], {
+    color: translucent,
+  })
+  .extendComponent(['listItem'], {
+    listStyleType: 'none',
+    marginBottom: '0.5em',
+    paddingLeft: '0em',
+    fontFamily: 'pinopolis',
+  })
+  .extendComponent(['heading', 'h1'], {
+    fontSize: '14rem',
+  })
+  .extendComponent(['heading', 'h2'], {
+    fontSize: '10rem',
+  })
+  .extendComponent(['heading', 'h3'], {
+    fontSize: '7rem',
+  })
+  .extendComponent(['heading', 'h4'], {
+    fontSize: '5rem',
+  });
 
 const theme = JSON.parse(JSON.stringify(mutableTheme));
+
+console.log(theme)
 
 export default theme;

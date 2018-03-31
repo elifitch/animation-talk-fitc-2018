@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Appear } from 'spectacle';
-import { FancyAppear } from './fancy-appear';
+import { Appear, Anim } from 'spectacle';
 import IB from './primitives/inline-block';
 import { underline } from '../theme';
 import Tween from './tween';
@@ -10,7 +9,7 @@ import SplitText from './split-text';
 
 function Bounce(props) {
   return (
-    <FancyAppear
+    <Appear
       startValue={{
         opacity: 0,
         transform: 'translateY(-1em)',
@@ -23,7 +22,7 @@ function Bounce(props) {
       {...props}
     >
       <IB>{props.children}</IB>
-    </FancyAppear>
+    </Appear>
   );
 }
 Bounce.propTypes = {
@@ -111,28 +110,28 @@ GsapExample.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-// function Letterwave(props) {
-//   return (
-//     <Tween
-//       from={{
-//         params: { y: -200 },
-//       }}
-//       to={[
-//         [
-//           {
-//             duration: 0.4,
-//             params: { y: 0 },
-//           },
-//         ],
-//       ]}
-//     >
-//       {props.children}
-//     </Tween>
-//   );
-// }
-// Letterwave.propTypes = {
-//   children: PropTypes.node.isRequired,
-// };
+function DirectAnimExample(props) {
+  return (
+    <Anim
+      fromStyle={{
+        opacity: 0,
+        transform: 'translateY(-1em)',
+      }}
+      toStyle={[{
+        opacity: 1,
+        transform: 'translateY(0em)',
+      }]}
+      easing="bounceOut"
+      {...props}
+    >
+      <IB>{props.children}</IB>
+    </Anim>
+  );
+}
+DirectAnimExample.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 function Letterwave(props) {
   return (
     <PowerTween
@@ -177,6 +176,8 @@ export {
   Bounce,
   Fade,
   Stroke,
-  GsapExample,
   Letterwave,
+  //
+  GsapExample,
+  DirectAnimExample,
 };

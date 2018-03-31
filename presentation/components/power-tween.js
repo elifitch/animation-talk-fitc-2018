@@ -145,7 +145,6 @@ class PowerTween extends Component {
       children,
     } = this.props;
     const child = React.Children.only(children);
-    console.log(child);
     return (
       <div>
         {
