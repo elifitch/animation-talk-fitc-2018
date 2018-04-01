@@ -14,16 +14,19 @@ import {
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce, Fade, GsapExample, DirectAnimExample, Letterwave } from './components/anim';
+import { Bounce, Fade } from './components/anim';
 import theme from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
 import SlideHeading from './components/slide-heading';
 import ListHeading from './components/list-heading';
 import SubsectionHeading from './components/subsection-heading';
+import LinkHeading from './components/link-heading';
 import Pic from './components/pic';
 import Vid from './components/vid';
 import LogoRowSlide from './slides/logo-row-slide';
+import EarthPointerSlide from './slides/earth-pointer-slide';
+import DorsalVentralBrain from './slides/dorsal-ventral-brain';
 
 require('normalize.css');
 
@@ -41,7 +44,7 @@ export default class Presentation extends React.Component {
       <div>
         <Deck
           transition={['slide']}
-          transitionDuration={500}
+          transitionDuration={300}
           theme={theme}
           controls={false}
           bgColor="#ff00ff"
@@ -49,7 +52,7 @@ export default class Presentation extends React.Component {
           contentHeight={1000}
         >
           <Slide >
-            <Title>Web Animation</Title>
+            <Title lineHeight={1}>Web Animation</Title>
             <Heading size={4} textColor="nearBlack">How to make friends and influence people</Heading>
           </Slide>
 
@@ -103,7 +106,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[some graphic: Animation is actually powerful/think different]]</Annot>
+            <Pic src="strong-emoji.png" />
+            <Annot>[[animate this with a shake for a little laugh]]</Annot>
             <Notes>
               Animation is actually incredibly powerful, expressive and useful design tool.
               It deserves to be taken seriously, at least as seriously as traditional design precepts.
@@ -173,7 +177,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Pic src="dorsal-ventral-brain.png" />
+            <DorsalVentralBrain />
+            <Annot>[[do pointer anims at the two streams]]</Annot>
             <Notes>
               The what system, also called the ventral system, takes the lower pathway through the brain, connecting more 
               directly to the parts of the brain that control things like long term memory, recognition, and perception 
@@ -183,10 +188,26 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H size={3}>Static design - <Fade>What system</Fade></H>
-            <H size={3}>Animation - <Fade>Where system</Fade></H>
+            <H size={3}>Static design - <Fade>What System</Fade></H>
+            <H size={3}>Animation - <Fade>Where System</Fade></H>
             <Notes>
               
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H size={3}>What System - <Fade>more conscious</Fade></H>
+            <H size={3}>Where System - <Fade>less conscious</Fade></H>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H size={3}>What System - <Fade>software</Fade></H>
+            <H size={3}>Where System - <Fade>hardware</Fade></H>
+            <Notes>
+
             </Notes>
           </Slide>
 
@@ -247,7 +268,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Don't leave the non-visual behind</H>
+            <H>Don't leave the<br />non-visual behind</H>
             <Notes>
               Animation can be a fabulous tool to relay information, as we'll see, but make sure that you include other ways to consume that information for folks who can't see the animation.
               This serves the double purpose of also making your site generally that much more accessible.
@@ -264,6 +285,19 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <Annot>[[link style looks bad]]</Annot>
+            <ListHeading>Problematic examples</ListHeading>
+            <List>
+              <ListItem><LinkHeading href="../../assets/wired-uk.mp4">Wired.co.uk</LinkHeading></ListItem>
+              <ListItem><LinkHeading href="../../assets/vimeo-cameo.mp4">Vimeo Cameo</LinkHeading></ListItem>
+              <ListItem><LinkHeading href="../../assets/rd-construction.mp4">RD Construction</LinkHeading></ListItem>
+            </List>
+            <Notes>
+              
+            </Notes>
+          </Slide>
+
+          <Slide>
             <H>Provide alternatives</H>
             <Notes>
               If animation is a large part of your app, give users the option to disable animations in their user preferences. This will be necessary 
@@ -274,7 +308,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[[should have a diff title here, because both cogni and spacial reduce cognitive load]]</H>
+            <Annot>[[should have a diff title here, because both cogni and spacial reduce cognitive load]]</Annot>
             <SSH>Lighten cognitive load</SSH>
             <Notes>
               Cognitive load is a term tossed around in UX design circles a lot. Basically what it means is the amount of consious and unconscious 
@@ -292,7 +326,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Multithreaded thinking</H>
+            <H>&ldquo;Multithreaded&rdquo; thinking</H>
             <Notes>
               When the UI changes, your brain has to spend cycles on determining what has changed on the screen and what that means. 
               When you animate a state transition, that work is offloaded to the visual side of the brain, letting the brain's 
@@ -335,8 +369,8 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          <Slide>
-            <H>[[We live in a spacial world]]</H>
+          <Slide bgColor="#000">
+            <EarthPointerSlide />
             <Notes>
               We unconsciously build mental maps of the world around us, and it lets us generally know where things are 
               without tons of conscious effort. When we create interfaces that snap from state to state, it prevents us 
@@ -347,12 +381,12 @@ export default class Presentation extends React.Component {
           <Slide>
             <H>Mental map of<br />what's out of view</H>
             <Notes>
-
+              Mental map of what's out of view
             </Notes>
           </Slide>
 
           <Slide>
-            <H>[[animation of a hamgurger menu or something else off screen like a modal]]</H>
+            <H>[[animation of a hamgurger menu]]</H>
             <Notes>
 
             </Notes>
@@ -385,12 +419,20 @@ export default class Presentation extends React.Component {
           <Slide>
             <H>[[video of ios settings screen-to-screen animation]]</H>
             <Notes>
-              
+              This animation from pane to pane makes it clear where in the flow you are, what direction you're going and 
+              cues gesture interactions for how to go back.
             </Notes>
           </Slide>
 
           <Slide>
             <SSH>Animation skews time</SSH>
+            <Notes>
+              Animation is fundamentally just change over time.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Time is a funny thing 🤔</H>
             <Notes>
               Time is a funny thing. It can appear to slow down, speed up, expand and contract.
             </Notes>
@@ -431,7 +473,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[[slack video]]</H>
+            <Vid src="slack-loading.mp4" controls autoplay={false} />
             <Notes>
               Slack conducts a masterclass here, moving from loading anim to loading anim to keep you engaged, 
               and make the loading process seem like it's faster than it actually  is.
@@ -588,15 +630,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>animate the text to illustrate your point</Annot>
-            <H>Anticipation &amp; Follow through</H>
-            <Notes>
-              Anticipation is a movement against the main animation in--dot dot dot--anticipation of the main animation.
-              Follow through is the opposite, an animation that continues through the final resting place
-            </Notes>
-          </Slide>
-
-          <Slide>
             <Annot>[[side by side animations of a modal entering and leaving, one more somber and one more serious, maybe have one fade and one full opacity at a time to direct attention]]</Annot>
             <Notes>
               Here we have two animations, one more playful and one more serious, that use anticipation and followthrough. 
@@ -618,8 +651,10 @@ export default class Presentation extends React.Component {
             <Annot>[[show medium clap animation, show inputs in a modal dropping in sliding into place in sequence]]</Annot>
             <Notes>
               These are both uses of secondary action. The first is a way to give an animation extra pop, kind of adding a 
-              flourish to something to make an action feel special and rewarding. The second is inputs cascading into place 
-              with their parent. It's a way to make an animation feel more natural and grounded, ideal for more serious brands.
+              flourish to something to make an action feel special and rewarding. This is a big part of animation for loot
+              boxes in video games, and gambling displays. Again I can't stress enough the importance of ethics here.
+              The second is inputs cascading into place with their parent. It's a way to make an animation feel more natural 
+              and grounded, ideal for more serious brands.
             </Notes>
           </Slide>
 
@@ -815,6 +850,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <Annot>[[maybe proto vs final for f8?]]</Annot>
             <H>Prototypes are king</H>
             <Notes>
               Once we enter the visual design stage, things become a little more variable. I usually make prototypes right 

@@ -9,7 +9,9 @@ class Vid extends React.Component {
     this.assignRef = this.assignRef.bind(this);
   }
   componentDidMount() {
-    this.vid.play();
+    if (this.props.autoplay) {
+      this.vid.play();
+    }
   }
   componentWillUnmount() {
     this.vid.pause();
@@ -38,11 +40,13 @@ Vid.propTypes = {
   src: PropTypes.string.isRequired,
   loop: PropTypes.bool,
   muted: PropTypes.bool,
+  autoplay: PropTypes.bool,
 };
 
 Vid.defaultProps = {
   loop: true,
   muted: true,
+  autoplay: true,
 };
 
 export default Vid;

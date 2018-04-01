@@ -13,6 +13,7 @@ class Title extends React.Component {
         shadowColor={purple} 
         textColor={pink}
         lineHeight={headingLineHeight}
+        {...this.props}
       >
         {this.props.children}
       </Heading3D>

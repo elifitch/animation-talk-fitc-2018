@@ -148,7 +148,8 @@ These slides should be made last
 * [Research: animation builds mental maps](http://www.cs.umd.edu/hcil/jazz/learn/papers/CS-TR-3964.pdf)
 * [Presentation resource: good easing curves for gsap](https://codepen.io/GreenSock/pen/xEPaBg?editors=0010)
 * [Eye stuff on wikipedia](https://en.wikipedia.org/wiki/Occipital_lobe)
-* [Eye stuff on wikipedia 2](https://en.wikipedia.org/wiki/Vision_for_perception_and_vision_for_action)
+* [Eye stuff on wikipedia 2](https://en.wikipedia.org/wiki/Two-streams_hypothesis)
+* [Eye stuff on wikipedia 3](https://en.wikipedia.org/wiki/Vision_for_perception_and_vision_for_action)
 * [vestibular examples] (https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity)
 
 ### GSAP demos

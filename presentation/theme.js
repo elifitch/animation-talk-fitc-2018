@@ -109,6 +109,9 @@ mutableTheme = mutableTheme
   })
   .extendComponent(['heading', 'h4'], {
     fontSize: '5rem',
+  })
+  .extendComponent(['heading', 'h5'], {
+    fontSize: '3.5rem',
   });
 
 const theme = JSON.parse(JSON.stringify(mutableTheme));

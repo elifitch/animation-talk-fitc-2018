@@ -39,6 +39,7 @@ function Fade(props) {
       endValue={{
         opacity: 1,
       }}
+      transitionDuration={props.transitionDuration}
       {...props}
     >
       <div style={divStyle}>{props.children}</div>
@@ -47,10 +48,12 @@ function Fade(props) {
 }
 Fade.defaultProps = {
   block: false,
+  transitionDuration: 300,
 };
 Fade.propTypes = {
   children: PropTypes.node.isRequired,
   block: PropTypes.bool,
+  transitionDuration: PropTypes.number,
 };
 
 function Stroke(props) {
