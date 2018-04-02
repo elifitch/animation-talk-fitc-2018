@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled, { keyframes } from 'react-emotion';
 import Pic from './pic';
 
 class Pointer extends React.Component {
@@ -10,6 +10,7 @@ class Pointer extends React.Component {
       rotation,
       size,
       animated,
+      animationDelay,
     } = this.props;
     const PositionWrapper = styled('div')(() => ({
       position: 'absolute',
@@ -20,23 +21,28 @@ class Pointer extends React.Component {
     const RotationWrapper = styled('div')(() => ({
       transform: `rotate(${rotation}deg)`,
     }));
+    const pointerBob = keyframes`
+      0%, 100% {
+        transform: translateY(0%);
+      }
+      50% {
+        transform: translateY(20%);
+      }
+    `;
     const AnimationWrapper = styled('div')(() => {
       if (animated) {
         return {
-          animation: 'pointer-bob 1s infinite',
-          '@keyframes: pointer-bob': {
-            from: 'transform: translateY(0%)',
-            to: 'transform: translateY(20%)',
-          },
+          animation: `${pointerBob} 1s ${animationDelay}ms infinite`,
         };
       }
       return {};
     });
+    const pointerSrc = require('../../assets/pointer.png');
     return (
       <PositionWrapper>
         <RotationWrapper>
           <AnimationWrapper>
-            <Pic src="pointer.png" style={{ width: '100%', maxWidth: 'none', minWidth: 'none' }} />
+            <img src={pointerSrc} style={{ width: '100%', maxWidth: 'none', minWidth: 'none' }} alt="" />
           </AnimationWrapper>
         </RotationWrapper>
       </PositionWrapper>
@@ -47,6 +53,7 @@ class Pointer extends React.Component {
 Pointer.defaultProps = {
   animated: false,
   size: '200px',
+  animationDelay: 0,
 };
 
 Pointer.propTypes = {
@@ -54,6 +61,7 @@ Pointer.propTypes = {
   rotation: PropTypes.number.isRequired,
   size: PropTypes.string,
   animated: PropTypes.bool,
+  animationDelay: PropTypes.number,
 };
 
 export default Pointer;

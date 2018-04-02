@@ -175,11 +175,34 @@ Letterwave.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+function CallFn({ fn }) {
+  return (
+    <PowerTween
+      anims={[
+        [
+          {
+            method: 'from',
+            target: child => child,
+            duration: 0.01,
+            args: [{ onComplete: fn }],
+          },
+        ],
+      ]}
+    >
+      <div />
+    </PowerTween>
+  );
+}
+CallFn.propTypes = {
+  fn: PropTypes.func.isRequired,
+};
+
 export {
   Bounce,
   Fade,
   Stroke,
   Letterwave,
+  CallFn,
   //
   GsapExample,
   DirectAnimExample,

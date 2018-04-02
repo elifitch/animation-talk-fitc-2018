@@ -14,8 +14,8 @@ import {
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce, Fade } from './components/anim';
-import theme from './theme';
+import { Bounce, Fade, CallFn } from './components/anim';
+import theme, { contentWidth } from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
 import SlideHeading from './components/slide-heading';
@@ -24,6 +24,7 @@ import SubsectionHeading from './components/subsection-heading';
 import LinkHeading from './components/link-heading';
 import Pic from './components/pic';
 import Vid from './components/vid';
+import Footer from './components/footer';
 import LogoRowSlide from './slides/logo-row-slide';
 import EarthPointerSlide from './slides/earth-pointer-slide';
 import DorsalVentralBrain from './slides/dorsal-ventral-brain';
@@ -39,6 +40,20 @@ Annot.propTypes = PropTypes.node.isRequired;
 const Hsmall = Annot;
 
 export default class Presentation extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      showSocialPointer: false,
+    };
+    this.showSocialPoiner = this.showSocialPoiner.bind(this);
+    this.hideSocialPoiner = this.hideSocialPoiner.bind(this);
+  }
+  showSocialPoiner() {
+    this.setState({ showSocialPointer: true });
+  }
+  hideSocialPoiner() {
+    this.setState({ showSocialPointer: false });
+  }
   render() {
     return (
       <div>
@@ -48,8 +63,9 @@ export default class Presentation extends React.Component {
           theme={theme}
           controls={false}
           bgColor="#ff00ff"
-          contentWidth={1400}
+          contentWidth={contentWidth}
           contentHeight={1000}
+          progress="bar"
         >
           <Slide >
             <Title lineHeight={1}>Web Animation</Title>
@@ -59,6 +75,8 @@ export default class Presentation extends React.Component {
           <Slide>
             <H>Hi, I'm Eli</H>
             <Fade><Hsmall>I like to make weird stuff on the internet</Hsmall></Fade>
+            <CallFn fn={this.showSocialPoiner} />
+            <CallFn fn={this.hideSocialPoiner} />
           </Slide>
 
           <Slide>
@@ -911,8 +929,10 @@ export default class Presentation extends React.Component {
               
             </Notes>
           </Slide>
-          
         </Deck>
+        <Footer
+          showSocialPoiner={this.state.showSocialPointer}
+        />
       </div>
     );
   }

@@ -26,6 +26,7 @@ class DorsalVentralBrain extends React.Component {
             }}
             rotation={-40}
             animated
+            animationDelay={200}
           />
         </Fade>
       </div>

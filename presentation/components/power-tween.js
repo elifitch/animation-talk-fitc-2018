@@ -34,8 +34,6 @@ class PowerTween extends Component {
 
   componentDidMount() {
     const node = findDOMNode(this.fragmentRef);
-    console.log(this.fragmentRef);
-    console.log(node)
     if (!node.dataset) {
       node.dataset = {};
     }

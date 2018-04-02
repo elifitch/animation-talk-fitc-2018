@@ -23,6 +23,8 @@ export const whitesmoke = '#fafafa';
 export const nearBlack = '#333333';
 export const translucent = 'rgba(0, 0, 80, 0.2)';
 
+export const contentWidth = 1400;
+
 export const underline = css`
   display: inline;
   background-size: 100% 0.15em;
