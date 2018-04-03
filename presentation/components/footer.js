@@ -24,7 +24,7 @@ const SHeading = styled('h5')(() => ({
   color: translucent,
 }));
 const SLink = styled('a')`
-  color: inherit;
+  color: ${({ highlight }) => (highlight ? pink : 'inherit')};
   text-decoration: none;
   transition: all 0.2s;
   position: relative;
@@ -35,12 +35,10 @@ const SLink = styled('a')`
 const FooterLink = ({ children, href, highlight }) => (
   <SHeading>
     <SLink
+      highlight={highlight}
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      style={{
-        color: highlight ? pink : 'inherit',
-      }}
     >
       {children}
     </SLink>

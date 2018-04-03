@@ -29,6 +29,7 @@ import LoginModal from './components/login-modal';
 import LogoRowSlide from './slides/logo-row-slide';
 import EarthPointerSlide from './slides/earth-pointer-slide';
 import DorsalVentralBrain from './slides/dorsal-ventral-brain';
+import ProgressBarDemo from './slides/progress-bar-demo';
 
 require('normalize.css');
 
@@ -76,12 +77,12 @@ export default class Presentation extends React.Component {
           <Slide>
             <H>Hi, I'm Eli</H>
             <Fade><Hsmall>I like to make things on the internet</Hsmall></Fade>
-            <CallFn fn={this.showSocialPoiner} />
-            <CallFn fn={this.hideSocialPoiner} />
           </Slide>
 
           <Slide>
             <LogoRowSlide />
+            <CallFn fn={this.showSocialPoiner} />
+            <CallFn fn={this.hideSocialPoiner} />
           </Slide>
           
 
@@ -202,7 +203,7 @@ export default class Presentation extends React.Component {
               The what system, also called the ventral system, takes the lower pathway through the brain, connecting more 
               directly to the parts of the brain that control things like long term memory, recognition, and perception 
               of small details. The where system, also called the ventral system, is associated with the perception of 
-              motion, spacial awareness, and it's much faster to process.
+              motion, spacial awareness, and muscle memory like catching a ball. It's also *much* faster to process.
             </Notes>
           </Slide>
 
@@ -210,7 +211,11 @@ export default class Presentation extends React.Component {
             <H size={3}>Static design - <Fade>What System</Fade></H>
             <H size={3}>Animation - <Fade>Where System</Fade></H>
             <Notes>
-              
+              Static design, like color, hierarchy, typography, mostly engages the what system. Animation engages a 
+              whole different visual pathway, a whole other way that people communicate and process information.
+              Which means there's this whole other visual pathway we can use to communicate. The Where System is 
+              associated with muscle memory, which makes it ideal for creating actions that reinforce spacial 
+              systems and cue gesture interactions.
             </Notes>
           </Slide>
 
@@ -218,7 +223,8 @@ export default class Presentation extends React.Component {
             <H size={3}>What System - <Fade>more conscious</Fade></H>
             <H size={3}>Where System - <Fade>less conscious</Fade></H>
             <Notes>
-
+              The what system is more conscious, and the where system tends to be more subtle. We can use this subtleness
+              to our advantage. That's not to say that animation itself is always subtle, but its influence can be.
             </Notes>
           </Slide>
 
@@ -226,7 +232,8 @@ export default class Presentation extends React.Component {
             <H size={3}>What System - <Fade>software</Fade></H>
             <H size={3}>Where System - <Fade>hardware</Fade></H>
             <Notes>
-
+              To fall back on a tech analogy, the what system is more highly evolved, it's newer, it's more like software.
+              The where system is more like hardware. Faster, more intimate, closer to the metal.
             </Notes>
           </Slide>
 
@@ -234,7 +241,9 @@ export default class Presentation extends React.Component {
             <H>Animation is the most efficient way to communicate</H>
             <Notes>
               Because of this more "hardware" level connection with the human subconscious, animation is an incredibly information dense 
-              way to communicate. It is at least as efficient as static design in communicating information.
+              way to communicate. At the very least it deserves an equal place alongside the old stalwarts of static design,
+              like color and typography. And I'd argue that it actually might offer an even more efficient way to 
+              communicate information to people.
             </Notes>
           </Slide>
 
@@ -304,7 +313,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[link style looks bad]]</Annot>
             <ListHeading>Problematic examples</ListHeading>
             <List>
               <ListItem><LinkHeading href="../../assets/wired-uk.mp4">Wired.co.uk</LinkHeading></ListItem>
@@ -476,7 +484,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[[Port over progress bar demo]]</H>
+            <ProgressBarDemo />
             <Notes>
               Grad students at carnegie mellon university showed that progress bars feel like they fill 12% faster if they have 
               bands that animate against the direction of the bar. This operates off the same principle as riding on a train 
