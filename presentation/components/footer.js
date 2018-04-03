@@ -32,16 +32,25 @@ const SLink = styled('a')`
     color: ${pink};
   }
 `;
-const FooterLink = ({ children, href }) => (
+const FooterLink = ({ children, href, highlight }) => (
   <SHeading>
-    <SLink href={href} target="_blank" rel="noopener noreferrer">
+    <SLink
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        color: highlight ? pink : 'inherit',
+      }}
+    >
       {children}
     </SLink>
   </SHeading>
 );
+FooterLink.defaultProps = { highlight: false };
 FooterLink.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
+  highlight: PropTypes.bool,
 };
 
 function Footer({ showSocialPoiner }) {
@@ -51,15 +60,22 @@ function Footer({ showSocialPoiner }) {
       <FooterLink href="http://eli.wtf">
         Eli.wtf
       </FooterLink>
-      <FooterLink href="https://twitter.com/elifitch">
+      <FooterLink href="https://twitter.com/elifitch" highlight={showSocialPoiner}>
         @elifitch
-        <Pointer
-          position={{
-            top: '0%',
-            left: '0%',
-          }}
-          rotation={-230}
-        />
+        {showSocialPoiner && (
+          <Pointer
+            position={{
+              top: '0%',
+              left: '0%',
+            }}
+            translation={{
+              x: '-80%',
+              y: '-80%',
+            }}
+            rotation={-230}
+            animated
+          />
+        )}
       </FooterLink>
     </SFooter>
   );

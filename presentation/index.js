@@ -25,6 +25,7 @@ import LinkHeading from './components/link-heading';
 import Pic from './components/pic';
 import Vid from './components/vid';
 import Footer from './components/footer';
+import LoginModal from './components/login-modal';
 import LogoRowSlide from './slides/logo-row-slide';
 import EarthPointerSlide from './slides/earth-pointer-slide';
 import DorsalVentralBrain from './slides/dorsal-ventral-brain';
@@ -74,7 +75,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <H>Hi, I'm Eli</H>
-            <Fade><Hsmall>I like to make weird stuff on the internet</Hsmall></Fade>
+            <Fade><Hsmall>I like to make things on the internet</Hsmall></Fade>
             <CallFn fn={this.showSocialPoiner} />
             <CallFn fn={this.hideSocialPoiner} />
           </Slide>
@@ -404,7 +405,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[[animation of a hamgurger menu]]</H>
+            <Vid src="amazon-hamburger-menu.mp4" />
             <Notes>
 
             </Notes>
@@ -420,7 +421,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[[animation of modal dropping from above (opacity and scale)]]</H>
+            <LoginModal />
             <Notes>
               
             </Notes>
@@ -491,7 +492,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Vid src="slack-loading.mp4" controls autoplay={false} />
+            <Vid src="slack-loading.mp4" controls autoPlay={false} />
             <Notes>
               Slack conducts a masterclass here, moving from loading anim to loading anim to keep you engaged, 
               and make the loading process seem like it's faster than it actually  is.

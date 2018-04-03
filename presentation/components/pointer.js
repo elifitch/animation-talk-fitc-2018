@@ -1,12 +1,13 @@
+/* eslint-disable global-require */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'react-emotion';
-import Pic from './pic';
 
 class Pointer extends React.Component {
   render() {
     const {
       position,
+      translation,
       rotation,
       size,
       animated,
@@ -17,6 +18,7 @@ class Pointer extends React.Component {
       top: position.top,
       left: position.left,
       width: `${size}`,
+      transform: `translate(${translation.x}, ${translation.y})`,
     }));
     const RotationWrapper = styled('div')(() => ({
       transform: `rotate(${rotation}deg)`,
@@ -51,6 +53,7 @@ class Pointer extends React.Component {
 }
 
 Pointer.defaultProps = {
+  translation: { x: '0%', y: '0%' },
   animated: false,
   size: '200px',
   animationDelay: 0,
@@ -58,6 +61,7 @@ Pointer.defaultProps = {
 
 Pointer.propTypes = {
   position: PropTypes.shape({ top: PropTypes.string, left: PropTypes.string }).isRequired,
+  translation: PropTypes.shape({ x: PropTypes.string, y: PropTypes.string }),
   rotation: PropTypes.number.isRequired,
   size: PropTypes.string,
   animated: PropTypes.bool,

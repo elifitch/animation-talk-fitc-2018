@@ -40,13 +40,13 @@ Vid.propTypes = {
   src: PropTypes.string.isRequired,
   loop: PropTypes.bool,
   muted: PropTypes.bool,
-  autoplay: PropTypes.bool,
+  autoPlay: PropTypes.bool,
 };
 
 Vid.defaultProps = {
   loop: true,
   muted: true,
-  autoplay: true,
+  autoPlay: true,
 };
 
 export default Vid;
