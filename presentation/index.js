@@ -14,7 +14,7 @@ import {
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce, Fade, CallFn } from './components/anim';
+import { Bounce, Fade, CallFn, DropIn } from './components/anim';
 import theme, { contentWidth } from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
@@ -421,7 +421,9 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <LoginModal />
+            <DropIn>
+              <LoginModal />
+            </DropIn>
             <Notes>
               
             </Notes>
@@ -436,7 +438,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[[video of ios settings screen-to-screen animation]]</H>
+            <Vid src="ios-settings.mp4" portrait />
             <Notes>
               This animation from pane to pane makes it clear where in the flow you are, what direction you're going and 
               cues gesture interactions for how to go back.
@@ -509,16 +511,16 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <ListHeading>What we talk about slide</ListHeading>
+            <ListHeading>Influencing emotion</ListHeading>
             <List>
-              <ListItem>How humans ascribe meaning to motion</ListItem>
-              <ListItem>The building blocks of character</ListItem>
-              <ListItem>How to design animations to evoke a desired feeling</ListItem>
+              <Fade><ListItem>How humans ascribe meaning to motion</ListItem></Fade>
+              <Fade><ListItem>The building blocks of character</ListItem></Fade>
+              <Fade><ListItem>How to design animations to evoke a desired feeling</ListItem></Fade>
             </List>
           </Slide>
 
           <Slide>
-            <SH>Meaning from motion</SH>
+            <SSH>Meaning from motion</SSH>
             <Notes>
               
             </Notes>
@@ -581,7 +583,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <SH>The building blocks<br />of character</SH>
+            <SSH>The building blocks<br />of character</SSH>
             <Notes>
               It's comparatively easy to give users an affordance by hinting at an action, or to help users build spacial 
               relationships by animating view transitions. If we're going to influence user's emotional responses, we need 

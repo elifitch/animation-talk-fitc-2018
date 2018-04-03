@@ -46,7 +46,7 @@ class LoginModal extends React.Component {
     `;
     return (
       <ModalContainer>
-        <ModalBody>
+        <ModalBody data-drop-in-target id="foo">
           <Spacer>
             <Heading size={5}>Sign in</Heading>
           </Spacer>

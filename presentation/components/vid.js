@@ -27,7 +27,7 @@ class Vid extends React.Component {
         style={{
           minWidth: '40vw',
           maxWidth: '80vw',
-          maxHeight: '620px',
+          maxHeight: this.props.portrait ? '820px' : '620px',
         }}
         src={source}
         ref={this.assignRef}
@@ -41,12 +41,14 @@ Vid.propTypes = {
   loop: PropTypes.bool,
   muted: PropTypes.bool,
   autoPlay: PropTypes.bool,
+  portrait: PropTypes.bool,
 };
 
 Vid.defaultProps = {
   loop: true,
   muted: true,
   autoPlay: true,
+  portrait: false,
 };
 
 export default Vid;
