@@ -30,6 +30,7 @@
     "react-style-proptype": "^3.2.1",
     "spectacle": "elifitch/spectacle#flexible-animations",
     "spectacle-renderer": "^0.0.3",
+    "uuid": "^3.2.1",
     "victory-core": "^21.0.4"
   },
   "devDependencies": {

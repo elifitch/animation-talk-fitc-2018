@@ -65,6 +65,8 @@
     "VelocityTracker": false,
     "CSSPlugin": false,
     "ThrowPropsPlugin": false,
-    "BezierPlugin": false
+    "BezierPlugin": false,
+
+    "CustomBounce": false
   }
 }

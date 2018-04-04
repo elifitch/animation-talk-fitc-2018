@@ -22,6 +22,7 @@ export const purple = '#9636f5';
 export const whitesmoke = '#fafafa';
 export const nearBlack = '#333333';
 export const translucent = 'rgba(0, 0, 80, 0.2)';
+export const islBlue = '#43d8f8';
 
 export const contentWidth = 1400;
 

@@ -14,7 +14,7 @@ import {
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce, Fade, CallFn, DropIn } from './components/anim';
+import { Bounce, Fade, CallFn, DropIn, FromLeft } from './components/anim';
 import theme, { contentWidth } from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
@@ -30,6 +30,7 @@ import LogoRowSlide from './slides/logo-row-slide';
 import EarthPointerSlide from './slides/earth-pointer-slide';
 import DorsalVentralBrain from './slides/dorsal-ventral-brain';
 import ProgressBarDemo from './slides/progress-bar-demo';
+import BouncingBall from './components/bouncing-ball';
 
 require('normalize.css');
 
@@ -600,14 +601,15 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H><Bounce>Timing</Bounce> &amp; Spacing</H>
+            <H> <FromLeft>Timing</FromLeft> &amp; <Bounce>Spacing</Bounce></H>
             <Notes>
               Timing and spacing work together to form the character of an animation.
             </Notes>
           </Slide>
 
           <Slide>
-            <H>[[linear ease bouncing ball animation]]</H>
+            <BouncingBall />
+            <Cite>linear</Cite>
             <Notes>
               Timing forms the structure of an animation. In CSS terms, this is the "duration" of an animation. 
               Illustrating what effect timing alone has on a classic bouncing ball animation, you can probably see 
@@ -616,7 +618,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[[bouncy ease bouncing ball animation]]</H>
+            <BouncingBall ease={() => ({ primary: 'Power4.easeInOut' })} />
+            <Cite>ease out</Cite>
             <Notes>
               Now we're getting somewhere! If timing is the structure of an animation, spacing is where we get 
               most of the style. It's kind of like the CSS to timing's HTML. It's called spacing, because it 
@@ -626,13 +629,38 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[[component playground? bouncy ease change to a heavy bounce]]</H>
+            <BouncingBall ease={() => ({ primary: 'Bounce.easeOut' })} />
+            <Cite>bounce</Cite>
+            <Notes>
+              With just our spacing, our easing curve, we can make the ball appear to bounce, and really influence
+              its character
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <BouncingBall 
+              ease={({ CustomBounce }) => {
+                const primaryEaseId = 'myBounce';
+                const squashEaseId = 'myBounce-squash';
+                CustomBounce.create(primaryEaseId, { strength: 0.3, squash: 0, squashID: squashEaseId });
+                return { primary: primaryEaseId, secondary: squashEaseId };
+              }}
+            />
+            <Cite>hard bounce</Cite>
             <Notes>
               See how much difference a simple change in spacing, or easing, can bring? When before we had something 
               like a ping pong ball we now have something heavy and weighty. The entire character is different. This 
               is a simple, classic example, but it's classic because it's an elegant way to show just how much impact 
               spacing can have on an animation. We can take this and extrapolate it way out to create all sorts of 
               sensations from our animations.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Two halves of the same coin</H>
+            <Notes>
+              Timing and spacing work together to form the core of the character you want to create, and indeed the feeling
+              you want to evoke.
             </Notes>
           </Slide>
           
@@ -642,11 +670,23 @@ export default class Presentation extends React.Component {
             <Notes>
               If we're going to create animations that evoke the desired emotions from our users, that exhibit the right character, 
               traditional animation principles can be extremely useful. Disney's 12 principles are the gold standard, but many 
-              of them don't really make sense on the web. So it's gonna be more like 6? 5? And more like guidelines than principles 
-              and I guess if we're changing so much they're really from me. SO here we go Eli's 5 guidelines?  We'll walk through them 
+              of them don't really make sense on the web. So it's gonna be more like 5. 4? And more like guidelines than principles 
+              and I guess if we're changing so much they're really from me. SO here we go Eli's 4 guidelines?  We'll walk through them 
               with examples that show how they can make a brand feel more fun and energetic, evoking a feeling of joy in users; and we'll 
               also show how they can make a brand feel more serious and somber, evoking a feeling of trust in users.
             </Notes>
+          </Slide>
+          <Slide>
+            <SSH>Disney's 5 Principles</SSH>
+          </Slide>
+          <Slide>
+            <SSH>Disney's 4??? Principles</SSH>
+          </Slide>
+          <Slide>
+            <SSH>Disney's 4 Guidelines?</SSH>
+          </Slide>
+          <Slide>
+            <SSH>Sure, lets go with that</SSH>
           </Slide>
 
           <Slide>
