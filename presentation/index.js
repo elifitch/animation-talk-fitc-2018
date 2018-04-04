@@ -22,6 +22,9 @@ import {
   FromLeft,
   Anticipation,
   FollowThrough,
+  Letterwave,
+  Squash,
+  Stretch,
 } from './components/anim/index';
 import theme, { contentWidth } from './theme';
 import Title from './components/title';
@@ -698,7 +701,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>animate the text to illustrate your point</Annot>
             <H><Anticipation>Anticipation</Anticipation> &amp; <FollowThrough>Follow through</FollowThrough></H>
             <Notes>
               Anticipation is a movement against the main animation in--dot dot dot--anticipation of the main animation. 
@@ -717,10 +719,9 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[make an animation here when switching slides the characters each have a delay and the floop into place like dropping cards on a table]]</Annot>
-            <H>Secondary action</H>
+            <H><Letterwave>Secondary action</Letterwave></H>
             <Notes>
-              Secondary action is a way to 
+              Secondary action is a way to [[COMPLETE]]
             </Notes>
           </Slide>
 
@@ -736,7 +737,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Squash &amp; Stretch</H>
+            <H><Squash>Squash</Squash> &amp; <Stretch>Stretch</Stretch></H>
             <Notes>
               As objects move through air, they deform a little bit. This elongation along the axis of motion also 
               helps to visually give the appearance of a smoother animation (much as blurring does). Used in small doeses 

@@ -8,8 +8,11 @@ import DropIn from './drop-in';
 import FromLeft from './from-left';
 import Anticipation from './anticipation';
 import FollowThrough from './follow-through';
+import Squash from './squash';
+import Stretch from './stretch';
 // import GsapExample from './gsap-example';
 // import DirectAnimExample from './direct-anim-example';
+// import PowerTweenExample from './power-tween-example';
 
 export {
   Bounce,
@@ -21,7 +24,10 @@ export {
   FromLeft,
   Anticipation,
   FollowThrough,
+  Squash,
+  Stretch,
   //
   // GsapExample,
   // DirectAnimExample,
+  // PowerTweenExample,
 };

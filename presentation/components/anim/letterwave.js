@@ -11,22 +11,8 @@ function Letterwave(props) {
           {
             method: 'staggerFrom',
             target: child => child.querySelectorAll('.split'),
-            duration: 1.0,
-            args: [{ y: -100, ease: Elastic.easeOut.config(1, 0.6) }, 0.05],
-          },
-          {
-            method: 'staggerTo',
-            target: child => child.querySelectorAll('.split'),
-            duration: 1.0,
-            args: [{ y: 200, ease: Elastic.easeOut.config(1, 0.6) }, 0.05],
-          },
-        ],
-        [
-          {
-            method: 'staggerTo',
-            target: child => child.querySelectorAll('.split'),
-            duration: 1.0,
-            args: [{ y: 300, ease: Elastic.easeOut.config(1, 0.6) }, 0.05],
+            duration: 2.0,
+            args: [{ y: '-40%', opacity: 0, ease: Elastic.easeOut.config(1, 0.2) }, 0.05],
           },
         ],
       ]}

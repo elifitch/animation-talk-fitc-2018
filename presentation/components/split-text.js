@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import IB from './primitives/inline-block';
 
 function SplitText(props) {
-  const splitChildren = props.children.split('').map((c, i) => <IB className="split" key={`split-el-${i}`}>{c}</IB>);
+  const splitChildren = props.children.split('').map((c, i) => (
+    <IB className="split" key={`split-el-${i}`}>{c === ' ' ? '\u00A0' : c}</IB>
+  ));
   return (
     <div {...props}>{splitChildren}</div>
   );
