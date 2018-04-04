@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Fade } from '../components/anim';
+import { Fade } from '../components/anim/index';
 import Pic from '../components/pic';
 
 const LogoImg = ({ src }) => (

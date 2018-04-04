@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import { connect } from 'react-redux';
+import styled from 'react-emotion';
 /* no idea why this is a problem here */
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved */
 import findKey from 'lodash.findKey';
@@ -12,6 +13,10 @@ import findKey from 'lodash.findKey';
 import TweenMax from 'gsap';
 /* eslint-enable no-unused-vars */
 import TimelineMax from 'gsap/TimelineMax';
+
+const Container = styled('div')(props => ({
+  display: props.inline ? 'inline-block' : 'block',
+}));
 
 class PowerTween extends Component {
   constructor() {
@@ -141,10 +146,11 @@ class PowerTween extends Component {
   render() {
     const {
       children,
+      inline,
     } = this.props;
     const child = React.Children.only(children);
     return (
-      <div>
+      <Container inline={inline}>
         {
           React.cloneElement(child, {
             className: `fragment ${child.props.className}`.trim(),
@@ -154,7 +160,7 @@ class PowerTween extends Component {
             },
           })
         }
-      </div>
+      </Container>
     );
   }
 }
@@ -162,6 +168,7 @@ class PowerTween extends Component {
 PowerTween.defaultProps = {
   style: {},
   order: 0,
+  inline: false,
 };
 
 PowerTween.propTypes = {
@@ -174,6 +181,9 @@ PowerTween.propTypes = {
   }))).isRequired,
   style: PropTypes.object,
   order: PropTypes.number,
+  /* eslint-disable react/no-unused-prop-types */
+  inline: PropTypes.bool,
+  /* eslint-enable react/no-unused-prop-types */
   // From spectacle
   route: PropTypes.shape({
     slide: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),

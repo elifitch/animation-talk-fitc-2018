@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fade } from '../components/anim';
+import { Fade } from '../components/anim/index';
 import Pic from '../components/pic';
 import Pointer from '../components/pointer';
 

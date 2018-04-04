@@ -14,7 +14,15 @@ import {
   // Text,
   Notes,
 } from 'spectacle';
-import { Bounce, Fade, CallFn, DropIn, FromLeft } from './components/anim';
+import {
+  Bounce,
+  Fade,
+  CallFn,
+  DropIn,
+  FromLeft,
+  Anticipation,
+  FollowThrough,
+} from './components/anim/index';
 import theme, { contentWidth } from './theme';
 import Title from './components/title';
 import SectionHeading from './components/section-heading';
@@ -691,7 +699,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Annot>animate the text to illustrate your point</Annot>
-            <H>Anticipation &amp; Follow through</H>
+            <H><Anticipation>Anticipation</Anticipation> &amp; <FollowThrough>Follow through</FollowThrough></H>
             <Notes>
               Anticipation is a movement against the main animation in--dot dot dot--anticipation of the main animation. 
               Follow through is the opposite, an animation that continues through the final resting place 
