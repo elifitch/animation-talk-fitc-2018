@@ -17,6 +17,11 @@ require('../assets/fonts/pinopolis.woff');
 require('../assets/fonts/pinopolis.ttf');
 require('../assets/fonts/pinopolis.svg');
 
+require('../assets/fonts/papyrus.eot');
+require('../assets/fonts/papyrus.woff');
+require('../assets/fonts/papyrus.ttf');
+require('../assets/fonts/papyrus.svg');
+
 export const pink = '#ff4cff';
 export const purple = '#9636f5';
 export const whitesmoke = '#fafafa';
@@ -62,6 +67,18 @@ injectGlobal`
     font-style:   normal;
     font-weight:  400;
   }
+
+  @font-face {
+    font-family: 'papyrus';
+    src: url('fonts/papyrus.eot'); /* IE9 Compat Modes */
+    src: url('fonts/papyrus.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('fonts/papyrus.woff') format('woff'), /* Modern Browsers */
+        url('fonts/papyrus.ttf')  format('truetype'), /* Safari, Android, iOS */
+        url('fonts/papyrus.svg#a57fa4c3938d69d0579506f0af9fc113') format('svg'); /* Legacy iOS */
+        
+    font-style:   normal;
+    font-weight:  400;
+  }
 `;
 
 let mutableTheme = createTheme({
@@ -73,6 +90,7 @@ let mutableTheme = createTheme({
 }, {
   primary: 'brandon grotesque',
   secondary: 'pinopolis',
+  papyrus: 'papyrus',
 });
 
 mutableTheme.extendComponent = (pathToComponent, style) => {

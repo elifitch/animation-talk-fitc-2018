@@ -30,6 +30,8 @@ import {
   FromTopFollowThroughFun,
   FromTopFollowThroughSerious,
   FromTopSecondaryAction,
+  BrandEnergetic,
+  BrandCalm,
 } from './components/anim/index';
 import theme, { contentWidth } from './theme';
 import Title from './components/title';
@@ -47,6 +49,7 @@ import EarthPointerSlide from './slides/earth-pointer-slide';
 import DorsalVentralBrain from './slides/dorsal-ventral-brain';
 import ProgressBarDemo from './slides/progress-bar-demo';
 import BouncingBall from './components/bouncing-ball';
+import PapyrusSlide from './slides/papyrus-slide';
 
 require('normalize.css');
 
@@ -818,16 +821,14 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[restrained in and out]]</Annot>
-            <H>Decisive or self assured</H>
+            <FromTop><H>Decisive or self assured</H></FromTop>
             <Notes>
               Restrained ease-in-out is the way to go. They feel balanced, stable, physical, and weighty without being heavy.
             </Notes>
           </Slide>
 
           <Slide>
-            <Annot>[[ease in out high power]]</Annot>
-            <H>Energetic or lively</H>
+            <BrandEnergetic><H>Energetic or lively</H></BrandEnergetic>
             <Notes>
               Use animations with more springiness, use more generous overshoots/followthroughs. Soft overshoots feel friendly 
               and energetic, sharp, quick overshoots though can show frenetic urgency. Be careful.
@@ -835,8 +836,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[smaller movements, opacity and blur]]</Annot>
-            <H>Calm, reserved or stable</H>
+            <BrandCalm><H>Calm, reserved or stable</H></BrandCalm>
             <Notes>
               Use smaller movements, less distance, shorter durations. Maybe choose to animate color, opacity,
               blur instead of using motion at all.
@@ -845,7 +845,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Annot>[[big boing squash stretch]]</Annot>
-            <H>Playful or outgoing</H>
+            <H><Stretch fromBottom>Playful</Stretch> or <Letterwave>outgoing</Letterwave></H>
             <Notes>
               Use more squash and stretch to make animations feel springy and elastic. Animations that look like they make 
               the sound "boinngngngngngngng". Again, a little goes a long way.
@@ -853,7 +853,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[##### Brand level stuff]]</Annot>
             <SSH>Finding the right character</SSH>
             <Notes>
               Everything we've covered so far on how to evoke the right feelings will be meaningless if you can't find what 
@@ -903,6 +902,17 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <div><Bounce><Hsmall>Boingggggggg</Hsmall></Bounce></div>
+            <div><Bounce><Hsmall>Fwoosh</Hsmall></Bounce></div>
+            <div><Bounce><Hsmall>Shwumpf</Hsmall></Bounce></div>
+            <div><Bounce><Hsmall>Kerplunk</Hsmall></Bounce></div>
+            <div><Bounce><Hsmall>Thud</Hsmall></Bounce></div>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
             <H>Physical objects help</H>
             <Notes>
               I find keeping around an object or objects that represent the brand can be extremely helpful. A few years ago 
@@ -927,9 +937,17 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[a wrap up slide for the emotion section]]</Annot>
+            <H>No brand is "too serious"</H>
             <Notes>
               
+            </Notes>
+          </Slide>
+
+          <Slide>
+            {/* <H textFont="papyrus">No brand is "too serious"</H> */}
+            <PapyrusSlide />
+            <Notes>
+
             </Notes>
           </Slide>
 
@@ -951,8 +969,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[opportunity for graphic?]]</Annot>
-            <H>[[Moodboarding]]</H>
+            <Pic src="pinterest.jpg" />
             <Notes>
               If you use moodboards in your design process, collect animation inspiration as well. If this is the point 
               at which you familiarize yourself with a brand, start developing ideas of animation here as well.
@@ -960,8 +977,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[an image of a storyboard would be better here]]</Annot>
-            <H>Storyboards as wireframes</H>
+            <Pic src="storyboard.png" />
             <Notes>
               During wireframes, storyboards are a good complement. You don't need to do it for every animation, but for 
               important ones its a good idea.  They illustrate interstitial states and fill the gaps between wireframe 
@@ -970,8 +986,22 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[maybe proto vs final for f8?]]</Annot>
-            <H>Prototypes are king</H>
+            <Vid
+              src="f8-proto.mp4"
+              style={{
+                minWidth: '40vw',
+                maxWidth: '80vw',
+                maxHeight: '400px',
+              }}
+            />
+            <Vid
+              src="fb-trends-in-use-exp.mp4"
+              style={{
+                minWidth: '40vw',
+                maxWidth: '80vw',
+                maxHeight: '400px',
+              }}
+            />
             <Notes>
               Once we enter the visual design stage, things become a little more variable. I usually make prototypes right 
               in code that illustrate animations and accompany visual designs, but I've seen framer.js, aftereffects, and 
@@ -980,6 +1010,13 @@ export default class Presentation extends React.Component {
               sweet gooey reveal of a logo, but I couldn't adequately execute on combining masks and gooey filters to make 
               this happen. That gooey reveal ended up being exported as a gif, which was enormous and bad for performance, 
               because once folks fell in love with the animation, they couldn't take nope for an answer.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Pic src="isl-milk-logo.gif" />
+            <Notes>
+              
             </Notes>
           </Slide>
 
@@ -1019,7 +1056,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[1 slide per section, summarizing]]</Annot>
+            <H>Don't let em get ya down</H>
             <Notes>
               
             </Notes>

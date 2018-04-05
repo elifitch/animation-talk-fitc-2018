@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PowerTween from '../power-tween';
 import SplitText from '../split-text';
+import IB from '../primitives/inline-block';
 
 function Letterwave(props) {
   return (
     <PowerTween
+      inline
       anims={[
         [
           {
@@ -17,11 +19,11 @@ function Letterwave(props) {
         ],
       ]}
     >
-      <div>
+      <IB>
         <SplitText>
           {props.children}
         </SplitText>
-      </div>
+      </IB>
     </PowerTween>
   );
 }

@@ -23,12 +23,12 @@ class Vid extends React.Component {
     const source = require(`../../assets/${this.props.src}`);
     return (
       <video 
-        {...this.props}
         style={{
           minWidth: '40vw',
           maxWidth: '80vw',
           maxHeight: this.props.portrait ? '820px' : '620px',
         }}
+        {...this.props}
         src={source}
         ref={this.assignRef}
       />

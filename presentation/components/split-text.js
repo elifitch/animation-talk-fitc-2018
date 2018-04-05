@@ -8,7 +8,7 @@ function SplitText(props) {
     <IB className="split" key={`split-el-${i}`}>{c === ' ' ? '\u00A0' : c}</IB>
   ));
   return (
-    <div {...props}>{splitChildren}</div>
+    <IB {...props}>{splitChildren}</IB>
   );
 }
 

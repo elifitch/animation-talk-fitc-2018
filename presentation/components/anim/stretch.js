@@ -14,7 +14,7 @@ function Stretch(props) {
             target: child => child,
             duration: 1.0,
             args: [{
-              scaleX: 0.8, scaleY: 1.4, y: '12%', ease: Power2.easeOut,
+              scaleX: 0.8, scaleY: 1.4, y: props.fromBottom ? '-12%' : '12%', ease: Power2.easeOut,
             }],
           },
           {
@@ -34,6 +34,10 @@ function Stretch(props) {
 }
 Stretch.propTypes = {
   children: PropTypes.node.isRequired,
+  fromBottom: PropTypes.bool,
+};
+Stretch.defaultProps = {
+  fromBottom: false,
 };
 
 export default Stretch;
