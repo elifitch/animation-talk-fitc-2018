@@ -96,9 +96,11 @@ class PowerTween extends Component {
   setInitialTweenState(target) {
     this.props.anims.forEach((segment, segmentIndex) => {
       const isLastSemgment = segmentIndex === this.props.anims.length - 1;
-
       segment.forEach((tween) => {
-        this.tl[tween.method](tween.target(target), tween.duration, ...tween.args);
+        
+        setTimeout(() => {
+          this.tl[tween.method](tween.target(target), tween.duration, ...tween.args);
+        }, 0);
       });
 
       this.tl.addLabel(`segment-${segmentIndex}`);

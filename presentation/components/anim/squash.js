@@ -14,7 +14,7 @@ function Squash(props) {
             target: child => child,
             duration: 1.0,
             args: [{
-              scaleX: 1.25, scaleY: 0.75, y: '8%', ease: Power4.easeOut,
+              scaleX: 1.25, scaleY: 0.75, y: '8%', ease: Power2.easeOut,
             }],
           },
           {

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 import { Heading } from 'spectacle';
 
-class LoginModal extends React.Component {
+class LoginModal extends React.PureComponent {
   render() {
     const ModalContainer = styled('div')`
       display: flex;
@@ -44,28 +44,61 @@ class LoginModal extends React.Component {
     const Spacer = styled('div')`
       margin-bottom: 1em;
     `;
+    console.log('render')
     return (
       <ModalContainer>
-        <ModalBody data-drop-in-target id="foo">
-          <Spacer>
+        <ModalBody data-drop-in-target>
+          <Spacer data-stagger-target>
             <Heading size={5}>Sign in</Heading>
           </Spacer>
-          <Spacer>
+          <Spacer data-stagger-target>
             <ModalLabel>Username</ModalLabel>
             <ModalInput />
           </Spacer>
-          <Spacer>
+          <Spacer data-stagger-target>
             <ModalLabel>Password</ModalLabel>
             <ModalInput type="password" />
           </Spacer>
-          <Spacer>
+          <Spacer data-stagger-target>
             <ModalLabel>MFA Code</ModalLabel>
             <ModalInput />
           </Spacer>
-          <ModalButton>Sign in</ModalButton>
+          <ModalButton data-stagger-target>Sign in</ModalButton>
         </ModalBody>
       </ModalContainer>
-    )
+    );
+    // return (
+    //   <ModalContainer>
+    //     <ModalBody data-drop-in-target>
+    //       <div data-stagger-target className="js-stagger-target">
+    //         <Spacer>
+    //           <Heading size={5}>Sign in</Heading>
+    //         </Spacer>
+    //       </div>
+    //       <div data-stagger-target className="js-stagger-target">
+    //         <Spacer>
+    //           <ModalLabel>Username</ModalLabel>
+    //           <ModalInput />
+    //         </Spacer>
+    //       </div>
+    //       <div data-stagger-target className="js-stagger-target">
+    //         <Spacer>
+    //           <ModalLabel>Password</ModalLabel>
+    //           <ModalInput type="password" />
+    //         </Spacer>
+    //       </div>
+    //       <div data-stagger-target className="js-stagger-target">
+    //         <Spacer>
+    //           <ModalLabel>MFA Code</ModalLabel>
+    //           <ModalInput />
+    //         </Spacer>
+    //       </div>
+    //       <div data-stagger-target className="js-stagger-target">
+    //         <ModalButton>Sign in</ModalButton>
+    //       </div>
+    //     </ModalBody>
+    //   </ModalContainer>
+    // );
   }
 }
 

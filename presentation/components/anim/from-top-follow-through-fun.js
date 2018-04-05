@@ -3,27 +3,28 @@ import PropTypes from 'prop-types';
 import PowerTween from '../power-tween';
 import IB from '../primitives/inline-block';
 
-function Stretch(props) {
+function FromTopFollowThroughFun(props) {
+  const dur = 1.5;
   return (
     <PowerTween
       inline
       anims={[
         [
           {
-            method: 'to',
+            method: 'from',
             target: child => child,
-            duration: 1.0,
+            duration: dur,
             args: [{
-              scaleX: 0.8, scaleY: 1.4, y: '12%', ease: Power2.easeOut,
+              y: '-20%', ease: Elastic.easeOut.config(1, 0.5),
             }],
           },
           {
-            method: 'to',
+            method: 'from',
             target: child => child,
-            duration: 2.0,
+            duration: 0.6,
             args: [{
-              scaleX: 1.0, scaleY: 1.0, y: '0%', ease: Elastic.easeOut.config(1, 0.2),
-            }],
+              opacity: 0, ease: Power2.easeOut,
+            }, `-=${dur}`],
           },
         ],
       ]}
@@ -32,8 +33,8 @@ function Stretch(props) {
     </PowerTween>
   );
 }
-Stretch.propTypes = {
+FromTopFollowThroughFun.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Stretch;
+export default FromTopFollowThroughFun;

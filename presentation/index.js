@@ -20,11 +20,16 @@ import {
   CallFn,
   DropIn,
   FromLeft,
+  FromTop,
   Anticipation,
   FollowThrough,
   Letterwave,
   Squash,
   Stretch,
+  FromTopSquashStretch,
+  FromTopFollowThroughFun,
+  FromTopFollowThroughSerious,
+  FromTopSecondaryAction,
 } from './components/anim/index';
 import theme, { contentWidth } from './theme';
 import Title from './components/title';
@@ -709,11 +714,34 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[side by side animations of a modal entering and leaving, one more somber and one more serious, maybe have one fade and one full opacity at a time to direct attention]]</Annot>
+            <FromTop><LoginModal /></FromTop>
+            <Cite>No follow through</Cite>
             <Notes>
               Here we have two animations, one more playful and one more serious, that use anticipation and followthrough. 
               The playful one uses anticipation n followthrough to show effervesence and joie de vivre. It can be a really 
               effective way to show life and "boucniness". But here we also are using anticipation and followthrough, but 
+              in this case it shows weight and solidity, traits that more serious brands like to fancy themselves as having.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <FromTopFollowThroughFun><LoginModal /></FromTopFollowThroughFun>
+            <Cite>Energetic follow through</Cite>
+            <Notes>
+              Here we have two animations, one more playful and one more serious, that use anticipation and followthrough.
+              The playful one uses anticipation n followthrough to show effervesence and joie de vivre. It can be a really
+              effective way to show life and "boucniness". But here we also are using anticipation and followthrough, but
+              in this case it shows weight and solidity, traits that more serious brands like to fancy themselves as having.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <FromTopFollowThroughSerious><LoginModal /></FromTopFollowThroughSerious>
+            <Cite>Serious follow through</Cite>
+            <Notes>
+              Here we have two animations, one more playful and one more serious, that use anticipation and followthrough.
+              The playful one uses anticipation n followthrough to show effervesence and joie de vivre. It can be a really
+              effective way to show life and "boucniness". But here we also are using anticipation and followthrough, but
               in this case it shows weight and solidity, traits that more serious brands like to fancy themselves as having.
             </Notes>
           </Slide>
@@ -726,7 +754,19 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[show medium clap animation, show inputs in a modal dropping in sliding into place in sequence]]</Annot>
+            <Pic src="medium-clap.gif" />
+            <Notes>
+              These are both uses of secondary action. The first is a way to give an animation extra pop, kind of adding a
+              flourish to something to make an action feel special and rewarding. This is a big part of animation for loot
+              boxes in video games, and gambling displays. Again I can't stress enough the importance of ethics here.
+              The second is inputs cascading into place with their parent. It's a way to make an animation feel more natural
+              and grounded, ideal for more serious brands.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <FromTopSecondaryAction><LoginModal /></FromTopSecondaryAction>
+            <Cite>Secondary action</Cite>
             <Notes>
               These are both uses of secondary action. The first is a way to give an animation extra pop, kind of adding a 
               flourish to something to make an action feel special and rewarding. This is a big part of animation for loot
@@ -748,7 +788,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[show modal coming in without SS and then with SS]]</Annot>
+            <FromTop><LoginModal /></FromTop>
+            <Cite>Normal ease</Cite>
             <Notes>
               See how this modal on the right enters, and it feels just that much more cheeky and spirited? People deride 
               animation as only serving this purpose, but even serving the purpose of making people feel happy while using 
@@ -758,7 +799,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[[show modal coming in without SS and then with SS]]</H>
+            <FromTopSquashStretch><LoginModal /></FromTopSquashStretch>
+            <Cite>Squash and stretch</Cite>
             <Notes>
               See how this modal on the right enters, and it feels just that much more cheeky and spirited? People deride
               animation as only serving this purpose, but even serving the purpose of making people feel happy while using
@@ -776,7 +818,15 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[animate the words]]</Annot>
+            <Annot>[[restrained in and out]]</Annot>
+            <H>Decisive or self assured</H>
+            <Notes>
+              Restrained ease-in-out is the way to go. They feel balanced, stable, physical, and weighty without being heavy.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[ease in out high power]]</Annot>
             <H>Energetic or lively</H>
             <Notes>
               Use animations with more springiness, use more generous overshoots/followthroughs. Soft overshoots feel friendly 
@@ -785,28 +835,20 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[animate the words]]</Annot>
+            <Annot>[[smaller movements, opacity and blur]]</Annot>
+            <H>Calm, reserved or stable</H>
+            <Notes>
+              Use smaller movements, less distance, shorter durations. Maybe choose to animate color, opacity,
+              blur instead of using motion at all.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Annot>[[big boing squash stretch]]</Annot>
             <H>Playful or outgoing</H>
             <Notes>
               Use more squash and stretch to make animations feel springy and elastic. Animations that look like they make 
               the sound "boinngngngngngngng". Again, a little goes a long way.
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <Annot>[[animate the words]]</Annot>
-            <H>Decisive or self assured</H>
-            <Notes>
-              Restrained ease-in-out is the way to go. They feel balanced, stable, physical, and weighty without being heavy. 
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <Annot>[[animate the words]]</Annot>
-            <H>Calm, reserved or stable</H>
-            <Notes>
-              Use smaller movements, less distance, shorter durations. Maybe choose to animate color, opacity, 
-              blur instead of using motion at all.
             </Notes>
           </Slide>
 
