@@ -32,6 +32,8 @@ import {
   FromTopSecondaryAction,
   BrandEnergetic,
   BrandCalm,
+  Rumble,
+  Stroke,
 } from './components/anim/index';
 import theme, { contentWidth } from './theme';
 import Title from './components/title';
@@ -50,6 +52,7 @@ import DorsalVentralBrain from './slides/dorsal-ventral-brain';
 import ProgressBarDemo from './slides/progress-bar-demo';
 import BouncingBall from './components/bouncing-ball';
 import PapyrusSlide from './slides/papyrus-slide';
+import ThankYouSlide from './slides/thank-you-slide';
 
 require('normalize.css');
 
@@ -146,8 +149,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Pic src="strong-emoji.png" />
-            <Annot>[[animate this with a shake for a little laugh]]</Annot>
+            <Rumble><Pic src="strong-emoji.png" /></Rumble>
             <Notes>
               Animation is actually incredibly powerful, expressive and useful design tool.
               It deserves to be taken seriously, at least as seriously as traditional design precepts.
@@ -199,7 +201,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>Needs to be graphics here, maybe break up this slide into more slides, it holds very important information, take your time on it</Annot>
+            {/* <Annot>Needs to be graphics here, maybe break up this slide into more slides, it holds very important information, take your time on it</Annot> */}
             <H>
               <div><Fade>What System</Fade></div>
               <div>vs.</div>
@@ -218,7 +220,6 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <DorsalVentralBrain />
-            <Annot>[[do pointer anims at the two streams]]</Annot>
             <Notes>
               The what system, also called the ventral system, takes the lower pathway through the brain, connecting more 
               directly to the parts of the brain that control things like long term memory, recognition, and perception 
@@ -664,6 +665,7 @@ export default class Presentation extends React.Component {
                 CustomBounce.create(primaryEaseId, { strength: 0.3, squash: 0, squashID: squashEaseId });
                 return { primary: primaryEaseId, secondary: squashEaseId };
               }}
+              duration={0.6}
             />
             <Cite>hard bounce</Cite>
             <Notes>
@@ -902,11 +904,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <div><Bounce><Hsmall>Boingggggggg</Hsmall></Bounce></div>
-            <div><Bounce><Hsmall>Fwoosh</Hsmall></Bounce></div>
-            <div><Bounce><Hsmall>Shwumpf</Hsmall></Bounce></div>
-            <div><Bounce><Hsmall>Kerplunk</Hsmall></Bounce></div>
-            <div><Bounce><Hsmall>Thud</Hsmall></Bounce></div>
+            <div><Bounce><Heading size={4}>Boingggggggg</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>Fwoosh</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>Shwumpf</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>Kerplunk</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>Thud</Heading></Bounce></div>
             <Notes>
 
             </Notes>
@@ -1021,7 +1023,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Collaboration is essential</H>
+            <H>Collaboration is <Stroke>essential</Stroke></H>
             <Notes>
               Collaboration is key. If you're on a team with a traditional split between front end and design, it's 
               important to work on animations together. Designers? Animation inclined FEDs often have a lot of great ideas, 
@@ -1058,8 +1060,42 @@ export default class Presentation extends React.Component {
           <Slide>
             <H>Don't let em get ya down</H>
             <Notes>
+              Animation is important and valid way of communicating that leans on decades of scientific research. Don't 
+              let somebody tell you that animation is a frivolity to be dismissed. That's no more true of animation
+              than it is of typefaces.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>With great power...</H>
+            <Notes>
+              With great power comes great responsibility. Don't use this for evil.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Animation shapes<br />space &amp; time</H>
+            <Notes>
               
             </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Always have your desired<br />character in mind</H>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H><Stroke>Nobody's</Stroke> gonna do this for you</H>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <ThankYouSlide />
           </Slide>
 
           <Slide>

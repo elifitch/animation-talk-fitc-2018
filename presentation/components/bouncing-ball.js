@@ -21,7 +21,7 @@ class BouncingBall extends React.Component {
       const ease = this.props.ease({ CustomBounce });
       this.tl.to(
         document.querySelectorAll(`[data-uuid="${this.state.targetId}"]`)[0],
-        1,
+        this.props.duration,
         { y: 700 - 100, delay: 0.3, ease: ease.primary },
       );
       this.tl.pause();
@@ -55,10 +55,12 @@ class BouncingBall extends React.Component {
 
 BouncingBall.defaultProps = {
   ease: () => ({ primary: 'Power0.easeNone' }),
+  duration: 1.0,
 };
 
 BouncingBall.propTypes = {
   ease: PropTypes.string,
+  duration: PropTypes.number,
 };
 
 export default BouncingBall;

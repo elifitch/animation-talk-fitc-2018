@@ -27,11 +27,9 @@ function BrandCalm(props) {
         [
           {
             method: 'to',
-            // target: child => child,
             target: () => tweenParams,
             duration: dur,
             args: [{
-              // opacity: 1, blur: 0, onUpdate: tweenTheThings, ease: Power2.easeOut,
               blur: 0, onUpdate: tweenBlur, ease: Power2.easeOut,
             }],
           },
@@ -43,14 +41,6 @@ function BrandCalm(props) {
               y: '-20%', opacity: 0, ease: Power2.easeOut,
             }, `-=${dur}`],
           },
-          // {
-          //   method: 'from',
-          //   target: child => child,
-          //   duration: dur,
-          //   args: [{
-          //     opacity: 0, ease: Power4.easeInOut,
-          //   }, `-=${dur * 1.2}`],
-          // },
         ],
       ]}
     >

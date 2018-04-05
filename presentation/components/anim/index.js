@@ -16,6 +16,7 @@ import FromTopSquashStretch from './from-top-squash-stretch';
 import FromTopFollowThroughFun from './from-top-follow-through-fun';
 import FromTopFollowThroughSerious from './from-top-follow-through-serious';
 import FromTopSecondaryAction from './from-top-secondary-action';
+import Rumble from './rumble';
 import BrandEnergetic from './brand-energetic';
 import BrandCalm from './brand-calm';
 // import GsapExample from './gsap-example';
@@ -40,6 +41,7 @@ export {
   FromTopFollowThroughFun,
   FromTopFollowThroughSerious,
   FromTopSecondaryAction,
+  Rumble,
   BrandEnergetic,
   BrandCalm,
   //

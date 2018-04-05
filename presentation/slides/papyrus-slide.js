@@ -35,7 +35,7 @@ class PapyrusSlide extends React.Component {
       `;
       return (
         <Fade transitionDuration={100} key={key}>
-          <Container size={1}>😱</Container>
+          <Container size={2}>😱</Container>
         </Fade>
       );
     });
