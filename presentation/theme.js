@@ -30,6 +30,7 @@ export const translucent = 'rgba(0, 0, 80, 0.2)';
 export const islBlue = '#43d8f8';
 
 export const contentWidth = 1400;
+export const h1FontSize = '14rem';
 
 export const underline = css`
   display: inline;
@@ -120,7 +121,7 @@ mutableTheme = mutableTheme
     fontFamily: 'pinopolis',
   })
   .extendComponent(['heading', 'h1'], {
-    fontSize: '14rem',
+    fontSize: h1FontSize,
   })
   .extendComponent(['heading', 'h2'], {
     fontSize: '10rem',
@@ -136,7 +137,5 @@ mutableTheme = mutableTheme
   });
 
 const theme = JSON.parse(JSON.stringify(mutableTheme));
-
-console.log(theme)
 
 export default theme;
