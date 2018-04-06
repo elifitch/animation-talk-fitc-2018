@@ -226,11 +226,20 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <DorsalVentralBrain />
+            <Notes>
+              The what system, also called the ventral system, takes the lower pathway through the brain, connecting more
+              directly to the parts of the brain that control things like long term memory, recognition, and perception
+              of small details. The where system, also called the dorsal system, is associated with the perception of
+              motion, spacial awareness, and muscle memory like catching a ball. It's also *much* faster to process.
+            </Notes>
+          </Slide>
+
+          <Slide>
             {/* <Annot>Needs to be graphics here, maybe break up this slide into more slides, it holds very important information, take your time on it</Annot> */}
             <H>
-              <div><Fade>What System</Fade></div>
-              <div>vs.</div>
-              <div><Fade>Where System</Fade></div>
+              <H size={3}>Ventral stream - <Fade>What System</Fade></H>
+              <H size={3}>Dorsal stream - <Fade>Where System</Fade></H>
             </H>
             <Notes>
               Margaret Livingstone, a professor of neurobiology at harvard university 
@@ -244,18 +253,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <DorsalVentralBrain />
-            <Notes>
-              The what system, also called the ventral system, takes the lower pathway through the brain, connecting more 
-              directly to the parts of the brain that control things like long term memory, recognition, and perception 
-              of small details. The where system, also called the dorsal system, is associated with the perception of 
-              motion, spacial awareness, and muscle memory like catching a ball. It's also *much* faster to process.
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <H size={3}>Static design - <Fade>What System</Fade></H>
-            <H size={3}>Animation - <Fade>Where System</Fade></H>
+            <H size={3}>What System - <Fade>Static design</Fade></H>
+            <H size={3}>Where System - <Fade>Animation</Fade></H>
             <Notes>
               Static design, like color, hierarchy, typography, mostly engages the what system. Animation engages a 
               whole different visual pathway, a whole other way that people communicate and process information.
@@ -284,7 +283,7 @@ export default class Presentation extends React.Component {
           </Slide> */}
 
           <Slide>
-            <H>Animation is the most efficient way to communicate</H>
+            <H>Animation is an efficient<br />way to communicate</H>
             <Notes>
               Because of this more "hardware" level connection with the human subconscious, animation is an incredibly information dense 
               way to communicate. At the very least it deserves an equal place alongside the old stalwarts of static design,
@@ -311,7 +310,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <SSH>>Ethical animation</SSH>
+            <SSH>Ethical animation</SSH>
             <Notes>
               Because animation is a more intimate form of communication, it can have wildly unintended and sometimes even dangerous consequences.
               Before talking about all the cool stuff you can do with animation, we need to take a moment to talk about how to animate with
@@ -364,7 +363,7 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          <Slide>
+          {/* <Slide>
             <H>Provide alternatives</H>
             <Notes>
               If animation is a large part of your app, give users the option to disable animations in their user preferences. This will be necessary 
@@ -372,10 +371,10 @@ export default class Presentation extends React.Component {
               hopefully it's soon. Once that media query is widespread, users will you'll be able to set a flag in their browser that you can 
               hook into to reduce or eliminate animation.
             </Notes>
-          </Slide>
+          </Slide> */}
 
           <Slide>
-            <Annot>[[should have a diff title here, because both cogni and spacial reduce cognitive load]]</Annot>
+            {/* <Annot>[[should have a diff title here, because both cogni and spacial reduce cognitive load]]</Annot> */}
             <SSH>Lighten cognitive load</SSH>
             <Notes>
               Cognitive load is a term tossed around in UX design circles a lot. Basically what it means is the amount of consious and unconscious 
@@ -446,15 +445,15 @@ export default class Presentation extends React.Component {
           <Slide bgColor="#000">
             <EarthPointerSlide />
             <Notes>
-              We live in a spacial world. See? Lots of space.
+              We live in a spacial world. See? Lots of space. We unconsciously build mental maps of the world around us, and it lets us
+              generally know where things are without tons of conscious effort.
             </Notes>
           </Slide>
 
           <Slide>
             <H>Mental map of<br />what's out of view</H>
             <Notes>
-              We unconsciously build mental maps of the world around us, and it lets us generally know where things are 
-              without tons of conscious effort. When we create interfaces that snap from state to state, it prevents us 
+              When we create interfaces that snap from state to state, it prevents us 
               from building that mental map and instinctively knowing where we are in a flow.
             </Notes>
           </Slide>
@@ -462,7 +461,7 @@ export default class Presentation extends React.Component {
           <Slide>
             <Vid src="amazon-hamburger-menu.mp4" />
             <Notes>
-
+              See menu come in from left help reinforce where button is in UI.
             </Notes>
           </Slide>
 
@@ -630,6 +629,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Vid src="fritz-heider-marianne-simmel.mp4" />
+            <Cite>Fritz Heider and Marianne Simmel</Cite>
             <Notes>
               This has been verified with experiments as well, most famously by Fritz Heider and Marianne Simmel in 1944.
               They showed this film to subjects, and all of them described the scene by anthropomorphizing the shapes. 
@@ -852,6 +852,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <FromTop><H>Decisive or self assured</H></FromTop>
+            <Cite>Restrained in-out</Cite>
             <Notes>
               Restrained ease-in-out is the way to go. They feel balanced, stable, physical, and weighty. Use a restrained followthrough 
               to give the animation a sense of weight, importance, and solidity.
@@ -862,7 +863,7 @@ export default class Presentation extends React.Component {
             <BrandEnergetic><H>Energetic or lively</H></BrandEnergetic>
             <Notes>
               Use animations with more springiness, use more generous overshoots/followthroughs. Soft overshoots feel friendly 
-              and energetic, sharp, quick overshoots though can show frenetic urgency. Be careful.
+              and energetic, sharp, quick overshoots though can show frenetic urgency.
             </Notes>
           </Slide>
 

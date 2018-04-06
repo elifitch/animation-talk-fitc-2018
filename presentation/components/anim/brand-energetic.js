@@ -7,14 +7,16 @@ function BrandEnergetic(props) {
   const dur = 0.5;
   const zipDur = 0.6;
   const zipSkew = 6;
-  const secondSkewDelay = zipDur * 0.58;
+  // const secondSkewDelay = zipDur * 0.58;
+  const secondSkewDelay = zipDur * 0.7;
+  const ease = Elastic.easeOut.config(1.3, 1);
 
   const zipLeft = [{
     method: 'to',
     target: child => child,
     duration: zipDur,
     args: [{
-      x: '-50%', ease: Power4.easeInOut,
+      x: '-50%', ease,
     }],
   },
   {
@@ -22,7 +24,7 @@ function BrandEnergetic(props) {
     target: child => child,
     duration: zipDur * 0.5,
     args: [{
-      skewX: `-${zipSkew}deg`, ease: Power4.easeInOut,
+      skewX: `-${zipSkew}deg`, ease,
     }, `-=${zipDur}`],
   },
   {
@@ -30,7 +32,7 @@ function BrandEnergetic(props) {
     target: child => child,
     duration: zipDur * 0.5,
     args: [{
-      skewX: '0deg', ease: Power4.easeInOut,
+      skewX: '0deg', ease,
     }, `-=${secondSkewDelay}`],
   }];
 
@@ -39,7 +41,7 @@ function BrandEnergetic(props) {
     target: child => child,
     duration: zipDur,
     args: [{
-      x: '50%', ease: Power4.easeInOut,
+      x: '50%', ease,
     }],
   },
   {
@@ -47,7 +49,7 @@ function BrandEnergetic(props) {
     target: child => child,
     duration: zipDur * 0.5,
     args: [{
-      skewX: `${zipSkew * 2}deg`, ease: Power4.easeInOut,
+      skewX: `${zipSkew * 2}deg`, ease,
     }, `-=${zipDur}`],
   },
   {
@@ -55,7 +57,7 @@ function BrandEnergetic(props) {
     target: child => child,
     duration: zipDur * 0.5,
     args: [{
-      skewX: '0deg', ease: Power4.easeInOut,
+      skewX: '0deg', ease,
     }, `-=${secondSkewDelay}`],
   }];
 
@@ -64,7 +66,7 @@ function BrandEnergetic(props) {
     target: child => child,
     duration: zipDur,
     args: [{
-      x: '0%', ease: Power4.easeInOut,
+      x: '0%', ease,
     }],
   },
   {
@@ -72,7 +74,7 @@ function BrandEnergetic(props) {
     target: child => child,
     duration: zipDur * 0.5,
     args: [{
-      skewX: `-${zipSkew}deg`, ease: Power4.easeInOut,
+      skewX: `-${zipSkew}deg`, ease,
     }, `-=${zipDur}`],
   },
   {
@@ -80,7 +82,7 @@ function BrandEnergetic(props) {
     target: child => child,
     duration: zipDur * 0.5,
     args: [{
-      skewX: '0deg', ease: Power4.easeInOut,
+      skewX: '0deg', ease,
     }, `-=${secondSkewDelay}`],
   }];
   return (
@@ -93,7 +95,7 @@ function BrandEnergetic(props) {
             target: child => child,
             duration: dur,
             args: [{
-              y: '-200%', ease: Power4.easeInOut,
+              y: '-200%', ease,
             }],
           },
           {
@@ -101,7 +103,7 @@ function BrandEnergetic(props) {
             target: child => child,
             duration: dur,
             args: [{
-              opacity: 0, ease: Power4.easeInOut,
+              opacity: 0, ease,
             }, `-=${dur * 1.2}`],
           },
         ],
