@@ -21,17 +21,31 @@ class Vid extends React.Component {
   }
   render() {
     const source = require(`../../assets/${this.props.src}`);
+    let wrapperStyle = {};
+    if (process.env.NODE_ENV === 'production') {
+      const poster = require('../../assets/loading.gif');
+      wrapperStyle = {
+        backgroundImage: `url(${poster})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+      };
+    }
     return (
-      <video 
-        style={{
-          minWidth: '40vw',
-          maxWidth: '80vw',
-          maxHeight: this.props.portrait ? '820px' : '620px',
-        }}
-        {...this.props}
-        src={source}
-        ref={this.assignRef}
-      />
+      <div
+        style={wrapperStyle}
+      >
+        <video
+          style={{
+            minWidth: '40vw',
+            maxWidth: '80vw',
+            maxHeight: this.props.portrait ? '820px' : '620px',
+
+          }}
+          {...this.props}
+          src={source}
+          ref={this.assignRef}
+        />
+      </div>
     );
   }
 }
