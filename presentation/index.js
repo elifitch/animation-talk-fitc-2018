@@ -159,7 +159,8 @@ export default class Presentation extends React.Component {
             <div><Bounce><Hsmall>Superfluous</Hsmall></Bounce></div>
             <div><Bounce><Hsmall>It's only surprise &amp; delight</Hsmall></Bounce></div>
             <div><Bounce><Hsmall>Just makes it pretty</Hsmall></Bounce></div>
-            <div><Bounce><Hsmall>[Collect other quotes here]</Hsmall></Bounce></div>
+            <div><Bounce><Hsmall>Just for polish</Hsmall></Bounce></div>
+            <div><Bounce><Hsmall>Sugar</Hsmall></Bounce></div>
             <Notes>
               I've heard folks call animation in UI design superfluous, give it a backhanded complement of "surprise and delight"
               the implication being that its not serious enough to be a part of "real" design
@@ -447,6 +448,14 @@ export default class Presentation extends React.Component {
             <Notes>
               We live in a spacial world. See? Lots of space. We unconsciously build mental maps of the world around us, and it lets us
               generally know where things are without tons of conscious effort.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Heading size={2}>🙅 🔑 👟 🙅</Heading>
+            <Notes>
+              When we create interfaces that snap from state to state, it prevents us
+              from building that mental map and instinctively knowing where we are in a flow.
             </Notes>
           </Slide>
 
@@ -820,7 +829,7 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          <Slide>
+          {/* <Slide>
             <FromTop><LoginModal /></FromTop>
             <Cite>Normal ease</Cite>
             <Notes>
@@ -829,7 +838,7 @@ export default class Presentation extends React.Component {
               your product is an amazing tool at your disposal. Don't cast it aside because some people on the internet think 
               they're too serious and important to use it.
             </Notes>
-          </Slide>
+          </Slide> */}
 
           <Slide>
             <FromTopSquashStretch><LoginModal /></FromTopSquashStretch>
@@ -946,8 +955,11 @@ export default class Presentation extends React.Component {
             <H>Physical objects help</H>
             <Notes>
               I find keeping around an object or objects that represent the brand can be extremely helpful. A few years ago 
-              I was designing and building UI animations for the website of an industry advocacy group. In talking with the 
+              I was designing and building UI animations for the website of an industry advocacy group.
+              
+              In talking with the 
               client, they spoke about their brand wanting to feel serious, impressive, trustworthy, consistent, levelheaded. 
+              
               They wanted users to feel assured. I was typing up notes from this meeting in this agency's machine shop, and 
               I found a large, 2 inch ball bearing. I actually have it right here. It's heavy, solid, completely smooth and 
               uniform. It was a perfect represenatation of how this brand wanted people to feel. So I kept it on my desk through 
