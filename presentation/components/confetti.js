@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { css } from 'react-emotion';
 import debounce from 'debounce';
 import random from 'lodash.random';
@@ -12,11 +13,12 @@ require('../../lib/gsap/Physics2DPlugin');
 
 const canvasContainerStyle = css({
   position: 'fixed',
-  top: '-100%',
+  // top: '-100%',
+  top: 0,
   left: 0,
   width: '100vw',
   height: '100vh',
-  zIndex: 1,
+  zIndex: -1,
   background: 'darkgray',
 });
 
@@ -61,38 +63,25 @@ class Confetti extends React.Component {
     window.addEventListener('resize', debounce(this.setCanvasSize, 200));
 
     this.setCanvasSize();
-    canvas.addEventListener('mousedown', this.handleMousedown);
-    canvas.addEventListener('mouseup', this.handleMouseup);
-    canvas.addEventListener('touchstart', this.handleMousedown);
-    canvas.addEventListener('touchend', this.handleMouseup);
-
-    // this.shootConfetti();
-    this.addConfettiParticles(10, 270, 5000, canvas.width, canvas.height);
+    this.shootConfetti();
   }
 
-  // shouldComponentUpdate(nextProps) {
-  //   if (this.props.shoot !== nextProps.shoot) {
-  //     const { canvas } = this;
+  shouldComponentUpdate(nextProps) {
+    if (this.props.shootConfetti !== nextProps.shootConfetti && nextProps.shootConfetti === true) {
+      this.shoot = true;
+      return true;
+    }
+    if (this.props.shootConfetti !== nextProps.shootConfetti && nextProps.shootConfetti === false) {
+      this.shoot = false;
+      return true;
+    }
+    return false;
+  }
 
-  //     this.shoot = true;
-  //     this.shootConfetti();
-  //     setTimeout(() => {
-  //       this.shoot = false;
-  //       const finalSlide = document.getElementById('final-slide');
-  //       canvas.addEventListener('mousedown', this.handleMousedown);
-  //       canvas.addEventListener('mouseup', this.handleMouseup);
-  //       canvas.addEventListener('touchstart', this.handleMousedown);
-  //       canvas.addEventListener('touchend', this.handleMouseup);
-  //       finalSlide.addEventListener('mousedown', this.handleMousedown);
-  //       finalSlide.addEventListener('mouseup', this.handleMouseup);
-  //       finalSlide.addEventListener('touchstart', this.handleMousedown);
-  //       finalSlide.addEventListener('touchend', this.handleMouseup);
-  //     }, 2000);
-
-  //     return true;
-  //   }
-  //   return false;
-  // }
+  componentWillUnmount() {
+    TweenMax.ticker.removeEventListener('tick', this.renderCanvas);
+    cancelAnimationFrame(this.raf);
+  }
 
   setCanvasRef(el) {
     this.canvas = el;
@@ -248,5 +237,9 @@ class Confetti extends React.Component {
     );
   }
 }
+
+Confetti.propTypes = {
+  shootConfetti: PropTypes.bool.isRequired,
+};
 
 export default Confetti;

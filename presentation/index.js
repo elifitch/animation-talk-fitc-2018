@@ -53,6 +53,7 @@ import ProgressBarDemo from './slides/progress-bar-demo';
 import BouncingBall from './components/bouncing-ball';
 import PapyrusSlide from './slides/papyrus-slide';
 import ThankYouSlide from './slides/thank-you-slide';
+import Confetti from './components/confetti';
 
 require('normalize.css');
 
@@ -69,9 +70,14 @@ export default class Presentation extends React.Component {
     super();
     this.state = {
       showSocialPointer: false,
+      enableConfetti: false,
+      fireConfetti: false,
     };
     this.showSocialPoiner = this.showSocialPoiner.bind(this);
     this.hideSocialPoiner = this.hideSocialPoiner.bind(this);
+    this.enableConfetti = this.enableConfetti.bind(this);
+    this.shootConfetti = this.shootConfetti.bind(this);
+    this.stopConfetti = this.stopConfetti.bind(this);
   }
   showSocialPoiner() {
     this.setState({ showSocialPointer: true });
@@ -79,9 +85,28 @@ export default class Presentation extends React.Component {
   hideSocialPoiner() {
     this.setState({ showSocialPointer: false });
   }
+
+  enableConfetti() {
+    this.setState({ enableConfetti: true });
+  }
+  shootConfetti() {
+    if (this.state.enableConfetti) {
+      this.setState({ fireConfetti: true });
+    }
+  }
+  stopConfetti() {
+    if (this.state.enableConfetti) {
+      this.setState({ fireConfetti: false });
+    }
+  }
+
   render() {
     return (
-      <div>
+      <div
+        role="widget" // eslint-disable-line
+        onMouseDown={this.shootConfetti}
+        onMouseUp={this.stopConfetti}
+      >
         <Deck
           transition={['slide']}
           transitionDuration={300}
@@ -1094,17 +1119,16 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          <Slide>
+          <Slide bgColor="transparent" onActive={this.enableConfetti}>
             <ThankYouSlide />
+            <CallFn fn={this.shootConfetti} />
+            <CallFn fn={this.stopConfetti} />
           </Slide>
 
-          <Slide>
-            <Annot>[[heavily animated thank you slide]]</Annot>
-            <Notes>
-              
-            </Notes>
-          </Slide>
         </Deck>
+        <Confetti
+          shootConfetti={this.state.fireConfetti}
+        />
         <Footer
           showSocialPoiner={this.state.showSocialPointer}
         />

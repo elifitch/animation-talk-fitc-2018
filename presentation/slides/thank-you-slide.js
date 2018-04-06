@@ -3,7 +3,6 @@ import styled from 'react-emotion';
 // import Title from '../components/title';
 import { Letterwave } from '../components/anim';
 import { h1FontSize, purple, pink } from '../theme';
-import Confetti from '../components/confetti';
 
 function threeDText(color, depth) {
   let style = '';
@@ -25,7 +24,6 @@ class ThankYouSlide extends React.Component {
     return (
       <div>
         <Text3D><Letterwave>Thanks Folks!</Letterwave></Text3D>
-        <Confetti shoot={true} />
       </div>
     );
   }
