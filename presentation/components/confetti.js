@@ -5,7 +5,6 @@ import debounce from 'debounce';
 import random from 'lodash.random';
 import uniqueId from 'lodash.uniqueid';
 import pull from 'lodash.pull';
-// import * as physics2D from '../../lib/gsap/Physics2DPlugin';
 import { pink, purple } from '../theme';
 
 require('gsap');
@@ -13,13 +12,11 @@ require('../../lib/gsap/Physics2DPlugin');
 
 const canvasContainerStyle = css({
   position: 'fixed',
-  // top: '-100%',
   top: 0,
   left: 0,
   width: '100vw',
   height: '100vh',
   zIndex: -1,
-  background: 'darkgray',
 });
 
 const canvasStyle = css({
@@ -46,8 +43,6 @@ class Confetti extends React.Component {
     this.shootConfetti = this.shootConfetti.bind(this);
     this.drawConfetti = this.drawConfetti.bind(this);
     this.renderCanvas = this.renderCanvas.bind(this);
-    this.handleMousedown = this.handleMousedown.bind(this);
-    this.handleMouseup = this.handleMouseup.bind(this);
     this.setCanvasSize = this.setCanvasSize.bind(this);
     this.setCanvasRef = this.setCanvasRef.bind(this);
   }
@@ -91,14 +86,6 @@ class Confetti extends React.Component {
     const { canvas } = this;
     canvas.width = window.innerWidth * this.dpr;
     canvas.height = window.innerHeight * this.dpr;
-  }
-
-  handleMousedown() {
-    this.shoot = true;
-  }
-
-  handleMouseup() {
-    this.shoot = false;
   }
 
   addConfettiParticles(amount, angle, velocity, canvasW, canvasH) {
@@ -165,7 +152,6 @@ class Confetti extends React.Component {
     const velocity = random(minVelocity, maxVelocity);
     const angle = random(minAngle, maxAngle);
     const gravity = GRAVITY;
-    // const friction = loRandom(0.1, 0.25);
     const friction = random(0.01, 0.05);
     const d = 0;
 

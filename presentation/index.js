@@ -178,7 +178,6 @@ export default class Presentation extends React.Component {
             <Notes>
               Animation is actually incredibly powerful, expressive and useful design tool.
               It deserves to be taken seriously, at least as seriously as traditional design precepts.
-              In order to fully appreciate animation's usefulness, lets think about design in a kind of weird way.
             </Notes>
           </Slide>
 
@@ -192,7 +191,7 @@ export default class Presentation extends React.Component {
           <Slide>
             <H><Fade>Biological</Fade> &amp; <Fade>Cultural</Fade></H>
             <Notes>
-              Design leverages biological and cultural factors of how humans process our environemnt in order to more effectively rely information.
+              Design leverages biological and cultural obserservations of how humans process our environemnt in order to more effectively rely information.
               Without the human hindbrain's ability to rapidly draw associations, and fit new things into established patterns, design wouldn't work.
             </Notes>
           </Slide>
@@ -218,7 +217,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Animation is no different</H>
+            <H>Animation <Bounce>is</Bounce> <Bounce>no</Bounce> <Bounce>different</Bounce></H>
+            <H><Fade>Engages the brain differently</Fade></H>
             <Notes>
               We infer at least as much information from how things move or change over time.
               In fact some research suggests that we infer *more* information from animation than we do "traditional" design
@@ -248,7 +248,7 @@ export default class Presentation extends React.Component {
             <Notes>
               The what system, also called the ventral system, takes the lower pathway through the brain, connecting more 
               directly to the parts of the brain that control things like long term memory, recognition, and perception 
-              of small details. The where system, also called the ventral system, is associated with the perception of 
+              of small details. The where system, also called the dorsal system, is associated with the perception of 
               motion, spacial awareness, and muscle memory like catching a ball. It's also *much* faster to process.
             </Notes>
           </Slide>
@@ -265,7 +265,7 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          <Slide>
+          {/* <Slide>
             <H size={3}>What System - <Fade>more conscious</Fade></H>
             <H size={3}>Where System - <Fade>less conscious</Fade></H>
             <Notes>
@@ -281,7 +281,7 @@ export default class Presentation extends React.Component {
               To fall back on a tech analogy, the what system is more highly evolved, it's newer, it's more like software.
               The where system is more like hardware. Faster, more intimate, closer to the metal.
             </Notes>
-          </Slide>
+          </Slide> */}
 
           <Slide>
             <H>Animation is the most efficient way to communicate</H>
@@ -311,18 +311,12 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <SSH>Animating Responsibly</SSH>
+            <SSH>>Ethical animation</SSH>
             <Notes>
               Because animation is a more intimate form of communication, it can have wildly unintended and sometimes even dangerous consequences.
-              Before talking about all the cool stuff you can do with animation, we need to take a moment to talk about how to animate with accessibility in mind.
-            </Notes>
-          </Slide>
-
-          <Slide>
-            <H>Ethical animation</H>
-            <Notes>
-              As we'll see in a minute, animation has profound influence over how we think and feel. It is of the *utmost* importance to not 
-              abuse that power or embrace "dark patterns". 
+              Before talking about all the cool stuff you can do with animation, we need to take a moment to talk about how to animate with
+              accessibility in mind. As we'll see in a minute, animation has profound influence over how we think and feel. It is of the 
+              *utmost* importance to not abuse that power or embrace "dark patterns".
             </Notes>
           </Slide>
 
@@ -408,6 +402,13 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <H>Reduces "change blindness"</H>
+            <Notes>
+              Because animation can be used to attract attention, it can indicate when something has changed in the UI.
+            </Notes>
+          </Slide>
+
+          <Slide>
             <H>Cueing</H>
             <Notes>
               
@@ -422,7 +423,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Confirmation</H>
+            <H>Connects states</H>
             <Notes>
 
             </Notes>
@@ -445,16 +446,16 @@ export default class Presentation extends React.Component {
           <Slide bgColor="#000">
             <EarthPointerSlide />
             <Notes>
-              We unconsciously build mental maps of the world around us, and it lets us generally know where things are 
-              without tons of conscious effort. When we create interfaces that snap from state to state, it prevents us 
-              from building that mental map and instinctively knowing where we are in a flow.
+              We live in a spacial world. See? Lots of space.
             </Notes>
           </Slide>
 
           <Slide>
             <H>Mental map of<br />what's out of view</H>
             <Notes>
-              Mental map of what's out of view
+              We unconsciously build mental maps of the world around us, and it lets us generally know where things are 
+              without tons of conscious effort. When we create interfaces that snap from state to state, it prevents us 
+              from building that mental map and instinctively knowing where we are in a flow.
             </Notes>
           </Slide>
 
@@ -617,7 +618,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>[[video of thomas and co jumping]]</H>
+            <Vid src="thomas-was-alone-jump.mp4" />
             <Notes>
               Each distinct character has a distint jump animation that goes with their charchacter. Thomas has a bright and 
               happy jumping style that underlines his optimism. John has a big scrunch up and bound, very bombastic, and 
@@ -632,7 +633,8 @@ export default class Presentation extends React.Component {
             <Notes>
               This has been verified with experiments as well, most famously by Fritz Heider and Marianne Simmel in 1944.
               They showed this film to subjects, and all of them described the scene by anthropomorphizing the shapes. 
-              We can use the tendencies of humans to ascribe meaning to motion in order to create 
+              We can use the tendencies of humans to ascribe meaning to motion, to fit what we observe into existing patterns 
+              in order to create certain character.
             </Notes>
           </Slide>
 
@@ -716,10 +718,10 @@ export default class Presentation extends React.Component {
             <Notes>
               If we're going to create animations that evoke the desired emotions from our users, that exhibit the right character, 
               traditional animation principles can be extremely useful. Disney's 12 principles are the gold standard, but many 
-              of them don't really make sense on the web. So it's gonna be more like 5. 4? And more like guidelines than principles 
-              and I guess if we're changing so much they're really from me. SO here we go Eli's 4 guidelines?  We'll walk through them 
-              with examples that show how they can make a brand feel more fun and energetic, evoking a feeling of joy in users; and we'll 
-              also show how they can make a brand feel more serious and somber, evoking a feeling of trust in users.
+              of them don't really make sense on the web. So it's gonna be more like 5. 4? And more like guidelines than principles.
+              We'll walk through them 
+              with examples that show how they can make a brand feel everything from lively and energetic, evoking a feeling of joy in users;
+              to how they can make a brand feel more serious and somber, evoking a feeling of trust in users; and everything in between.
             </Notes>
           </Slide>
           <Slide>
@@ -779,7 +781,8 @@ export default class Presentation extends React.Component {
           <Slide>
             <H><Letterwave>Secondary action</Letterwave></H>
             <Notes>
-              Secondary action is a way to [[COMPLETE]]
+              Secondary action can make animation seem more playful, or it can simply make an animation feel more real, grounded, 
+              and organic.
             </Notes>
           </Slide>
 
@@ -850,7 +853,8 @@ export default class Presentation extends React.Component {
           <Slide>
             <FromTop><H>Decisive or self assured</H></FromTop>
             <Notes>
-              Restrained ease-in-out is the way to go. They feel balanced, stable, physical, and weighty without being heavy.
+              Restrained ease-in-out is the way to go. They feel balanced, stable, physical, and weighty. Use a restrained followthrough 
+              to give the animation a sense of weight, importance, and solidity.
             </Notes>
           </Slide>
 
@@ -871,7 +875,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[big boing squash stretch]]</Annot>
             <H><Stretch fromBottom>Playful</Stretch> or <Letterwave>outgoing</Letterwave></H>
             <Notes>
               Use more squash and stretch to make animations feel springy and elastic. Animations that look like they make 
@@ -901,7 +904,7 @@ export default class Presentation extends React.Component {
               okay, and the time savings of starting from what you already have is totally worth it! On the other hand, in 
               desinging aniations to evoke a specific set of feelings you need to be much more intentional about the 
               details of your animations. This means that even a small number of animations that deviate from what you need 
-              it can break everything.
+              can break everything, and it's worth starting from scratch.
             </Notes>
           </Slide>
 
@@ -919,7 +922,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Annot>[[Maybe animate each of the words in notes, could be cool]]</Annot>
             <H>Rely on onomatopoeia</H>
             <Notes>
               Sounds like fwoosh, boingngng, kathung, shumpf, kathoom; these sounds can be helpful in communicating how an
@@ -971,7 +973,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            {/* <H textFont="papyrus">No brand is "too serious"</H> */}
             <PapyrusSlide />
             <Notes>
 
@@ -1099,13 +1100,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H>Animation shapes<br />space &amp; time</H>
-            <Notes>
-              
-            </Notes>
-          </Slide>
-
-          <Slide>
             <H>Always have your desired<br />character in mind</H>
             <Notes>
 
@@ -1113,7 +1107,14 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <H><Stroke>Nobody's</Stroke> gonna do this for you</H>
+            <H>Nobody's gonna do this for you</H>
+            <Notes>
+
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <H>Animation is all about the <Stroke>user</Stroke></H>
             <Notes>
 
             </Notes>

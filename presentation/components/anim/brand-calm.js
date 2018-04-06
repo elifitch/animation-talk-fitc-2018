@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'react-emotion';
 import PowerTween from '../power-tween';
 import IB from '../primitives/inline-block';
 
@@ -19,6 +20,9 @@ function BrandCalm(props) {
       },
     });
   };
+  const SIB = styled(IB)`
+    will-change: filter;
+  `;
   tweenBlur();
   return (
     <PowerTween
