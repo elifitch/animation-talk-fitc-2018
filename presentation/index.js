@@ -364,7 +364,7 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          {/* <Slide>
+          <Slide>
             <H>Provide alternatives</H>
             <Notes>
               If animation is a large part of your app, give users the option to disable animations in their user preferences. This will be necessary 
@@ -372,7 +372,7 @@ export default class Presentation extends React.Component {
               hopefully it's soon. Once that media query is widespread, users will you'll be able to set a flag in their browser that you can 
               hook into to reduce or eliminate animation.
             </Notes>
-          </Slide> */}
+          </Slide>
 
           <Slide>
             {/* <Annot>[[should have a diff title here, because both cogni and spacial reduce cognitive load]]</Annot> */}
@@ -959,7 +959,7 @@ export default class Presentation extends React.Component {
               
               In talking with the 
               client, they spoke about their brand wanting to feel serious, impressive, trustworthy, consistent, levelheaded. 
-              
+
               They wanted users to feel assured. I was typing up notes from this meeting in this agency's machine shop, and 
               I found a large, 2 inch ball bearing. I actually have it right here. It's heavy, solid, completely smooth and 
               uniform. It was a perfect represenatation of how this brand wanted people to feel. So I kept it on my desk through 
@@ -1054,12 +1054,12 @@ export default class Presentation extends React.Component {
             </Notes>
           </Slide>
 
-          <Slide>
+          {/* <Slide>
             <Pic src="isl-milk-logo.gif" />
             <Notes>
               
             </Notes>
-          </Slide>
+          </Slide> */}
 
           <Slide>
             <H>Collaboration is <Stroke>essential</Stroke></H>

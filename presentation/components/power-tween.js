@@ -80,12 +80,17 @@ class PowerTween extends Component {
         this.playTween();
       }
       if (newAnimationIndex < this.state.activeAnimation) {
-        if (this.tl.isActive()) {
-          // jump to next label to prevent weird behavior where tweens become
-          // out of sync with slide behavior
-          this.tl.seek(this.tl.getLabelBefore());
+        if (this.props.playReverse) {
+          if (this.tl.isActive()) {
+            // jump to next label to prevent weird behavior where tweens become
+            // out of sync with slide behavior
+            this.tl.seek(this.tl.getLabelBefore());
+          }
+          this.reverseTween();
+        } else {
+          this.tl.pause();
+          this.tl.seek(this.tl.getLabelBefore() || 0);
         }
-        this.reverseTween();
       }
       this.setState({
         activeAnimation: newAnimationIndex,
@@ -171,6 +176,7 @@ PowerTween.defaultProps = {
   style: {},
   order: 0,
   inline: false,
+  playReverse: false,
 };
 
 PowerTween.propTypes = {
@@ -183,6 +189,7 @@ PowerTween.propTypes = {
   }))).isRequired,
   style: PropTypes.object,
   order: PropTypes.number,
+  playReverse: PropTypes.bool,
   /* eslint-disable react/no-unused-prop-types */
   inline: PropTypes.bool,
   /* eslint-enable react/no-unused-prop-types */
