@@ -7,10 +7,11 @@
     "clean": "rimraf dist",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.production.js",
     "lint": "eslint --ext .js,.jsx .",
-    "deploy": "npm run clean & npm run build && surge -p .",
+    "deploy": "nnpm run clean & nnpm run build && nsurge -p .",
     "export": "spectacle-renderer --delay 3000",
     "start": "cross-env NODE_ENV=development node server.js",
-    "build:spectacle": "cd node_modules/spectacle && npm run clean && npm run build:lib"
+    "build:spectacle": "cd node_modules/spectacle && npm run clean && npm run build:lib",
+    "release": "npm run build:spectacle && npm run build && s3-deploy './dist/**' --bucket assets.eli.wtf/talks/animation-talk-fitc-2018 --cwd './dist/' --profile 'eli.wtf'"
   },
   "author": "",
   "license": "MIT",
@@ -77,6 +78,7 @@
     "react-transform-catch-errors": "^1.0.2",
     "redbox-react": "^1.5.0",
     "rimraf": "^2.6.2",
+    "s3-deploy": "^0.10.0",
     "style-loader": "^0.19.0",
     "surge": "latest",
     "url-loader": "^0.6.2",
