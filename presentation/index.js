@@ -54,6 +54,9 @@ import BouncingBall from './components/bouncing-ball';
 import PapyrusSlide from './slides/papyrus-slide';
 import ThankYouSlide from './slides/thank-you-slide';
 import Confetti from './components/confetti';
+import wiredUK from '../assets/wired-uk.mp4';
+import vimeo from '../assets/vimeo-cameo.mp4';
+import rd from '../assets/rd-contstruction.mp4';
 
 require('normalize.css');
 
@@ -357,9 +360,9 @@ export default class Presentation extends React.Component {
           <Slide>
             <ListHeading>Problematic examples</ListHeading>
             <List>
-              <ListItem><LinkHeading href="../../assets/wired-uk.mp4">Wired.co.uk</LinkHeading></ListItem>
-              <ListItem><LinkHeading href="../../assets/vimeo-cameo.mp4">Vimeo Cameo</LinkHeading></ListItem>
-              <ListItem><LinkHeading href="../../assets/rd-construction.mp4">RD Construction</LinkHeading></ListItem>
+              <ListItem><LinkHeading href={wiredUK}>Wired.co.uk</LinkHeading></ListItem>
+              <ListItem><LinkHeading href={vimeo}>Vimeo Cameo</LinkHeading></ListItem>
+              <ListItem><LinkHeading href={rd}>RD Construction</LinkHeading></ListItem>
             </List>
             <Notes>
               
