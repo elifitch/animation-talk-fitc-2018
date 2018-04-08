@@ -38,7 +38,7 @@ class Vid extends React.Component {
           style={{
             minWidth: '40vw',
             maxWidth: '80vw',
-            maxHeight: this.props.portrait ? '820px' : '620px',
+            maxHeight: this.props.portrait ? '920px' : '620px',
 
           }}
           {...this.props}

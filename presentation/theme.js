@@ -88,6 +88,7 @@ let mutableTheme = createTheme({
   tertiary: purple,
   quarternary: '#CECECE',
   nearBlack,
+  translucent,
 }, {
   primary: 'brandon grotesque',
   secondary: 'pinopolis',

@@ -239,8 +239,8 @@ export default class Presentation extends React.Component {
           <Slide>
             {/* <Annot>Needs to be graphics here, maybe break up this slide into more slides, it holds very important information, take your time on it</Annot> */}
             <H>
-              <H size={3}>Ventral stream - <Fade>What System</Fade></H>
-              <H size={3}>Dorsal stream - <Fade>Where System</Fade></H>
+              <H size={3}>Ventral stream - <Fade>Static design</Fade></H>
+              <H size={3}>Dorsal stream - <Fade>Animation</Fade></H>
             </H>
             <Notes>
               Margaret Livingstone, a professor of neurobiology at harvard university 
@@ -250,13 +250,7 @@ export default class Presentation extends React.Component {
               You can use animation to more directly communicate with the users hindbrain, and more efficiently manage users cognition
               and emotional state, which at the end of the day, is the goal of design: helping people understand information better, 
               and forging a deeper connection betrween the user and the experience.
-            </Notes>
-          </Slide>
 
-          <Slide>
-            <H size={3}>What System - <Fade>Static design</Fade></H>
-            <H size={3}>Where System - <Fade>Animation</Fade></H>
-            <Notes>
               Static design, like color, hierarchy, typography, mostly engages the what system. Animation engages a 
               whole different visual pathway, a whole other way that people communicate and process information.
               Which means there's this whole other visual pathway we can use to communicate. The Where System is 
@@ -264,6 +258,14 @@ export default class Presentation extends React.Component {
               systems and cue gesture interactions.
             </Notes>
           </Slide>
+
+          {/* <Slide>
+            <H size={3}>What System - <Fade>Static design</Fade></H>
+            <H size={3}>Where System - <Fade>Animation</Fade></H>
+            <Notes>
+              
+            </Notes>
+          </Slide> */}
 
           {/* <Slide>
             <H size={3}>What System - <Fade>more conscious</Fade></H>
@@ -416,7 +418,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Vid src="affordance.mp4" />
+            <Vid portrait src="affordance.mp4" />
             <Notes>
 
             </Notes>
@@ -722,7 +724,6 @@ export default class Presentation extends React.Component {
           </Slide>
           
           <Slide>
-            <Annot>make this a comical carousel, switching from 12 principles to 5 (or whatever), principles to guidlines, disneys to Elis, whatever</Annot>
             <SSH>Disney's 12 Principles</SSH>
             <Notes>
               If we're going to create animations that evoke the desired emotions from our users, that exhibit the right character, 
@@ -1135,8 +1136,10 @@ export default class Presentation extends React.Component {
 
           <Slide bgColor="transparent" onActive={this.enableConfetti}>
             <ThankYouSlide />
+            {/* <a href="http://assets.eli.wtf/talks/animation-talk-fitc-2018"><Heading size={5} textColor="translucent">http://assets.eli.wtf/talks/animation-talk-fitc-2018</Heading></a> */}
             <CallFn fn={this.shootConfetti} />
             <CallFn fn={this.stopConfetti} />
+            <Fade><LinkHeading href="http://assets.eli.wtf/talks/animation-talk-fitc-2018">http://assets.eli.wtf/talks/animation-talk-fitc-2018</LinkHeading></Fade>
           </Slide>
 
         </Deck>
