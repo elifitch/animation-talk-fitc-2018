@@ -156,11 +156,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <div><Bounce><Hsmall>Superfluous</Hsmall></Bounce></div>
-            <div><Bounce><Hsmall>It's only surprise &amp; delight</Hsmall></Bounce></div>
-            <div><Bounce><Hsmall>Just makes it pretty</Hsmall></Bounce></div>
-            <div><Bounce><Hsmall>Just for polish</Hsmall></Bounce></div>
-            <div><Bounce><Hsmall>Sugar</Hsmall></Bounce></div>
+            <div><Bounce><Heading size={4}>Superfluous</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>It's only surprise &amp; delight</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>Just makes it pretty</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>Just for polish</Heading></Bounce></div>
+            <div><Bounce><Heading size={4}>Sugar</Heading></Bounce></div>
             <Notes>
               I've heard folks call animation in UI design superfluous, give it a backhanded complement of "surprise and delight"
               the implication being that its not serious enough to be a part of "real" design
@@ -975,6 +975,16 @@ export default class Presentation extends React.Component {
               Much like a physical object, you can use a piece of music as a touchstone. Val Head is an amazin web animator, 
               and she's a big fan of using a piece of music as a touchstone. Use the rhythm, form, sensations of the music 
               and use that as a reference for your animations. Work until your animations feel "right" alongside that 
+              piece of music.
+            </Notes>
+          </Slide>
+
+          <Slide>
+            <Pic src="futurecop.jpg" />
+            <Notes>
+              Much like a physical object, you can use a piece of music as a touchstone. Val Head is an amazin web animator,
+              and she's a big fan of using a piece of music as a touchstone. Use the rhythm, form, sensations of the music
+              and use that as a reference for your animations. Work until your animations feel "right" alongside that
               piece of music.
             </Notes>
           </Slide>

@@ -90,8 +90,8 @@ let mutableTheme = createTheme({
   nearBlack,
   translucent,
 }, {
-  primary: 'brandon grotesque',
-  secondary: 'pinopolis',
+  primary: 'brandon grotesque, futura, helvetica',
+  secondary: 'pinopolis, monospace',
   papyrus: 'papyrus',
 });
 
