@@ -141,6 +141,10 @@ These slides should be made last
 * Example of a springy energetic brand is dropbox paper [val][https://vimeo.com/162721550]; compared to medium, which is much more measured and restrained writing experience [val][https://vimeo.com/162721531]
 * Surprise and delight examples: Yelp pull to refresh cat rocketship, medium clap animaiton....
 
+## Post FITC Notes
+* If your company/client/whatever is too "dignified" or "serious" for animation, think about what character the *lack* of animation has. It makes everything in your UI go "HEY" when it appears [do like a bend of the knees, jut your head forward, wave your arms]. Humans still ascribe character to motion, and we still naturally perceive things as changing over time, that's how we process information about the world. So when things snap into place, we perceive them as having moved or changed so fast we couldn't see it. It's jarring and unsettling, not dignified or serious. Quite the opposite.
+* Call physical objects "totems" not "touchstones" just like from inception. Maybe even have a looping gif from inception of the totem spinning.
+
 
 ## Resources
 * [codenewbie podcast with RN: cognitive load](https://www.codenewbie.org/podcast/what-and-why-is-web-animation)
