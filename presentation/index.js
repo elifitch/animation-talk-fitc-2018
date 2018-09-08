@@ -1159,9 +1159,9 @@ export default class Presentation extends React.Component {
         <Confetti
           shootConfetti={this.state.fireConfetti}
         />
-        <Footer
+        {/* <Footer
           showSocialPoiner={this.state.showSocialPointer}
-        />
+        /> */}
       </div>
     );
   }

@@ -19,6 +19,7 @@ class BouncingBall extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       const ease = this.props.ease({ CustomBounce });
+      console.log(ease)
       this.tl.to(
         document.querySelectorAll(`[data-uuid="${this.state.targetId}"]`)[0],
         this.props.duration,

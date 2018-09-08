@@ -95,8 +95,8 @@ class Confetti extends React.Component {
     while (i < amount) {
       // sprite
       const isEven = i % 2 === 0;
-      const r = random(4, 6) * this.dpr;
-      const d = random(15, 25) * this.dpr;
+      const r = random(4, 6) * this.dpr * 0.5;
+      const d = random(15, 25) * this.dpr * 0.5;
       let colorBase = {};
 
       if (isEven) {

@@ -23,7 +23,7 @@ class ThankYouSlide extends React.Component {
   render() {
     return (
       <div>
-        <Text3D><Letterwave>Thanks Folks!</Letterwave></Text3D>
+        <Text3D><Letterwave>Lets have fun!</Letterwave></Text3D>
       </div>
     );
   }
